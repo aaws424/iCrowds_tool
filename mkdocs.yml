@@ -1,0 +1,40 @@
+site_name: iCrowds Documentation
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Static:
+      - Overview: static/index.md
+      - Stadium: static/stadium.md
+      - Scatter:
+          - Overview: static/scatter.md
+          - Scatter on Ground: static/scatter/ground.md
+          - Scatter on Curve: static/scatter/curve.md
+          - Scatter on Vertex: static/scatter/vertex.md
+  - Dynamic:
+      - Overview: dynamic/index.md
+      - Fluid System: dynamic/fluid.md
+      - Walkers System: dynamic/walkers.md
+      - City System: dynamic/city.md
+  - Tutorials: tutorials.md
+  - FAQ: faq.md
