@@ -1,0 +1,1689 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../curve/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Scatter on Ground - iCrowds Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#icrowds-static-on-ground-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="iCrowds Documentation" class="md-header__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iCrowds Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scatter on Ground
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Static
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynamic/" class="md-tabs__link">
+          
+  
+  
+  Dynamic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tutorials/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="iCrowds Documentation" class="md-nav__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    iCrowds Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stadium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stadium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scatter
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scatter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Ground
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Ground
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singles-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singles Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Singles Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density_singles-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density_Singles Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masks_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masks_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object_singles-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object_Singles Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations_Singles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clusters Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clusters Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density_clusters-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density_Clusters Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mask_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-variations_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Variations_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offset_clusters-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offset_Clusters Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-terrain-and-agent-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Terrain and Agent Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-distribution-method-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Distribution Method Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-masking-and-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Masking and Refinement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-final-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Final Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urban-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Urban Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Scenarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vertex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Vertex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dynamic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dynamic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/fluid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluid System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/walkers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Walkers System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    City System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singles-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singles Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Singles Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density_singles-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density_Singles Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masks_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masks_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random_Singles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object_singles-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object_Singles Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations_singles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations_Singles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clusters Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clusters Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density_clusters-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density_Clusters Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mask_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-variations_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Variations_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offset_clusters-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offset_Clusters Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random_clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random_Clusters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-terrain-and-agent-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Terrain and Agent Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-distribution-method-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Distribution Method Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-masking-and-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Masking and Refinement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-final-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Final Adjustments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urban-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Urban Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Scenarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="icrowds-static-on-ground-documentation">iCrowds Static On Ground Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Static On Ground</strong> system is a comprehensive terrain-based crowd distribution tool that scatters agents across surfaces with precise control over placement, density, and grouping. It supports both individual agent placement and clustered groupings for natural-looking crowd formations.</p>
+<h2 id="core-components">Core Components</h2>
+<h3 id="global-inputs">Global Inputs</h3>
+<p><strong>Purpose</strong>: Define the base environment and agent sources</p>
+<p><strong>Parameters</strong>:
+- <strong>Terrain</strong>: Base surface for agent placement
+- <strong>Agents</strong>: Source objects or collections for scattering
+- <strong>Agent Input Type</strong>: Switch between Object or Collection input methods</p>
+<h3 id="singles-distribution-system">Singles Distribution System</h3>
+<p><strong>Purpose</strong>: Place individual agents with controlled spacing and variation</p>
+<h4 id="density_singles-panel">Density_Singles Panel</h4>
+<p><strong>Placement Controls</strong>:
+- <strong>Density_Singles</strong>: Overall agent concentration level
+- <strong>Min_Distance_Singles</strong>: Minimum spacing between individual agents
+- <strong>Seed_Singles</strong>: Randomization seed for placement variation
+- <strong>max_Singles</strong>: Maximum number of agents to place</p>
+<h4 id="masks_singles">Masks_Singles</h4>
+<p><strong>Placement Restrictions</strong>:
+- <strong>Vertex Group Mask_Singles</strong>: Use vertex groups to define density areas
+- <strong>Inside Sphere Mask_Singles</strong>: Spherical boundary constraints</p>
+<h4 id="personal-space_singles">Personal Space_Singles</h4>
+<p><strong>Natural Spacing</strong>:
+- <strong>Relax Iterations_Singles</strong>: Physics passes for optimal spacing
+- <strong>Space Min_Singles</strong>: Minimum personal space between agents
+- <strong>Space Max_Singles</strong>: Maximum personal space allowance
+- <strong>Space Seed_Singles</strong>: Randomization for natural spacing variation</p>
+<h4 id="rotation_singles">Rotation_Singles</h4>
+<p><strong>Orientation Control</strong>:
+- <strong>Up Direction_Singles</strong>: Surface normal alignment
+- <strong>Look Direction_Singles</strong>: Forward orientation direction</p>
+<h4 id="random_singles">Random_Singles</h4>
+<p><strong>Placement Variation</strong>:
+- <strong>Random Min_Singles</strong>: Minimum random offset
+- <strong>Random Max_Singles</strong>: Maximum random offset
+- <strong>Random Seed_Singles</strong>: Randomization control</p>
+<h4 id="at-object_singles-panel">At Object_Singles Panel</h4>
+<p><strong>Object-Based Placement</strong>:
+- <strong>At Object_Singles</strong>: Target objects for placement
+- <strong>Add Randomness_Singles</strong>: Introduce variation to object-based placement</p>
+<h4 id="scale-variations_singles">Scale Variations_Singles</h4>
+<p><strong>Size Diversity</strong>:
+- <strong>Scale Variation_Singles</strong>: Enable/disable size variations
+- <strong>Scale Min_Singles</strong>: Minimum agent scale
+- <strong>Scale Max_Singles</strong>: Maximum agent scale
+- <strong>Scale Seed_Singles</strong>: Scale randomization control</p>
+<h3 id="clusters-distribution-system">Clusters Distribution System</h3>
+<p><strong>Purpose</strong>: Create natural group formations with clustered agent placement</p>
+<h4 id="density_clusters-panel">Density_Clusters Panel</h4>
+<p><strong>Cluster Density</strong>:
+- <strong>Density_Clusters</strong>: Overall cluster concentration
+- <strong>Min Distance_Clusters</strong>: Spacing between cluster centers
+- <strong>Seed_Clusters</strong>: Cluster placement randomization
+- <strong>max_Clusters</strong>: Maximum number of clusters</p>
+<h4 id="mask_clusters">Mask_Clusters</h4>
+<p><strong>Cluster Placement Restrictions</strong>:
+- <strong>Vertex Group Mask_Clusters</strong>: Density control via vertex groups
+- <strong>Inside Sphere Mask_Clusters</strong>: Spherical boundary for clusters</p>
+<h4 id="cluster-variations_clusters">Cluster Variations_Clusters</h4>
+<p><strong>Group Configuration</strong>:
+- <strong>Radius_Clusters</strong>: Overall cluster size control
+- <strong>Radius Min_Clusters</strong>: Minimum cluster radius
+- <strong>Radius Max_Clusters</strong>: Maximum cluster radius
+- <strong>Radius Seed_Clusters</strong>: Cluster size randomization
+- <strong>Count_Clusters</strong>: Agents per cluster
+- <strong>Count Min_Clusters</strong>: Minimum agents per cluster
+- <strong>Count Max_Clusters</strong>: Maximum agents per cluster
+- <strong>Count Seed_Clusters</strong>: Agent count randomization</p>
+<h4 id="offset_clusters-panel">Offset_Clusters Panel</h4>
+<p><strong>Placement Refinement</strong>:
+- <strong>Offset_Clusters</strong>: Enable cluster position offsets
+- <strong>Detail_Clusters</strong>: Offset refinement level
+- <strong>Random Offset_Clusters</strong>: Random position variation
+- <strong>Offset Min_Clusters</strong>: Minimum offset distance
+- <strong>Offset Max_Clusters</strong>: Maximum offset distance
+- <strong>Offset Seed_Clusters</strong>: Offset randomization</p>
+<h4 id="personal-space_clusters">Personal Space_Clusters</h4>
+<p><strong>Intra-Cluster Spacing</strong>:
+- <strong>Relax Iterations_Clusters</strong>: Physics smoothing within clusters
+- <strong>Space Min_Clusters</strong>: Minimum spacing between cluster members
+- <strong>Space Max_Clusters</strong>: Maximum spacing allowance
+- <strong>Space Seed_Clusters</strong>: Spacing variation control</p>
+<h4 id="rotation_clusters">Rotation_Clusters</h4>
+<p><strong>Cluster Orientation</strong>:
+- <strong>Up Direction_Clusters</strong>: Surface alignment for clusters
+- <strong>Look Direction_Clusters</strong>: Cluster facing direction</p>
+<h4 id="random_clusters">Random_Clusters</h4>
+<p><strong>Cluster Variation</strong>:
+- <strong>Random Min_Clusters</strong>: Minimum cluster variation
+- <strong>Random Max_Clusters</strong>: Maximum variation range
+- <strong>Random Seed_Clusters</strong>: Cluster randomization control</p>
+<h2 id="workflow">Workflow</h2>
+<h3 id="phase-1-terrain-and-agent-setup">Phase 1: Terrain and Agent Setup</h3>
+<ol>
+<li>Define the base terrain surface for placement</li>
+<li>Select agent objects or collections for scattering</li>
+<li>Choose between Object or Collection input method</li>
+</ol>
+<h3 id="phase-2-distribution-method-selection">Phase 2: Distribution Method Selection</h3>
+<p><strong>Option A: Singles Distribution</strong>
+1. Configure density and minimum spacing parameters
+2. Set up masking for controlled placement areas
+3. Adjust personal space for natural agent spacing
+4. Configure rotation and scale variations</p>
+<p><strong>Option B: Clusters Distribution</strong>
+1. Set cluster density and spacing between groups
+2. Define cluster size parameters (radius and agent count)
+3. Configure intra-cluster spacing and organization
+4. Apply offsets and variations for natural group formations</p>
+<h3 id="phase-3-masking-and-refinement">Phase 3: Masking and Refinement</h3>
+<ol>
+<li>Use vertex groups to control density distribution</li>
+<li>Apply spherical masks for boundary control</li>
+<li>Fine-tune placement with offset and detail parameters</li>
+<li>Adjust randomization seeds for controlled variation</li>
+</ol>
+<h3 id="phase-4-final-adjustments">Phase 4: Final Adjustments</h3>
+<ol>
+<li>Review and tweak scale variations</li>
+<li>Optimize personal space parameters</li>
+<li>Finalize rotation and orientation settings</li>
+<li>Balance randomness for natural-looking results</li>
+</ol>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="natural-environments">Natural Environments</h3>
+<ul>
+<li>Scattering vegetation and natural elements</li>
+<li>Wildlife placement in ecosystems</li>
+<li>Rock and debris distribution on terrain</li>
+</ul>
+<h3 id="urban-planning">Urban Planning</h3>
+<ul>
+<li>Pedestrian placement in public spaces</li>
+<li>Street furniture and object distribution</li>
+<li>Park and recreational area population</li>
+</ul>
+<h3 id="event-scenarios">Event Scenarios</h3>
+<ul>
+<li>Audience seating arrangements</li>
+<li>Exhibition booth placement</li>
+<li>Festival attendee distribution</li>
+</ul>
+<h3 id="architectural-visualization">Architectural Visualization</h3>
+<ul>
+<li>People in building environments</li>
+<li>Furniture and object placement in interiors</li>
+<li>Context population around structures</li>
+</ul>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Dual Distribution Methods</strong>: Choose between individual or clustered placement</li>
+<li><strong>Precise Density Control</strong>: Vertex group masking for area-specific density</li>
+<li><strong>Natural Spacing Algorithms</strong>: Physics-based personal space optimization</li>
+<li><strong>Comprehensive Randomization</strong>: Controlled variation for organic results</li>
+<li><strong>Scalable Workflow</strong>: Handle from small scenes to massive distributions</li>
+<li><strong>Non-Destructive Workflow</strong>: Parameters can be adjusted iteratively</li>
+</ul>
+<p>The Static On Ground system provides artist-friendly controls for creating believable, naturally distributed crowds and objects across any terrain surface, with advanced options for both individual placement and group formations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

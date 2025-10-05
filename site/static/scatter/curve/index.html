@@ -1,0 +1,1781 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ground/">
+      
+      
+        <link rel="next" href="../vertex/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Scatter on Curve - iCrowds Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#icrowds-static-on-curve-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="iCrowds Documentation" class="md-header__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iCrowds Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scatter on Curve
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Static
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynamic/" class="md-tabs__link">
+          
+  
+  
+  Dynamic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tutorials/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="iCrowds Documentation" class="md-nav__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    iCrowds Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stadium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stadium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scatter
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scatter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Ground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Curve
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Curve
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curve-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curve Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curve Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-based-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count-Based Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length-based-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Length-Based Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius-multiplier-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radius Multiplier Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position Variation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-innovation-radius-driven-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Innovation: Radius-Driven Density
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Innovation: Radius-Driven Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curve-radius-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curve Radius Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius-multiplier-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radius Multiplier Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-curve-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Curve Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-agent-and-curve-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Agent and Curve Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-distribution-method-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Distribution Method Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-radius-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Radius Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-spacing-and-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: Spacing and Variation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Refinement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#road-and-path-populations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Road and Path Populations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-and-ceremony-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event and Ceremony Layouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-formations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Formations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-density-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Density Gradients
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-curve-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Curve Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animation Preparation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vertex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Vertex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dynamic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dynamic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/fluid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluid System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/walkers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Walkers System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    City System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curve-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curve Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curve Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-based-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count-Based Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#length-based-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Length-Based Distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius-multiplier-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radius Multiplier Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position Variation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-innovation-radius-driven-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Innovation: Radius-Driven Density
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Innovation: Radius-Driven Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curve-radius-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curve Radius Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radius-multiplier-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Radius Multiplier Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-curve-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Curve Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-agent-and-curve-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Agent and Curve Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-distribution-method-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Distribution Method Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-radius-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Radius Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-spacing-and-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: Spacing and Variation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Refinement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#road-and-path-populations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Road and Path Populations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-and-ceremony-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event and Ceremony Layouts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-formations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Formations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-density-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Density Gradients
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-curve-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Curve Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Animation Preparation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="icrowds-static-on-curve-documentation">iCrowds Static On Curve Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Static On Curve</strong> system is a specialized tool for distributing agents along curves with intelligent density control based on curve radius. It enables artists to create natural-looking formations that follow paths, roads, or custom trajectories with radius-driven population density.</p>
+<h2 id="core-components">Core Components</h2>
+<h3 id="global-inputs">Global Inputs</h3>
+<p><strong>Purpose</strong>: Define the base environment and agent sources</p>
+<p><strong>Parameters</strong>:
+- <strong>Terrain</strong>: Reference surface for agent placement
+- <strong>Agents</strong>: Source objects or collections for distribution
+- <strong>Agent Input Type</strong>: Switch between Object or Collection input methods</p>
+<h3 id="curve-distribution-system">Curve Distribution System</h3>
+<p><strong>Purpose</strong>: Control agent placement along curves with radius-based density</p>
+<h4 id="density-panel">Density Panel</h4>
+<p><strong>Placement Methods</strong>:
+- <strong>Curve</strong>: Target curve object for agent distribution
+- <strong>Density Type</strong>: Method for calculating agent placement
+- <strong>Max</strong>: Maximum number of agents along the curve</p>
+<h4 id="count-based-distribution">Count-Based Distribution</h4>
+<p><strong>Fixed Quantity Control</strong>:
+- <strong>Count Min</strong>: Minimum number of agents to place
+- <strong>Count Max</strong>: Maximum number of agents to place</p>
+<h4 id="length-based-distribution">Length-Based Distribution</h4>
+<p><strong>Density-per-Length Control</strong>:
+- <strong>Length</strong>: Agents per unit length of the curve</p>
+<h4 id="radius-multiplier-panel">Radius Multiplier Panel</h4>
+<p><strong>Curve Radius Integration</strong>:
+- <strong>Radius Multiplier</strong>: Scale factor for curve radius influence on density
+- <em>Feature: Use Alt+S curve point scaling to drive agent density variations</em></p>
+<h3 id="personal-space">Personal Space</h3>
+<p><strong>Purpose</strong>: Maintain natural spacing between agents along the curve</p>
+<p><strong>Parameters</strong>:
+- <strong>Relax Iterations</strong>: Physics smoothing passes for optimal spacing
+- <strong>Space Min</strong>: Minimum distance between adjacent agents
+- <strong>Space Max</strong>: Maximum allowable spacing
+- <strong>Space Seed</strong>: Randomization for organic spacing variation</p>
+<h3 id="rotation">Rotation</h3>
+<p><strong>Purpose</strong>: Control agent orientation along the curve path</p>
+<p><strong>Parameters</strong>:
+- <strong>Up Direction</strong>: Surface normal alignment for agents
+- <strong>Look Direction</strong>: Forward orientation (typically follows curve direction)</p>
+<h3 id="random">Random</h3>
+<p><strong>Purpose</strong>: Introduce controlled variation for natural results</p>
+<p><strong>Parameters</strong>:
+- <strong>Random Min</strong>: Minimum random placement offset
+- <strong>Random Max</strong>: Maximum random placement offset<br />
+- <strong>Random Seed</strong>: Randomization control for reproducible results</p>
+<h3 id="at-object-panel">At Object Panel</h3>
+<p><strong>Purpose</strong>: Object-based placement along curves</p>
+<p><strong>Parameters</strong>:
+- <strong>At Object</strong>: Specific object targets for placement
+- <strong>Add Randomness</strong>: Introduce variation to object-based placement</p>
+<h3 id="position-variation">Position Variation</h3>
+<p><strong>Purpose</strong>: Fine-tune agent positioning relative to the curve</p>
+<p><strong>Parameters</strong>:
+- <strong>Position Variation</strong>: Amount of positional randomness
+- <strong>Position Seed</strong>: Randomization control for position variations</p>
+<h3 id="scale-variations">Scale Variations</h3>
+<p><strong>Purpose</strong>: Create size diversity among agents</p>
+<p><strong>Parameters</strong>:
+- <strong>Scale Variation</strong>: Enable/disable agent size variations</p>
+<h2 id="key-innovation-radius-driven-density">Key Innovation: Radius-Driven Density</h2>
+<h3 id="curve-radius-control">Curve Radius Control</h3>
+<p><strong>Unique Feature</strong>: The system uses the curve's radius (adjusted with <strong>Alt+S</strong>) to dynamically control agent density:</p>
+<ul>
+<li><strong>Wider Radius Areas</strong>: Higher agent density and more spacing flexibility</li>
+<li><strong>Narrower Radius Areas</strong>: Lower agent density with tighter constraints</li>
+<li><strong>Variable Radius Curves</strong>: Create natural density gradients along paths</li>
+</ul>
+<h3 id="radius-multiplier-application">Radius Multiplier Application</h3>
+<ul>
+<li><strong>Multiplier &gt; 1.0</strong>: Amplify the radius's effect on density</li>
+<li><strong>Multiplier &lt; 1.0</strong>: Reduce the radius's influence</li>
+<li><strong>Multiplier = 0.0</strong>: Disable radius-based density control</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<h3 id="phase-1-curve-preparation">Phase 1: Curve Preparation</h3>
+<ol>
+<li>Create or import the target curve object</li>
+<li>Use <strong>Alt+S</strong> to scale curve points' radius for density control</li>
+<li>Adjust radius variations to define density hotspots and sparse areas</li>
+</ol>
+<h3 id="phase-2-agent-and-curve-setup">Phase 2: Agent and Curve Setup</h3>
+<ol>
+<li>Select the target curve for distribution</li>
+<li>Choose agent objects or collections</li>
+<li>Set Agent Input Type (Object or Collection)</li>
+</ol>
+<h3 id="phase-3-distribution-method-selection">Phase 3: Distribution Method Selection</h3>
+<p><strong>Option A: Count-Based Placement</strong>
+1. Set Count Min/Max for fixed agent quantities
+2. System automatically distributes along curve length</p>
+<p><strong>Option B: Density-Based Placement</strong><br />
+1. Set Length parameter for agents per unit distance
+2. Density automatically adapts to curve radius variations</p>
+<h3 id="phase-4-radius-integration">Phase 4: Radius Integration</h3>
+<ol>
+<li>Adjust Radius Multiplier to control radius influence</li>
+<li>Fine-tune how curve point scaling affects density</li>
+<li>Balance between radius-driven and uniform distribution</li>
+</ol>
+<h3 id="phase-5-spacing-and-variation">Phase 5: Spacing and Variation</h3>
+<ol>
+<li>Configure Personal Space for natural agent separation</li>
+<li>Set Rotation parameters for proper orientation</li>
+<li>Add Random and Position variations for organic look</li>
+<li>Enable Scale Variations for size diversity</li>
+</ol>
+<h3 id="phase-6-refinement">Phase 6: Refinement</h3>
+<ol>
+<li>Use At Object for specific placement requirements</li>
+<li>Adjust randomization seeds for controlled variation</li>
+<li>Fine-tune Max parameter to limit total agents</li>
+</ol>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="road-and-path-populations">Road and Path Populations</h3>
+<ul>
+<li>pedestrians along sidewalks</li>
+<li>vehicles on roads</li>
+<li>street furniture along pathways</li>
+</ul>
+<h3 id="event-and-ceremony-layouts">Event and Ceremony Layouts</h3>
+<ul>
+<li>audience seating along procession routes</li>
+<li>participants in parade formations</li>
+<li>vendors along festival paths</li>
+</ul>
+<h3 id="natural-formations">Natural Formations</h3>
+<ul>
+<li>trees along riverbanks</li>
+<li>rocks along geological faults</li>
+<li>plants following terrain contours</li>
+</ul>
+<h3 id="architectural-applications">Architectural Applications</h3>
+<ul>
+<li>people in queue lines</li>
+<li>furniture along building perimeters</li>
+<li>decorative elements along architectural features</li>
+</ul>
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="dynamic-density-gradients">Dynamic Density Gradients</h3>
+<ul>
+<li>Use gradually changing radius to create smooth density transitions</li>
+<li>Create crowded-to-sparse effects along paths</li>
+<li>Simulate natural gathering and dispersion patterns</li>
+</ul>
+<h3 id="multi-curve-networks">Multi-Curve Networks</h3>
+<ul>
+<li>Distribute across multiple curves for complex layouts</li>
+<li>Use different radius settings for varied density zones</li>
+<li>Create hierarchical distribution patterns</li>
+</ul>
+<h3 id="animation-preparation">Animation Preparation</h3>
+<ul>
+<li>Set up static formations for later fluid system integration</li>
+<li>Pre-define natural starting positions for dynamic simulations</li>
+<li>Create baseline distributions for motion systems</li>
+</ul>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Radius-Driven Density</strong>: Unique curve radius control over agent distribution</li>
+<li><strong>Dual Distribution Methods</strong>: Choose between count-based or density-based placement</li>
+<li><strong>Adaptive Spacing</strong>: Automatic adjustment based on curve characteristics</li>
+<li><strong>Non-Linear Control</strong>: Curve point radius scaling for localized density effects</li>
+<li><strong>Natural Orientation</strong>: Automatic rotation following curve direction</li>
+<li><strong>Artist-Friendly</strong>: Visual curve editing with immediate density feedback</li>
+</ul>
+<p>The Static On Curve system provides intuitive control over path-based agent distribution, leveraging Blender's native curve editing tools to create natural, radius-driven population densities that adapt intelligently to path width variations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

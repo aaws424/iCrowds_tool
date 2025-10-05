@@ -1,6 +1,6 @@
 site_name: iCrowds Documentation
 theme:
-  name: material
+  name: readthedocs
   palette:
     # Light mode
     - scheme: default

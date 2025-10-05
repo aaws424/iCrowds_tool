@@ -1,0 +1,1742 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../curve/">
+      
+      
+        <link rel="next" href="../../../dynamic/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Scatter on Vertex - iCrowds Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#icrowds-static-on-vertex-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="iCrowds Documentation" class="md-header__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iCrowds Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scatter on Vertex
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Static
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dynamic/" class="md-tabs__link">
+          
+  
+  
+  Dynamic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tutorials/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="iCrowds Documentation" class="md-nav__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    iCrowds Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stadium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stadium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scatter
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scatter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Ground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Vertex
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Vertex
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vertex Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position Variations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Variations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-innovation-vertex-based-precision-with-natural-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Innovation: Vertex-Based Precision with Natural Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Innovation: Vertex-Based Precision with Natural Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-vertex-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact Vertex Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-group-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Group Masking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mesh-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Mesh Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-agent-and-mesh-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Agent and Mesh Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-density-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Density Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-spacing-and-naturalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Spacing and Naturalization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-variation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: Variation Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-advanced-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Advanced Placement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-group-masking-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Group Masking Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-mesh-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Mesh Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hybrid Approaches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dynamic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dynamic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/fluid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluid System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/walkers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Walkers System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dynamic/city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    City System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-distribution-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Distribution System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vertex Distribution System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Density Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position Variations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Variations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-object-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      At Object Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scale Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-innovation-vertex-based-precision-with-natural-variation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Innovation: Vertex-Based Precision with Natural Variation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Innovation: Vertex-Based Precision with Natural Variation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-vertex-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact Vertex Placement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-group-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Group Masking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-mesh-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Mesh Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-agent-and-mesh-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Agent and Mesh Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-density-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Density Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-spacing-and-naturalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Spacing and Naturalization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-variation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: Variation Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-advanced-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Advanced Placement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-group-masking-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex Group Masking Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-mesh-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Mesh Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hybrid Approaches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="icrowds-static-on-vertex-documentation">iCrowds Static On Vertex Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Static On Vertex</strong> system is a mesh-based distribution tool that places agents precisely on mesh vertices with controlled variation and spacing. It enables exact placement control using existing mesh topology while maintaining natural-looking variations through comprehensive randomization options.</p>
+<h2 id="core-components">Core Components</h2>
+<h3 id="global-inputs">Global Inputs</h3>
+<p><strong>Purpose</strong>: Define the base environment and agent sources</p>
+<p><strong>Parameters</strong>:
+- <strong>Terrain</strong>: Reference surface for orientation and placement context
+- <strong>Agents</strong>: Source objects or collections for vertex-based distribution
+- <strong>Agent Input Type</strong>: Switch between Object or Collection input methods</p>
+<h3 id="vertex-distribution-system">Vertex Distribution System</h3>
+<p><strong>Purpose</strong>: Control agent placement directly on mesh vertices</p>
+<h4 id="density-panel">Density Panel</h4>
+<p><strong>Placement Controls</strong>:
+- <strong>Mesh</strong>: Target mesh object whose vertices will host agents
+- <strong>Max</strong>: Maximum number of agents to place (vertex-limited)
+- <em>Feature: Vertex group masking for selective placement</em></p>
+<h3 id="personal-space">Personal Space</h3>
+<p><strong>Purpose</strong>: Maintain natural spacing between vertex-placed agents</p>
+<p><strong>Parameters</strong>:
+- <strong>Relax Iterations</strong>: Physics smoothing passes for optimal vertex spacing
+- <strong>Space Min</strong>: Minimum distance between agents on adjacent vertices
+- <strong>Space Max</strong>: Maximum allowable spacing adjustment
+- <strong>Space Seed</strong>: Randomization for organic spacing variation</p>
+<h3 id="position-variations">Position Variations</h3>
+<p><strong>Purpose</strong>: Introduce controlled offsets from exact vertex positions</p>
+<p><strong>Parameters</strong>:
+- <strong>Position Variation</strong>: Amount of positional randomness from vertex centers
+- <strong>Position Seed</strong>: Randomization control for position variations</p>
+<h3 id="rotation-variations">Rotation Variations</h3>
+<p><strong>Purpose</strong>: Control agent orientation on vertices</p>
+<p><strong>Parameters</strong>:
+- <strong>Up Direction</strong>: Surface normal alignment for natural standing
+- <strong>Look Direction</strong>: Forward orientation control (random or directed)</p>
+<h3 id="random">Random</h3>
+<p><strong>Purpose</strong>: Additional randomization for natural distribution</p>
+<p><strong>Parameters</strong>:
+- <strong>Random Min</strong>: Minimum random influence
+- <strong>Random Max</strong>: Maximum random influence
+- <strong>Random Seed</strong>: Overall randomization control</p>
+<h3 id="at-object-panel">At Object Panel</h3>
+<p><strong>Purpose</strong>: Object-specific vertex placement</p>
+<p><strong>Parameters</strong>:
+- <strong>At Object</strong>: Target specific objects for vertex placement
+- <strong>Add Randomness</strong>: Introduce variation to object-based placement</p>
+<h3 id="scale-variations">Scale Variations</h3>
+<p><strong>Purpose</strong>: Create size diversity among vertex-placed agents</p>
+<p><strong>Parameters</strong>:
+- <strong>Scale Variation</strong>: Enable/disable agent size variations
+- <strong>Scale Min</strong>: Minimum agent scale factor
+- <strong>Scale Max</strong>: Maximum agent scale factor
+- <strong>Scale Seed</strong>: Scale randomization control</p>
+<h2 id="key-innovation-vertex-based-precision-with-natural-variation">Key Innovation: Vertex-Based Precision with Natural Variation</h2>
+<h3 id="exact-vertex-placement">Exact Vertex Placement</h3>
+<p><strong>Core Feature</strong>: Agents are placed precisely on mesh vertices while maintaining organic feel:</p>
+<ul>
+<li><strong>Vertex-Level Control</strong>: Each agent corresponds to a specific vertex</li>
+<li><strong>Topology-Driven</strong>: Distribution follows mesh edge flow and density</li>
+<li><strong>Non-Destructive</strong>: Original mesh remains untouched</li>
+</ul>
+<h3 id="vertex-group-masking">Vertex Group Masking</h3>
+<p><strong>Advanced Control</strong>: Use vertex groups to selectively enable/disable placement:</p>
+<ul>
+<li><strong>Density Zones</strong>: Create high-density and sparse areas using vertex weights</li>
+<li><strong>Pattern Control</strong>: Design specific formation patterns through vertex selection</li>
+<li><strong>Animated Masks</strong>: Use animated vertex groups for dynamic placement changes</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<h3 id="phase-1-mesh-preparation">Phase 1: Mesh Preparation</h3>
+<ol>
+<li>Create or import the target mesh with appropriate vertex density</li>
+<li>Use vertex groups to define placement zones and density variations</li>
+<li>Ensure mesh has sufficient vertices for desired agent count</li>
+</ol>
+<h3 id="phase-2-agent-and-mesh-setup">Phase 2: Agent and Mesh Setup</h3>
+<ol>
+<li>Select the target mesh for vertex-based distribution</li>
+<li>Choose agent objects or collections</li>
+<li>Set Agent Input Type (Object or Collection)</li>
+</ol>
+<h3 id="phase-3-density-configuration">Phase 3: Density Configuration</h3>
+<ol>
+<li>Set Max parameter to control total agent count</li>
+<li>System automatically uses available vertices up to the maximum</li>
+<li>Vertex group masks automatically limit placement to weighted areas</li>
+</ol>
+<h3 id="phase-4-spacing-and-naturalization">Phase 4: Spacing and Naturalization</h3>
+<ol>
+<li>Configure Personal Space to prevent overcrowding on dense vertices</li>
+<li>Adjust Position Variations for organic offsets from exact vertex positions</li>
+<li>Set Rotation parameters for natural orientation</li>
+</ol>
+<h3 id="phase-5-variation-controls">Phase 5: Variation Controls</h3>
+<ol>
+<li>Enable Scale Variations for size diversity</li>
+<li>Use Random parameters to introduce controlled chaos</li>
+<li>Fine-tune randomization seeds for reproducible results</li>
+</ol>
+<h3 id="phase-6-advanced-placement">Phase 6: Advanced Placement</h3>
+<ol>
+<li>Use At Object for specific object targeting</li>
+<li>Apply additional randomness for object-based variations</li>
+<li>Balance exact placement with natural-looking results</li>
+</ol>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="architectural-precision">Architectural Precision</h3>
+<ul>
+<li>People placed exactly on seating vertices</li>
+<li>Furniture on floor plan vertices</li>
+<li>Decorative elements on architectural features</li>
+</ul>
+<h3 id="event-planning">Event Planning</h3>
+<ul>
+<li>Audience members on seating vertices</li>
+<li>Participants in organized formations</li>
+<li>Exhibits on precise layout points</li>
+</ul>
+<h3 id="natural-distributions">Natural Distributions</h3>
+<ul>
+<li>Plants on terrain vertices following contours</li>
+<li>Rocks on geological feature vertices</li>
+<li>Animals on ecosystem analysis points</li>
+</ul>
+<h3 id="technical-applications">Technical Applications</h3>
+<ul>
+<li>Data visualization with agent representation</li>
+<li>Sensor placement simulations</li>
+<li>Urban planning with exact positioning</li>
+</ul>
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="vertex-group-masking-strategies">Vertex Group Masking Strategies</h3>
+<ul>
+<li><strong>Weight-Based Density</strong>: Use vertex weights to control probability of placement</li>
+<li><strong>Pattern Creation</strong>: Design specific formations through vertex selection</li>
+<li><strong>Animated Distributions</strong>: Animate vertex groups for moving placement zones</li>
+</ul>
+<h3 id="multi-mesh-distributions">Multi-Mesh Distributions</h3>
+<ul>
+<li>Combine multiple meshes for complex distributions</li>
+<li>Use different vertex densities for varied concentration areas</li>
+<li>Create hierarchical placement systems</li>
+</ul>
+<h3 id="hybrid-approaches">Hybrid Approaches</h3>
+<ul>
+<li>Combine vertex placement with other distribution methods</li>
+<li>Use vertex system for base placement with other systems for variation</li>
+<li>Create layered distribution effects</li>
+</ul>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Precision Placement</strong>: Exact control through mesh vertices</li>
+<li><strong>Vertex Group Masking</strong>: Advanced selective placement control</li>
+<li><strong>Natural Variation</strong>: Comprehensive randomization while maintaining structure</li>
+<li><strong>Topology-Aware</strong>: Distribution follows mesh flow and density</li>
+<li><strong>Non-Destructive</strong>: Original mesh remains intact</li>
+<li><strong>Scalable</strong>: Works with simple to complex meshes</li>
+</ul>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<ul>
+<li><strong>Vertex Count</strong>: Performance scales with vertex quantity</li>
+<li><strong>Optimization</strong>: Use optimized meshes with appropriate vertex density</li>
+<li><strong>LOD Strategies</strong>: Implement level-of-detail for distant distributions</li>
+</ul>
+<p>The Static On Vertex system provides the perfect balance between precision control and natural variation, allowing artists to create exact formations while maintaining organic-looking results through comprehensive variation controls and vertex group masking capabilities.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "search.highlight"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
