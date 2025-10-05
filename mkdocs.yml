@@ -1,25 +1,6 @@
 site_name: iCrowds Documentation
 theme:
   name: readthedocs
-  palette:
-    # Light mode
-    - scheme: default
-      primary: blue
-      accent: light blue
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Dark mode
-    - scheme: slate
-      primary: blue
-      accent: light blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - search.highlight
 
 nav:
   - Home: index.md
