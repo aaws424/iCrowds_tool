@@ -1,236 +1,1910 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>FAQ - iCrowds Documentation</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "FAQ";
-        var mkdocs_page_input_path = "faq.md";
-        var mkdocs_page_url = null;
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tutorials/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>FAQ - iCrowds Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> iCrowds Documentation
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Static</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../static/">Overview</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../static/stadium/">Stadium</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >Scatter</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../static/scatter/">Overview</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../static/scatter/ground/">Scatter on Ground</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../static/scatter/curve/">Scatter on Curve</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../static/scatter/vertex/">Scatter on Vertex</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Dynamic</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../dynamic/">Overview</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../dynamic/fluid/">Fluid System</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../dynamic/walkers/">Walkers System</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../dynamic/city/">City System</a>
-                  </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../tutorials/">Tutorials</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">FAQ</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#general-questions">General Questions</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#whats-the-difference-between-the-four-static-systems">🤔 What's the difference between the four static systems?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#which-static-system-is-fastest-for-large-crowds">⚡ Which static system is fastest for large crowds?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#can-i-combine-multiple-static-systems">🔄 Can I combine multiple static systems?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#on-ground-system-faq">On Ground System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#when-should-i-use-singles-vs-clusters">🌍 When should I use Singles vs Clusters?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-does-vertex-group-masking-work">🎯 How does vertex group masking work?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#whats-the-difference-between-min-distance-and-personal-space">📏 What's the difference between Min Distance and Personal Space?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#on-curve-system-faq">On Curve System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-control-density-along-curves">🛣️ How do I control density along curves?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#count-vs-density-placement">📐 Count vs Density placement?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#can-agents-follow-complex-curved-paths">🔄 Can agents follow complex curved paths?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#on-vertex-system-faq">On Vertex System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#whats-the-advantage-over-regular-scattering">📍 What's the advantage over regular scattering?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-create-custom-patterns">🎨 How do I create custom patterns?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#performance-with-high-vertex-meshes">📊 Performance with high-vertex meshes?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#stadium-system-faq">Stadium System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#what-are-the-four-distribution-methods">🏟️ What are the four distribution methods?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#which-method-is-best-for-theater-seating">💺 Which method is best for theater seating?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#on-face-method-why-do-i-need-uvs">📐 On Face method - why do I need UVs?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-create-different-seating-sections">🎪 How do I create different seating sections?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#walkers-system-faq">Walkers System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#when-should-i-use-walkers-vs-on-curve">🛣️ When should I use Walkers vs On Curve?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-control-agent-spacing-in-walkers">📏 How do I control agent spacing in Walkers?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#whats-the-difference-between-lanes-count-and-density">🔄 What's the difference between Lanes Count and Density?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#city-system-faq">City System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#what-makes-city-system-unique-for-urban-scenes">🏙️ What makes City system unique for urban scenes?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-activities-work">🎯 How do Activities work?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#best-workflow-for-city-scenes">🌆 Best workflow for city scenes?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#fluid-system-faq">Fluid System FAQ</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-transition-from-static-to-dynamic">🌊 How do I transition from static to dynamic?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#what-movement-control-methods-are-available">🎮 What movement control methods are available?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-control-simulation-speed">⚡ How do I control simulation speed?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#technical-issues-performance">Technical Issues &amp; Performance</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#agents-floating-above-ground">⚠️ Agents floating above ground?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#rotation-looks-wrong">🔄 Rotation looks wrong?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#system-running-slow">🐌 System running slow?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#workflow-tips-best-practices">Workflow Tips &amp; Best Practices</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#how-to-make-crowds-look-natural">🎨 How to make crowds look natural?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#best-pipeline-for-complex-scenes">🏗️ Best pipeline for complex scenes?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#preparing-for-different-use-cases">🎬 Preparing for different use cases?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#advanced-techniques">Advanced Techniques</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#creating-density-gradients">🌊 Creating density gradients?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mixing-agent-types-and-behaviors">🎭 Mixing agent types and behaviors?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#optimizing-for-real-timegame-engines">📱 Optimizing for real-time/game engines?</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting-common-problems">Troubleshooting Common Problems</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#no-agents-appearing">❌ No agents appearing?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#agents-clipping-through-each-other">🔀 Agents clipping through each other?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#scale-issues-between-systems">📐 Scale issues between systems?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#attractrepel-systems-not-working">🎯 Attract/Repel systems not working?</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-              </ul>
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#icrowd-simulation-tool-complete-faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="iCrowds Documentation" class="md-header__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iCrowds Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">iCrowds Documentation</a>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
         
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">FAQ</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../static/" class="md-tabs__link">
+          
+  
+  
+  Static
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dynamic/" class="md-tabs__link">
+          
+  
+  
+  Dynamic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorials/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tutorials
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="icrowd-simulation-tool-complete-faq">iCrowd Simulation Tool - Complete FAQ</h1>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="iCrowds Documentation" class="md-nav__button md-logo" aria-label="iCrowds Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    iCrowds Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Static
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/stadium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stadium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scatter
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scatter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/scatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/scatter/ground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Ground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/scatter/curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Curve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static/scatter/vertex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scatter on Vertex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dynamic
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dynamic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/fluid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluid System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/walkers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Walkers System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    City System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-the-four-static-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 What's the difference between the four static systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-static-system-is-fastest-for-large-crowds" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Which static system is fastest for large crowds?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-combine-multiple-static-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Can I combine multiple static systems?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-ground-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Ground System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Ground System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-singles-vs-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 When should I use Singles vs Clusters?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-vertex-group-masking-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 How does vertex group masking work?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-min-distance-and-personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      📏 What's the difference between Min Distance and Personal Space?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-curve-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Curve System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Curve System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-density-along-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛣️ How do I control density along curves?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-vs-density-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 Count vs Density placement?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-agents-follow-complex-curved-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Can agents follow complex curved paths?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vertex-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Vertex System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Vertex System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-advantage-over-regular-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      📍 What's the advantage over regular scattering?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-create-custom-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 How do I create custom patterns?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-with-high-vertex-meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Performance with high-vertex meshes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stadium-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stadium System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stadium System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-four-distribution-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏟️ What are the four distribution methods?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-method-is-best-for-theater-seating" class="md-nav__link">
+    <span class="md-ellipsis">
+      💺 Which method is best for theater seating?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-face-method-why-do-i-need-uvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 On Face method - why do I need UVs?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-create-different-seating-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 How do I create different seating sections?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#walkers-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Walkers System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Walkers System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-walkers-vs-on-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛣️ When should I use Walkers vs On Curve?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-agent-spacing-in-walkers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📏 How do I control agent spacing in Walkers?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-lanes-count-and-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 What's the difference between Lanes Count and Density?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#city-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      City System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="City System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-city-system-unique-for-urban-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏙️ What makes City system unique for urban scenes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-activities-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 How do Activities work?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-workflow-for-city-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌆 Best workflow for city scenes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluid-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluid System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluid System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-transition-from-static-to-dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 How do I transition from static to dynamic?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-movement-control-methods-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 What movement control methods are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-simulation-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ How do I control simulation speed?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-issues-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Issues &amp; Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Issues &amp; Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-floating-above-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Agents floating above ground?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Rotation looks wrong?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-running-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐌 System running slow?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-tips-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Tips &amp; Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Tips &amp; Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-crowds-look-natural" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 How to make crowds look natural?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-pipeline-for-complex-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Best pipeline for complex scenes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-for-different-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Preparing for different use cases?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-density-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 Creating density gradients?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-agent-types-and-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Mixing agent types and behaviors?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-for-real-timegame-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Optimizing for real-time/game engines?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-agents-appearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ No agents appearing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-clipping-through-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔀 Agents clipping through each other?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-issues-between-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 Scale issues between systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attractrepel-systems-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Attract/Repel systems not working?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-the-four-static-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 What's the difference between the four static systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-static-system-is-fastest-for-large-crowds" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Which static system is fastest for large crowds?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-combine-multiple-static-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Can I combine multiple static systems?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-ground-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Ground System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Ground System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-singles-vs-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 When should I use Singles vs Clusters?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-vertex-group-masking-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 How does vertex group masking work?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-min-distance-and-personal-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      📏 What's the difference between Min Distance and Personal Space?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-curve-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Curve System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Curve System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-density-along-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛣️ How do I control density along curves?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-vs-density-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 Count vs Density placement?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-agents-follow-complex-curved-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Can agents follow complex curved paths?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-vertex-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      On Vertex System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="On Vertex System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-advantage-over-regular-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      📍 What's the advantage over regular scattering?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-create-custom-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 How do I create custom patterns?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-with-high-vertex-meshes" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Performance with high-vertex meshes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stadium-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stadium System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stadium System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-four-distribution-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏟️ What are the four distribution methods?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-method-is-best-for-theater-seating" class="md-nav__link">
+    <span class="md-ellipsis">
+      💺 Which method is best for theater seating?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-face-method-why-do-i-need-uvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 On Face method - why do I need UVs?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-create-different-seating-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 How do I create different seating sections?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#walkers-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Walkers System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Walkers System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-walkers-vs-on-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛣️ When should I use Walkers vs On Curve?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-agent-spacing-in-walkers" class="md-nav__link">
+    <span class="md-ellipsis">
+      📏 How do I control agent spacing in Walkers?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-difference-between-lanes-count-and-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 What's the difference between Lanes Count and Density?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#city-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      City System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="City System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-city-system-unique-for-urban-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏙️ What makes City system unique for urban scenes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-activities-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 How do Activities work?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-workflow-for-city-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌆 Best workflow for city scenes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluid-system-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluid System FAQ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluid System FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-transition-from-static-to-dynamic" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 How do I transition from static to dynamic?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-movement-control-methods-are-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 What movement control methods are available?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-control-simulation-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ How do I control simulation speed?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-issues-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Issues &amp; Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Issues &amp; Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-floating-above-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Agents floating above ground?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-looks-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Rotation looks wrong?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-running-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐌 System running slow?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-tips-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow Tips &amp; Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow Tips &amp; Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-crowds-look-natural" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 How to make crowds look natural?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-pipeline-for-complex-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Best pipeline for complex scenes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-for-different-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Preparing for different use cases?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-density-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌊 Creating density gradients?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-agent-types-and-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎭 Mixing agent types and behaviors?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-for-real-timegame-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Optimizing for real-time/game engines?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting Common Problems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-agents-appearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ No agents appearing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agents-clipping-through-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔀 Agents clipping through each other?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-issues-between-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      📐 Scale issues between systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attractrepel-systems-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Attract/Repel systems not working?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="icrowd-simulation-tool-complete-faq">iCrowd Simulation Tool - Complete FAQ</h1>
 <h2 id="general-questions">General Questions</h2>
 <h3 id="whats-the-difference-between-the-four-static-systems">🤔 <strong>What's the difference between the four static systems?</strong></h3>
 <ul>
@@ -477,48 +2151,59 @@
 </ul>
 <hr />
 <p><strong>Need more help?</strong> Check our video tutorials and example files for visual guidance on complex setups! The community forum also has advanced techniques shared by other users.</p>
-              
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../tutorials/" class="btn btn-neutral float-left" title="Tutorials"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
           
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../tutorials/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-  </span>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "search.highlight"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
 </html>
