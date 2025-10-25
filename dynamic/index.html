@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Scatter</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../static/scatter/">Overview</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../static/scatter/ground/">Scatter on Ground</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../static/scatter/curve/">Scatter on Curve</a>
@@ -66,39 +64,23 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#three-integrated-systems">Three Integrated Systems</a>
+    <li class="toctree-l2"><a class="reference internal" href="#system-overview">System Overview</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-walkers-system-static-path-based-distribution">1. Walkers System - Static Path-Based Distribution</a>
+    <li class="toctree-l3"><a class="reference internal" href="#1-city-system">1. City System</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-city-system-static-urban-distribution">2. City System - Static Urban Distribution</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-fluid-system">2. Fluid System</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-fluid-system-dynamic-movement-control">3. Fluid System - Dynamic Movement Control</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-walkers-system">3. Walkers System</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#integrated-workflow">Integrated Workflow</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-1-static-setup">Phase 1: Static Setup</a>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-system-selection-guide">Quick System Selection Guide</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-2-dynamic-activation">Phase 2: Dynamic Activation</a>
+    <li class="toctree-l2"><a class="reference internal" href="#common-workflow">Common Workflow</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-3-runtime-control">Phase 3: Runtime Control</a>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-notes">Technical Notes</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#system-relationships">System Relationships</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#unique-capabilities">Unique Capabilities</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#walkers-system-specialization">Walkers System Specialization</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#city-system-specialization">City System Specialization</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fluid-system-specialization">Fluid System Specialization</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#use-case-scenarios">Use Case Scenarios</a>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
     </li>
     </ul>
                   </li>
@@ -109,13 +91,17 @@
                   <li class="toctree-l1"><a class="reference internal" href="city/">City System</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -141,83 +127,78 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dynamic-icrowd-simulation-system-overview">Dynamic iCrowd Simulation - System Overview</h1>
-<h2 id="three-integrated-systems">Three Integrated Systems</h2>
-<h3 id="1-walkers-system-static-path-based-distribution">1. Walkers System - <strong>Static Path-Based Distribution</strong></h3>
-<p><strong>Purpose</strong>: Create structured, lane-based crowd placements along defined paths</p>
-<p><strong>Core Functionality</strong>:
-- Path-following agent distribution along curves and lanes
-- Controlled density with personal space management
-- Predictable, organized crowd patterns
-- Ideal for parades, guided flows, structured movement</p>
-<p><strong>Key Components</strong>: Lanes, Walkers Curves, Noise controls, Personal Space settings</p>
-<h3 id="2-city-system-static-urban-distribution">2. City System - <strong>Static Urban Distribution</strong></h3>
-<p><strong>Purpose</strong>: Environment-aware crowd placement for urban scenarios</p>
-<p><strong>Core Functionality</strong>:
-- Terrain and infrastructure-based distribution (roads, sidewalks)
-- Activity-based agent behaviors (sleep, eat, work, leisure)
-- Collision-aware placement with environmental constraints
-- Urban-scale crowd simulation setup</p>
-<p><strong>Key Components</strong>: ICity infrastructure, Activities system, Collision objects, Mask controls</p>
-<h3 id="3-fluid-system-dynamic-movement-control">3. Fluid System - <strong>Dynamic Movement Control</strong></h3>
-<p><strong>Purpose</strong>: Transform static distributions into living, responsive crowds</p>
-<p><strong>Core Functionality</strong>:
-- Real-time movement simulation with physics-based behaviors
-- Multi-method control (path following, attraction, repulsion)
-- Dynamic response to environmental changes
-- Smooth, natural crowd flow and interactions</p>
-<p><strong>Key Components</strong>: Motion engine, Flow Curves, Attract/Repel systems, Real-time controls</p>
-<h2 id="integrated-workflow">Integrated Workflow</h2>
-<h3 id="phase-1-static-setup">Phase 1: Static Setup</h3>
+                <h1 id="icrowds-dynamic-systems">iCrowds Dynamic Systems</h1>
+<h2 id="system-overview">System Overview</h2>
+<p>iCrowds provides three specialized crowd simulation systems for different scenarios:</p>
+<h3 id="1-city-system">1. City System</h3>
+<p><strong>Purpose:</strong> Autonomous urban population simulation<br />
+<strong>Best For:</strong> 
+- Open-world city environments
+- Agents with independent needs and behaviors
+- Complex urban planning studies</p>
+<p><strong>Key Features:</strong>
+- Needs-based AI (hunger, sleep, fun, bladder)
+- Automatic pathfinding to activities
+- High agent customization
+- Debug tools for behavior monitoring</p>
+<h3 id="2-fluid-system">2. Fluid System</h3>
+<p><strong>Purpose:</strong> Artist-controlled crowd movement<br />
+<strong>Best For:</strong>
+- Directed crowd flow
+- Event and venue simulations
+- Emergency evacuation planning</p>
+<p><strong>Key Features:</strong>
+- Flow curves for guided movement
+- Attracter/repeler objects
+- Multiple distribution methods
+- Physics-based collision avoidance</p>
+<h3 id="3-walkers-system">3. Walkers System</h3>
+<p><strong>Purpose:</strong> Organized path-based pedestrian traffic<br />
+<strong>Best For:</strong>
+- Sidewalks and crosswalks
+- Museum/retail visitor flow
+- Structured movement patterns</p>
+<p><strong>Key Features:</strong>
+- Lane-based curve following
+- Bidirectional traffic flow
+- Simple setup and management
+- Consistent animation patterns</p>
+<h2 id="quick-system-selection-guide">Quick System Selection Guide</h2>
+<p><strong>Choose City System if:</strong>
+- You want autonomous, life-like behavior
+- Agents should make independent decisions
+- Simulating daily urban activities</p>
+<p><strong>Choose Fluid System if:</strong>
+- You need precise crowd direction control
+- Using attractors/repellers to shape movement
+- Creating natural crowd flow patterns</p>
+<p><strong>Choose Walkers System if:</strong>
+- You need organized path following
+- Simulating sidewalk or lane-based traffic
+- Quick setup with predictable results</p>
+<h2 id="common-workflow">Common Workflow</h2>
+<ol>
+<li><strong>Setup Environment</strong> - Prepare terrain and collision objects</li>
+<li><strong>Select System</strong> - Choose based on your simulation needs</li>
+<li><strong>Configure Distribution</strong> - Place agents using density controls</li>
+<li><strong>Set Behaviors</strong> - Configure speeds, activities, or paths</li>
+<li><strong>Add Controls</strong> - Place flow curves, attracters, or activities</li>
+<li><strong>Run Simulation</strong> - Monitor with debug tools as needed</li>
+</ol>
+<h2 id="technical-notes">Technical Notes</h2>
 <ul>
-<li>Use <strong>Walkers</strong> for structured path-based distributions</li>
-<li>Use <strong>City</strong> for environment-aware urban placements</li>
-<li>Both systems output density maps and agent configurations</li>
+<li>All systems support custom agent collections</li>
+<li>Speed thresholds control animation transitions</li>
+<li>Distribution uses weight painting for density control</li>
+<li>Systems can be combined in different scene areas</li>
 </ul>
-<h3 id="phase-2-dynamic-activation">Phase 2: Dynamic Activation</h3>
-<ul>
-<li><strong>Fluid system</strong> imports static distributions</li>
-<li>Applies motion behaviors and interactive controls</li>
-<li>Enables real-time crowd movement and responses</li>
-</ul>
-<h3 id="phase-3-runtime-control">Phase 3: Runtime Control</h3>
-<ul>
-<li>Adjust movement parameters in real-time</li>
-<li>Modify attractors/repellers during simulation</li>
-<li>Monitor and tweak crowd behaviors dynamically</li>
-</ul>
-<h2 id="system-relationships">System Relationships</h2>
-<pre><code>Static Systems (Walkers/City) → Fluid System → Dynamic Simulation
-    ↓                            ↓
-Distribution Setup          Movement Control
-    ↓                            ↓
-Agent Placement            Real-time Behavior
-</code></pre>
-<h2 id="unique-capabilities">Unique Capabilities</h2>
-<h3 id="walkers-system-specialization">Walkers System Specialization</h3>
-<ul>
-<li>Precise lane control and flow direction</li>
-<li>Looping paths and structured formations</li>
-<li>Ideal for controlled crowd movements</li>
-</ul>
-<h3 id="city-system-specialization">City System Specialization</h3>
-<ul>
-<li>Urban environment integration</li>
-<li>Activity-based behavior states</li>
-<li>Complex collision and space management</li>
-</ul>
-<h3 id="fluid-system-specialization">Fluid System Specialization</h3>
-<ul>
-<li>Real-time dynamic control</li>
-<li>Multiple simultaneous movement methods</li>
-<li>Physics-based natural interactions</li>
-</ul>
-<h2 id="use-case-scenarios">Use Case Scenarios</h2>
-<p><strong>Architectural Visualization</strong>: City (placement) → Fluid (movement)
-<strong>Event Planning</strong>: Walkers (structured flow) → Fluid (dynamic behavior)<br />
-<strong>Urban Analysis</strong>: City (environment setup) → Fluid (traffic simulation)
-<strong>Entertainment</strong>: Combined use for complex crowd scenes</p>
-<p>This three-system approach provides complete flexibility: from highly controlled static placements to fully dynamic, responsive crowd simulations that can adapt to changing conditions in real-time.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li>Start with the Walkers System for simple path-based crowds</li>
+<li>Use Fluid System for controlled crowd movement</li>
+<li>Implement City System for complex autonomous populations</li>
+</ol>
+<p><strong>Remember:</strong> You can mix systems in different parts of your scene for optimal results.</p>
               
             </div>
           </div><footer>

@@ -51,47 +51,53 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Scatter</a>
     <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
-                </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Scatter on Ground</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#core-components">Core Components</a>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-tab">Distribution Tab</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#global-inputs">Global Inputs</a>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-setup">Basic Setup</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#singles-distribution-system">Singles Distribution System</a>
+    <li class="toctree-l4"><a class="reference internal" href="#distribution-types">Distribution Types</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#clusters-distribution-system">Clusters Distribution System</a>
+    <li class="toctree-l4"><a class="reference internal" href="#distribution-controls">Distribution Controls</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#personal-space-system">Personal Space System</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cluster-variations">Cluster Variations</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a>
+    <li class="toctree-l3"><a class="reference internal" href="#settings-tab">Settings Tab</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-1-terrain-and-agent-setup">Phase 1: Terrain and Agent Setup</a>
+    <li class="toctree-l4"><a class="reference internal" href="#orientation-control">Orientation Control</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-2-distribution-method-selection">Phase 2: Distribution Method Selection</a>
+    <li class="toctree-l4"><a class="reference internal" href="#scale-variations">Scale Variations</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-3-masking-and-refinement">Phase 3: Masking and Refinement</a>
+        </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-4-final-adjustments">Phase 4: Final Adjustments</a>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-configuration">Agent Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#input-requirements">Input Requirements</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#customization">Customization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#typical-workflow">Typical Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#for-realistic-results">For Realistic Results</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#performance-optimization">Performance Optimization</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#natural-appearance-tips">Natural Appearance Tips</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#use-cases">Use Cases</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#natural-environments">Natural Environments</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#urban-planning">Urban Planning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#event-scenarios">Event Scenarios</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#architectural-visualization">Architectural Visualization</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
     </li>
     </ul>
                 </li>
@@ -113,13 +119,17 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../../dynamic/city/">City System</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -146,170 +156,186 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="icrowds-static-on-ground-documentation">iCrowds Static On Ground Documentation</h1>
+                <h1 id="on-ground-icrowd-system-user-documentation">On Ground iCrowd System - User Documentation</h1>
 <h2 id="overview">Overview</h2>
-<p>The <strong>Static On Ground</strong> system is a comprehensive terrain-based crowd distribution tool that scatters agents across surfaces with precise control over placement, density, and grouping. It supports both individual agent placement and clustered groupings for natural-looking crowd formations.</p>
-<h2 id="core-components">Core Components</h2>
-<h3 id="global-inputs">Global Inputs</h3>
-<p><strong>Purpose</strong>: Define the base environment and agent sources</p>
-<p><strong>Parameters</strong>:
-- <strong>Terrain</strong>: Base surface for agent placement
-- <strong>Agents</strong>: Source objects or collections for scattering
-- <strong>Agent Input Type</strong>: Switch between Object or Collection input methods</p>
-<h3 id="singles-distribution-system">Singles Distribution System</h3>
-<p><strong>Purpose</strong>: Place individual agents with controlled spacing and variation</p>
-<h4 id="density_singles-panel">Density_Singles Panel</h4>
-<p><strong>Placement Controls</strong>:
-- <strong>Density_Singles</strong>: Overall agent concentration level
-- <strong>Min_Distance_Singles</strong>: Minimum spacing between individual agents
-- <strong>Seed_Singles</strong>: Randomization seed for placement variation
-- <strong>max_Singles</strong>: Maximum number of agents to place</p>
-<h4 id="masks_singles">Masks_Singles</h4>
-<p><strong>Placement Restrictions</strong>:
-- <strong>Vertex Group Mask_Singles</strong>: Use vertex groups to define density areas
-- <strong>Inside Sphere Mask_Singles</strong>: Spherical boundary constraints</p>
-<h4 id="personal-space_singles">Personal Space_Singles</h4>
-<p><strong>Natural Spacing</strong>:
-- <strong>Relax Iterations_Singles</strong>: Physics passes for optimal spacing
-- <strong>Space Min_Singles</strong>: Minimum personal space between agents
-- <strong>Space Max_Singles</strong>: Maximum personal space allowance
-- <strong>Space Seed_Singles</strong>: Randomization for natural spacing variation</p>
-<h4 id="rotation_singles">Rotation_Singles</h4>
-<p><strong>Orientation Control</strong>:
-- <strong>Up Direction_Singles</strong>: Surface normal alignment
-- <strong>Look Direction_Singles</strong>: Forward orientation direction</p>
-<h4 id="random_singles">Random_Singles</h4>
-<p><strong>Placement Variation</strong>:
-- <strong>Random Min_Singles</strong>: Minimum random offset
-- <strong>Random Max_Singles</strong>: Maximum random offset
-- <strong>Random Seed_Singles</strong>: Randomization control</p>
-<h4 id="at-object_singles-panel">At Object_Singles Panel</h4>
-<p><strong>Object-Based Placement</strong>:
-- <strong>At Object_Singles</strong>: Target objects for placement
-- <strong>Add Randomness_Singles</strong>: Introduce variation to object-based placement</p>
-<h4 id="scale-variations_singles">Scale Variations_Singles</h4>
-<p><strong>Size Diversity</strong>:
-- <strong>Scale Variation_Singles</strong>: Enable/disable size variations
-- <strong>Scale Min_Singles</strong>: Minimum agent scale
-- <strong>Scale Max_Singles</strong>: Maximum agent scale
-- <strong>Scale Seed_Singles</strong>: Scale randomization control</p>
-<h3 id="clusters-distribution-system">Clusters Distribution System</h3>
-<p><strong>Purpose</strong>: Create natural group formations with clustered agent placement</p>
-<h4 id="density_clusters-panel">Density_Clusters Panel</h4>
-<p><strong>Cluster Density</strong>:
-- <strong>Density_Clusters</strong>: Overall cluster concentration
-- <strong>Min Distance_Clusters</strong>: Spacing between cluster centers
-- <strong>Seed_Clusters</strong>: Cluster placement randomization
-- <strong>max_Clusters</strong>: Maximum number of clusters</p>
-<h4 id="mask_clusters">Mask_Clusters</h4>
-<p><strong>Cluster Placement Restrictions</strong>:
-- <strong>Vertex Group Mask_Clusters</strong>: Density control via vertex groups
-- <strong>Inside Sphere Mask_Clusters</strong>: Spherical boundary for clusters</p>
-<h4 id="cluster-variations_clusters">Cluster Variations_Clusters</h4>
-<p><strong>Group Configuration</strong>:
-- <strong>Radius_Clusters</strong>: Overall cluster size control
-- <strong>Radius Min_Clusters</strong>: Minimum cluster radius
-- <strong>Radius Max_Clusters</strong>: Maximum cluster radius
-- <strong>Radius Seed_Clusters</strong>: Cluster size randomization
-- <strong>Count_Clusters</strong>: Agents per cluster
-- <strong>Count Min_Clusters</strong>: Minimum agents per cluster
-- <strong>Count Max_Clusters</strong>: Maximum agents per cluster
-- <strong>Count Seed_Clusters</strong>: Agent count randomization</p>
-<h4 id="offset_clusters-panel">Offset_Clusters Panel</h4>
-<p><strong>Placement Refinement</strong>:
-- <strong>Offset_Clusters</strong>: Enable cluster position offsets
-- <strong>Detail_Clusters</strong>: Offset refinement level
-- <strong>Random Offset_Clusters</strong>: Random position variation
-- <strong>Offset Min_Clusters</strong>: Minimum offset distance
-- <strong>Offset Max_Clusters</strong>: Maximum offset distance
-- <strong>Offset Seed_Clusters</strong>: Offset randomization</p>
-<h4 id="personal-space_clusters">Personal Space_Clusters</h4>
-<p><strong>Intra-Cluster Spacing</strong>:
-- <strong>Relax Iterations_Clusters</strong>: Physics smoothing within clusters
-- <strong>Space Min_Clusters</strong>: Minimum spacing between cluster members
-- <strong>Space Max_Clusters</strong>: Maximum spacing allowance
-- <strong>Space Seed_Clusters</strong>: Spacing variation control</p>
-<h4 id="rotation_clusters">Rotation_Clusters</h4>
-<p><strong>Cluster Orientation</strong>:
-- <strong>Up Direction_Clusters</strong>: Surface alignment for clusters
-- <strong>Look Direction_Clusters</strong>: Cluster facing direction</p>
-<h4 id="random_clusters">Random_Clusters</h4>
-<p><strong>Cluster Variation</strong>:
-- <strong>Random Min_Clusters</strong>: Minimum cluster variation
-- <strong>Random Max_Clusters</strong>: Maximum variation range
-- <strong>Random Seed_Clusters</strong>: Cluster randomization control</p>
-<h2 id="workflow">Workflow</h2>
-<h3 id="phase-1-terrain-and-agent-setup">Phase 1: Terrain and Agent Setup</h3>
+<p>The On Ground System creates natural-looking static crowds scattered across terrain, perfect for park scenes, outdoor events, queues, and social gatherings with both individual agents and social groups.</p>
+<h2 id="distribution-tab">Distribution Tab</h2>
+<h3 id="basic-setup">Basic Setup</h3>
+<ul>
+<li><strong>View Mode</strong>: Render - Standard visualization</li>
+<li><strong>Terrain</strong>: On Ground Terrain - Input terrain collection for agent placement</li>
+</ul>
+<h3 id="distribution-types">Distribution Types</h3>
+<h4 id="1-singles">1. Singles</h4>
+<p><strong>Individual scattered agents</strong>
+- <strong>Density</strong>: 0.200 - Overall density of individual agents
+- <strong>Min Distance</strong>: 1m - Minimum spacing between single agents
+- <strong>Seed</strong>: 1 - Randomization pattern
+- <strong>Max Agents</strong>: 100,000.000 - Maximum number limit</p>
+<h4 id="2-clusters">2. Clusters</h4>
+<p><strong>Social groups and clusters</strong>
+- <strong>Density</strong>: 0.060 - Density of cluster centers
+- <strong>Min Distance</strong>: 6.39m - Spacing between different clusters
+- <strong>Seed</strong>: 0 - Randomization pattern
+- <strong>Max Clusters</strong>: 100,000.000 - Maximum cluster count</p>
+<h3 id="distribution-controls">Distribution Controls</h3>
+<h4 id="weight-painting">Weight Painting</h4>
+<ul>
+<li><strong>Brush Tool</strong>: Paint density variations directly on terrain</li>
+<li><strong>Vertex Group Mask</strong>: Use predefined vertex groups for density control</li>
+<li><strong>Application</strong>: Create natural density variations like pathways vs open areas</li>
+</ul>
+<h4 id="sphere-mask">Sphere Mask</h4>
+<ul>
+<li><strong>Sphere Object</strong>: Use sphere objects to define inclusion/exclusion zones</li>
+<li><strong>Edit</strong>: Modify sphere position and radius for precise area control</li>
+</ul>
+<h3 id="personal-space-system">Personal Space System</h3>
+<ul>
+<li><strong>Relax Iterations</strong>: 12 - Processing passes for collision resolution</li>
+<li><strong>Min Distance</strong>: 0.500m - Minimum personal space between agents</li>
+<li><strong>Max Distance</strong>: 1.000m - Maximum personal space buffer</li>
+<li><strong>Seed</strong>: 0 - Randomization for personal space variation</li>
+</ul>
+<h3 id="cluster-variations">Cluster Variations</h3>
+<h4 id="radius-settings">Radius Settings</h4>
+<ul>
+<li><strong>Min Radius</strong>: 0.000m - Smallest cluster size</li>
+<li><strong>Max Radius</strong>: 1.000m - Largest cluster size</li>
+<li><strong>Seed</strong>: 6 - Randomization pattern</li>
+<li><strong>Relax Iterations</strong>: 1.329 - Cluster formation quality</li>
+<li><strong>Noise</strong>: 1.000 - Natural variation in cluster shapes</li>
+</ul>
+<h4 id="population-settings">Population Settings</h4>
+<ul>
+<li><strong>Min Count</strong>: 5 - Minimum agents per cluster</li>
+<li><strong>Max Count</strong>: 12 - Maximum agents per cluster</li>
+<li><strong>Seed</strong>: 0 - Randomization for cluster sizes</li>
+</ul>
+<h4 id="placement-settings">Placement Settings</h4>
+<ul>
+<li><strong>Offset</strong>: Random positioning variation within clusters</li>
+<li><strong>Creates</strong>: More organic, natural-looking group formations</li>
+</ul>
+<h2 id="settings-tab">Settings Tab</h2>
+<h3 id="orientation-control">Orientation Control</h3>
+<h4 id="rotation-modes">Rotation Modes</h4>
 <ol>
-<li>Define the base terrain surface for placement</li>
-<li>Select agent objects or collections for scattering</li>
-<li>Choose between Object or Collection input method</li>
+<li><strong>Default</strong></li>
+<li>Consistent facing direction across all agents</li>
+<li>
+<p>Uniform crowd appearance</p>
+</li>
+<li>
+<p><strong>Randomize</strong></p>
+</li>
+<li>Random rotation per agent</li>
+<li>Natural-looking varied crowd</li>
+<li>
+<p><strong>Control</strong>: Adjust randomization intensity</p>
+</li>
+<li>
+<p><strong>At Object</strong></p>
+</li>
+<li>All agents face toward target object</li>
+<li><strong>Optional</strong>: Add randomization for natural variation</li>
+<li><strong>Use</strong>: Crowds facing a stage, speaker, or point of interest</li>
 </ol>
-<h3 id="phase-2-distribution-method-selection">Phase 2: Distribution Method Selection</h3>
-<p><strong>Option A: Singles Distribution</strong>
-1. Configure density and minimum spacing parameters
-2. Set up masking for controlled placement areas
-3. Adjust personal space for natural agent spacing
-4. Configure rotation and scale variations</p>
-<p><strong>Option B: Clusters Distribution</strong>
-1. Set cluster density and spacing between groups
-2. Define cluster size parameters (radius and agent count)
-3. Configure intra-cluster spacing and organization
-4. Apply offsets and variations for natural group formations</p>
-<h3 id="phase-3-masking-and-refinement">Phase 3: Masking and Refinement</h3>
+<h3 id="scale-variations">Scale Variations</h3>
+<ul>
+<li><strong>Size Randomization</strong>: Control agent size variations</li>
+<li><strong>Natural Variation</strong>: Avoid uniform, artificial appearance</li>
+<li><strong>Scale Range</strong>: Adjust minimum and maximum size parameters</li>
+</ul>
+<h2 id="agent-configuration">Agent Configuration</h2>
+<h3 id="input-requirements">Input Requirements</h3>
+<ul>
+<li><strong>Animated Agents</strong>: Collections with idle animations</li>
+<li><strong>Multiple Collections</strong>: Support for varied agent types</li>
+<li><strong>Probability Control</strong>: Balance between different agent collections</li>
+</ul>
+<h3 id="customization">Customization</h3>
+<ul>
+<li><strong>Custom Collections</strong>: Import additional agent types</li>
+<li><strong>Clothing Variations</strong>: Modify agent appearances within collections</li>
+<li><strong>Collection Blending</strong>: Mix different agent types naturally</li>
+</ul>
+<h2 id="typical-workflow">Typical Workflow</h2>
 <ol>
-<li>Use vertex groups to control density distribution</li>
-<li>Apply spherical masks for boundary control</li>
-<li>Fine-tune placement with offset and detail parameters</li>
-<li>Adjust randomization seeds for controlled variation</li>
+<li><strong>Terrain Setup</strong></li>
+<li>Prepare ground terrain collection</li>
+<li>
+<p>Define areas using weight painting or sphere masks</p>
+</li>
+<li>
+<p><strong>Singles Distribution</strong></p>
+</li>
+<li>Set density for individual agents</li>
+<li>Adjust personal space for natural spacing</li>
+<li>
+<p>Use weight painting for area-specific density</p>
+</li>
+<li>
+<p><strong>Clusters Setup</strong></p>
+</li>
+<li>Configure cluster density and spacing</li>
+<li>Set cluster size variations (radius and population)</li>
+<li>
+<p>Adjust cluster formation parameters</p>
+</li>
+<li>
+<p><strong>Orientation &amp; Scale</strong></p>
+</li>
+<li>Choose rotation mode based on scene needs</li>
+<li>Set scale variations for natural appearance</li>
+<li>
+<p>Fine-tune facing directions</p>
+</li>
+<li>
+<p><strong>Agent Assignment</strong></p>
+</li>
+<li>Select agent collections</li>
+<li>Balance probabilities between collections</li>
+<li>Add custom agents if needed</li>
 </ol>
-<h3 id="phase-4-final-adjustments">Phase 4: Final Adjustments</h3>
-<ol>
-<li>Review and tweak scale variations</li>
-<li>Optimize personal space parameters</li>
-<li>Finalize rotation and orientation settings</li>
-<li>Balance randomness for natural-looking results</li>
-</ol>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="for-realistic-results">For Realistic Results</h3>
+<ul>
+<li>Use <strong>Singles</strong> for background crowds and individuals</li>
+<li>Use <strong>Clusters</strong> for social groups and gatherings</li>
+<li>Combine both types for most natural scenes</li>
+<li>Use <strong>weight painting</strong> to follow terrain features and paths</li>
+<li>Apply <strong>personal space</strong> to prevent agent overlapping</li>
+</ul>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<ul>
+<li>Start with lower densities and increase gradually</li>
+<li>Use appropriate relax iterations (higher = better quality but slower)</li>
+<li>Balance cluster counts with scene complexity</li>
+<li>Use sphere masks to limit calculations to visible areas</li>
+</ul>
+<h3 id="natural-appearance-tips">Natural Appearance Tips</h3>
+<ul>
+<li>Use random rotation with moderate variation</li>
+<li>Apply scale variations for diverse crowd</li>
+<li>Mix cluster sizes for organic social groups</li>
+<li>Use noise and offset for irregular cluster shapes</li>
+</ul>
 <h2 id="use-cases">Use Cases</h2>
-<h3 id="natural-environments">Natural Environments</h3>
 <ul>
-<li>Scattering vegetation and natural elements</li>
-<li>Wildlife placement in ecosystems</li>
-<li>Rock and debris distribution on terrain</li>
+<li><strong>Park scenes</strong> with people sitting and standing</li>
+<li><strong>Outdoor events</strong> like concerts or festivals</li>
+<li><strong>Queue simulations</strong> for attractions or services</li>
+<li><strong>Public squares</strong> and gathering places</li>
+<li><strong>Beach scenes</strong> with scattered groups</li>
+<li><strong>Marketplaces</strong> and social spaces</li>
 </ul>
-<h3 id="urban-planning">Urban Planning</h3>
-<ul>
-<li>Pedestrian placement in public spaces</li>
-<li>Street furniture and object distribution</li>
-<li>Park and recreational area population</li>
-</ul>
-<h3 id="event-scenarios">Event Scenarios</h3>
-<ul>
-<li>Audience seating arrangements</li>
-<li>Exhibition booth placement</li>
-<li>Festival attendee distribution</li>
-</ul>
-<h3 id="architectural-visualization">Architectural Visualization</h3>
-<ul>
-<li>People in building environments</li>
-<li>Furniture and object placement in interiors</li>
-<li>Context population around structures</li>
-</ul>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li><strong>Dual Distribution Methods</strong>: Choose between individual or clustered placement</li>
-<li><strong>Precise Density Control</strong>: Vertex group masking for area-specific density</li>
-<li><strong>Natural Spacing Algorithms</strong>: Physics-based personal space optimization</li>
-<li><strong>Comprehensive Randomization</strong>: Controlled variation for organic results</li>
-<li><strong>Scalable Workflow</strong>: Handle from small scenes to massive distributions</li>
-<li><strong>Non-Destructive Workflow</strong>: Parameters can be adjusted iteratively</li>
-</ul>
-<p>The Static On Ground system provides artist-friendly controls for creating believable, naturally distributed crowds and objects across any terrain surface, with advanced options for both individual placement and group formations.</p>
+<p>The On Ground System creates the most organic and natural-looking static crowds, ideal for environments where people gather informally and social dynamics are important.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../stadium/" class="btn btn-neutral float-left" title="Stadium"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../curve/" class="btn btn-neutral float-right" title="Scatter on Curve">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -333,7 +359,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../stadium/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../curve/" style="color: #fcfcfc">Next &raquo;</a></span>

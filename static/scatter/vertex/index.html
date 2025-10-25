@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" >Scatter</a>
     <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../ground/">Scatter on Ground</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../curve/">Scatter on Curve</a>
@@ -61,75 +59,53 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#core-components">Core Components</a>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-tab">Distribution Tab</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#global-inputs">Global Inputs</a>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-setup">Basic Setup</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#vertex-distribution-system">Vertex Distribution System</a>
+    <li class="toctree-l4"><a class="reference internal" href="#vertex-distribution">Vertex Distribution</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#personal-space">Personal Space</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#position-variations">Position Variations</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#rotation-variations">Rotation Variations</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#random">Random</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#at-object-panel">At Object Panel</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#scale-variations">Scale Variations</a>
+    <li class="toctree-l4"><a class="reference internal" href="#positioning-controls">Positioning Controls</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#key-innovation-vertex-based-precision-with-natural-variation">Key Innovation: Vertex-Based Precision with Natural Variation</a>
+    <li class="toctree-l3"><a class="reference internal" href="#settings-tab">Settings Tab</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#exact-vertex-placement">Exact Vertex Placement</a>
+    <li class="toctree-l4"><a class="reference internal" href="#orientation-control">Orientation Control</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#vertex-group-masking">Vertex Group Masking</a>
+    <li class="toctree-l4"><a class="reference internal" href="#scale-variation">Scale Variation</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-configuration">Agent Configuration</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-1-mesh-preparation">Phase 1: Mesh Preparation</a>
+    <li class="toctree-l4"><a class="reference internal" href="#input-requirements">Input Requirements</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-2-agent-and-mesh-setup">Phase 2: Agent and Mesh Setup</a>
+    <li class="toctree-l4"><a class="reference internal" href="#customization">Customization</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-3-density-configuration">Phase 3: Density Configuration</a>
+        </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-4-spacing-and-naturalization">Phase 4: Spacing and Naturalization</a>
+    <li class="toctree-l3"><a class="reference internal" href="#mesh-preparation-guide">Mesh Preparation Guide</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#optimal-vertex-setup">Optimal Vertex Setup</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-5-variation-controls">Phase 5: Variation Controls</a>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-vertex-patterns">Creating Vertex Patterns</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#phase-6-advanced-placement">Phase 6: Advanced Placement</a>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#typical-workflow">Typical Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#for-precise-placement">For Precise Placement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mesh-optimization">Mesh Optimization</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#natural-appearance-tips">Natural Appearance Tips</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#use-cases">Use Cases</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#architectural-precision">Architectural Precision</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#event-planning">Event Planning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#natural-distributions">Natural Distributions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#technical-applications">Technical Applications</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#advanced-techniques">Advanced Techniques</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#vertex-group-masking-strategies">Vertex Group Masking Strategies</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#multi-mesh-distributions">Multi-Mesh Distributions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hybrid-approaches">Hybrid Approaches</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#performance-considerations">Performance Considerations</a>
     </li>
     </ul>
                 </li>
@@ -147,13 +123,17 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../../dynamic/city/">City System</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -180,170 +160,169 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="icrowds-static-on-vertex-documentation">iCrowds Static On Vertex Documentation</h1>
+                <h1 id="on-vertex-icrowd-system-user-documentation">On Vertex iCrowd System - User Documentation</h1>
 <h2 id="overview">Overview</h2>
-<p>The <strong>Static On Vertex</strong> system is a mesh-based distribution tool that places agents precisely on mesh vertices with controlled variation and spacing. It enables exact placement control using existing mesh topology while maintaining natural-looking variations through comprehensive randomization options.</p>
-<h2 id="core-components">Core Components</h2>
-<h3 id="global-inputs">Global Inputs</h3>
-<p><strong>Purpose</strong>: Define the base environment and agent sources</p>
-<p><strong>Parameters</strong>:
-- <strong>Terrain</strong>: Reference surface for orientation and placement context
-- <strong>Agents</strong>: Source objects or collections for vertex-based distribution
-- <strong>Agent Input Type</strong>: Switch between Object or Collection input methods</p>
-<h3 id="vertex-distribution-system">Vertex Distribution System</h3>
-<p><strong>Purpose</strong>: Control agent placement directly on mesh vertices</p>
-<h4 id="density-panel">Density Panel</h4>
-<p><strong>Placement Controls</strong>:
-- <strong>Mesh</strong>: Target mesh object whose vertices will host agents
-- <strong>Max</strong>: Maximum number of agents to place (vertex-limited)
-- <em>Feature: Vertex group masking for selective placement</em></p>
-<h3 id="personal-space">Personal Space</h3>
-<p><strong>Purpose</strong>: Maintain natural spacing between vertex-placed agents</p>
-<p><strong>Parameters</strong>:
-- <strong>Relax Iterations</strong>: Physics smoothing passes for optimal vertex spacing
-- <strong>Space Min</strong>: Minimum distance between agents on adjacent vertices
-- <strong>Space Max</strong>: Maximum allowable spacing adjustment
-- <strong>Space Seed</strong>: Randomization for organic spacing variation</p>
-<h3 id="position-variations">Position Variations</h3>
-<p><strong>Purpose</strong>: Introduce controlled offsets from exact vertex positions</p>
-<p><strong>Parameters</strong>:
-- <strong>Position Variation</strong>: Amount of positional randomness from vertex centers
-- <strong>Position Seed</strong>: Randomization control for position variations</p>
-<h3 id="rotation-variations">Rotation Variations</h3>
-<p><strong>Purpose</strong>: Control agent orientation on vertices</p>
-<p><strong>Parameters</strong>:
-- <strong>Up Direction</strong>: Surface normal alignment for natural standing
-- <strong>Look Direction</strong>: Forward orientation control (random or directed)</p>
-<h3 id="random">Random</h3>
-<p><strong>Purpose</strong>: Additional randomization for natural distribution</p>
-<p><strong>Parameters</strong>:
-- <strong>Random Min</strong>: Minimum random influence
-- <strong>Random Max</strong>: Maximum random influence
-- <strong>Random Seed</strong>: Overall randomization control</p>
-<h3 id="at-object-panel">At Object Panel</h3>
-<p><strong>Purpose</strong>: Object-specific vertex placement</p>
-<p><strong>Parameters</strong>:
-- <strong>At Object</strong>: Target specific objects for vertex placement
-- <strong>Add Randomness</strong>: Introduce variation to object-based placement</p>
-<h3 id="scale-variations">Scale Variations</h3>
-<p><strong>Purpose</strong>: Create size diversity among vertex-placed agents</p>
-<p><strong>Parameters</strong>:
-- <strong>Scale Variation</strong>: Enable/disable agent size variations
-- <strong>Scale Min</strong>: Minimum agent scale factor
-- <strong>Scale Max</strong>: Maximum agent scale factor
-- <strong>Scale Seed</strong>: Scale randomization control</p>
-<h2 id="key-innovation-vertex-based-precision-with-natural-variation">Key Innovation: Vertex-Based Precision with Natural Variation</h2>
-<h3 id="exact-vertex-placement">Exact Vertex Placement</h3>
-<p><strong>Core Feature</strong>: Agents are placed precisely on mesh vertices while maintaining organic feel:</p>
+<p>The On Vertex System precisely places agents on mesh vertices, providing exact control over agent positioning for structured arrangements and specific placement requirements.</p>
+<h2 id="distribution-tab">Distribution Tab</h2>
+<h3 id="basic-setup">Basic Setup</h3>
 <ul>
-<li><strong>Vertex-Level Control</strong>: Each agent corresponds to a specific vertex</li>
-<li><strong>Topology-Driven</strong>: Distribution follows mesh edge flow and density</li>
-<li><strong>Non-Destructive</strong>: Original mesh remains untouched</li>
+<li><strong>View Mode</strong>: Render - Standard visualization mode</li>
+<li><strong>Terrain</strong>: On Curve Terrain - Ground surface for agent alignment</li>
 </ul>
-<h3 id="vertex-group-masking">Vertex Group Masking</h3>
-<p><strong>Advanced Control</strong>: Use vertex groups to selectively enable/disable placement:</p>
+<h3 id="vertex-distribution">Vertex Distribution</h3>
 <ul>
-<li><strong>Density Zones</strong>: Create high-density and sparse areas using vertex weights</li>
-<li><strong>Pattern Control</strong>: Design specific formation patterns through vertex selection</li>
-<li><strong>Animated Masks</strong>: Use animated vertex groups for dynamic placement changes</li>
+<li><strong>Mesh Object</strong>: Input the object containing vertices for agent placement</li>
+<li><strong>Distribution</strong>: One agent per vertex (On vertex distribution)</li>
+<li><strong>Max Agents Num</strong>: 100,000.000 - Total maximum agents in system</li>
 </ul>
-<h2 id="workflow">Workflow</h2>
-<h3 id="phase-1-mesh-preparation">Phase 1: Mesh Preparation</h3>
+<h3 id="positioning-controls">Positioning Controls</h3>
+<h4 id="personal-space">Personal Space</h4>
+<ul>
+<li><strong>Relax Iterations</strong>: 12 - Processing passes for collision resolution</li>
+<li><strong>Min Distance</strong>: 0.500 m - Minimum space between agents</li>
+<li><strong>Max Distance</strong>: 1.000 m - Maximum personal buffer</li>
+<li><strong>Seed</strong>: 0 - Randomization pattern</li>
+</ul>
+<h4 id="position-variation">Position Variation</h4>
+<ul>
+<li><strong>Position Variation</strong>: 0.000 - Random offset from exact vertex positions</li>
+<li><strong>Seed</strong>: 0 - Randomization pattern</li>
+<li><strong>Usage</strong>: Add imperfection to avoid overly perfect grid patterns</li>
+</ul>
+<h2 id="settings-tab">Settings Tab</h2>
+<h3 id="orientation-control">Orientation Control</h3>
+<h4 id="rotation-modes">Rotation Modes</h4>
 <ol>
-<li>Create or import the target mesh with appropriate vertex density</li>
-<li>Use vertex groups to define placement zones and density variations</li>
-<li>Ensure mesh has sufficient vertices for desired agent count</li>
+<li><strong>Default</strong></li>
+<li>Consistent facing direction for all agents</li>
+<li>
+<p>Uniform appearance across vertex points</p>
+</li>
+<li>
+<p><strong>Random</strong></p>
+</li>
+<li>Random rotation per agent</li>
+<li>
+<p>Creates natural variation in facing directions</p>
+</li>
+<li>
+<p><strong>At Object</strong></p>
+</li>
+<li>All agents face toward a target object</li>
+<li>Useful for crowds facing a stage or point of interest</li>
 </ol>
-<h3 id="phase-2-agent-and-mesh-setup">Phase 2: Agent and Mesh Setup</h3>
+<h4 id="up-direction">Up Direction</h4>
+<ul>
+<li><strong>Default</strong>: Automatic alignment with terrain normals</li>
+<li><strong>Function</strong>: Ensures agents stand properly on ground surface</li>
+<li><strong>Adjustment</strong>: Can be modified for special orientation needs</li>
+</ul>
+<h3 id="scale-variation">Scale Variation</h3>
+<ul>
+<li><strong>Min Scale</strong>: 0.900 - Smallest agent size (90% of normal)</li>
+<li><strong>Max Scale</strong>: 1.000 - Largest agent size (100% of normal)</li>
+<li><strong>Seed</strong>: 0 - Randomization pattern for size variation</li>
+<li><strong>Effect</strong>: Creates natural size diversity in the crowd</li>
+</ul>
+<h2 id="agent-configuration">Agent Configuration</h2>
+<h3 id="input-requirements">Input Requirements</h3>
+<ul>
+<li><strong>Animated Agents</strong>: Collections with idle animations</li>
+<li><strong>Multiple Collections</strong>: Support for varied agent types</li>
+<li><strong>Probability Control</strong>: Balance between different agent collections</li>
+</ul>
+<h3 id="customization">Customization</h3>
+<ul>
+<li><strong>Custom Collections</strong>: Import additional agent types</li>
+<li><strong>Clothing Variations</strong>: Modify agent appearances</li>
+<li><strong>Collection Blending</strong>: Mix different agent types naturally</li>
+</ul>
+<h2 id="mesh-preparation-guide">Mesh Preparation Guide</h2>
+<h3 id="optimal-vertex-setup">Optimal Vertex Setup</h3>
 <ol>
-<li>Select the target mesh for vertex-based distribution</li>
-<li>Choose agent objects or collections</li>
-<li>Set Agent Input Type (Object or Collection)</li>
+<li><strong>Even Distribution</strong>: Vertices should be evenly spaced for consistent agent placement</li>
+<li><strong>Density Control</strong>: More vertices = more agents in that area</li>
+<li><strong>Mesh Types</strong>: Works with any mesh object containing vertices</li>
+<li><strong>Vertex Groups</strong>: Use vertex groups for selective agent placement</li>
 </ol>
-<h3 id="phase-3-density-configuration">Phase 3: Density Configuration</h3>
+<h3 id="creating-vertex-patterns">Creating Vertex Patterns</h3>
+<ul>
+<li><strong>Grid Meshes</strong>: For organized, grid-like formations</li>
+<li><strong>Scattered Points</strong>: For random but controlled placement</li>
+<li><strong>Custom Shapes</strong>: Arrange vertices in specific patterns or logos</li>
+</ul>
+<h2 id="typical-workflow">Typical Workflow</h2>
 <ol>
-<li>Set Max parameter to control total agent count</li>
-<li>System automatically uses available vertices up to the maximum</li>
-<li>Vertex group masks automatically limit placement to weighted areas</li>
+<li><strong>Mesh Preparation</strong></li>
+<li>Create or select mesh with desired vertex arrangement</li>
+<li>Ensure vertex density matches required agent density</li>
+<li>
+<p>Use vertex groups for area-specific control</p>
+</li>
+<li>
+<p><strong>Distribution Setup</strong></p>
+</li>
+<li>Input mesh object into distribution panel</li>
+<li>Set maximum agent count if needed</li>
+<li>
+<p>Adjust position variation for natural imperfection</p>
+</li>
+<li>
+<p><strong>Spacing Configuration</strong></p>
+</li>
+<li>Set personal space parameters</li>
+<li>Adjust relax iterations for collision quality</li>
+<li>
+<p>Fine-tune min/max distances</p>
+</li>
+<li>
+<p><strong>Orientation &amp; Scale</strong></p>
+</li>
+<li>Choose rotation mode based on scene requirements</li>
+<li>Set scale variation for natural size diversity</li>
+<li>
+<p>Configure up direction for proper ground alignment</p>
+</li>
+<li>
+<p><strong>Agent Assignment</strong></p>
+</li>
+<li>Select agent collections</li>
+<li>Balance probabilities between collections</li>
+<li>Apply customizations as needed</li>
 </ol>
-<h3 id="phase-4-spacing-and-naturalization">Phase 4: Spacing and Naturalization</h3>
-<ol>
-<li>Configure Personal Space to prevent overcrowding on dense vertices</li>
-<li>Adjust Position Variations for organic offsets from exact vertex positions</li>
-<li>Set Rotation parameters for natural orientation</li>
-</ol>
-<h3 id="phase-5-variation-controls">Phase 5: Variation Controls</h3>
-<ol>
-<li>Enable Scale Variations for size diversity</li>
-<li>Use Random parameters to introduce controlled chaos</li>
-<li>Fine-tune randomization seeds for reproducible results</li>
-</ol>
-<h3 id="phase-6-advanced-placement">Phase 6: Advanced Placement</h3>
-<ol>
-<li>Use At Object for specific object targeting</li>
-<li>Apply additional randomness for object-based variations</li>
-<li>Balance exact placement with natural-looking results</li>
-</ol>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="for-precise-placement">For Precise Placement</h3>
+<ul>
+<li>Use <strong>position variation 0.000</strong> for exact vertex alignment</li>
+<li>Create custom vertex layouts for specific formations</li>
+<li>Use <strong>relax iterations</strong> to prevent agent overlapping</li>
+<li>Combine with <strong>vertex groups</strong> for complex placement patterns</li>
+</ul>
+<h3 id="mesh-optimization">Mesh Optimization</h3>
+<ul>
+<li>Use appropriate vertex density for required agent count</li>
+<li>Avoid overly dense meshes unless high agent count is needed</li>
+<li>Use simple meshes for large-scale simulations</li>
+<li>Test different mesh types for various formation needs</li>
+</ul>
+<h3 id="natural-appearance-tips">Natural Appearance Tips</h3>
+<ul>
+<li>Use <strong>random rotation</strong> with vertex-based placement</li>
+<li>Apply <strong>scale variation</strong> to avoid uniform look</li>
+<li>Use slight <strong>position variation</strong> to break perfect patterns</li>
+<li>Mix agent collections for visual diversity</li>
+</ul>
 <h2 id="use-cases">Use Cases</h2>
-<h3 id="architectural-precision">Architectural Precision</h3>
 <ul>
-<li>People placed exactly on seating vertices</li>
-<li>Furniture on floor plan vertices</li>
-<li>Decorative elements on architectural features</li>
+<li><strong>Stadium Seating</strong>: Precise seat-by-seat placement</li>
+<li><strong>Military Formations</strong>: Exact positional arrangements</li>
+<li><strong>Theater Audiences</strong>: Controlled seating patterns</li>
+<li><strong>Ceremonial Events</strong>: Structured participant placement</li>
+<li><strong>Architectural Visualization</strong>: Precise population of spaces</li>
+<li><strong>Logo Formations</strong>: Spelling out words or shapes with agents</li>
+<li><strong>Grid Patterns</strong>: Organized displays and exhibitions</li>
 </ul>
-<h3 id="event-planning">Event Planning</h3>
-<ul>
-<li>Audience members on seating vertices</li>
-<li>Participants in organized formations</li>
-<li>Exhibits on precise layout points</li>
-</ul>
-<h3 id="natural-distributions">Natural Distributions</h3>
-<ul>
-<li>Plants on terrain vertices following contours</li>
-<li>Rocks on geological feature vertices</li>
-<li>Animals on ecosystem analysis points</li>
-</ul>
-<h3 id="technical-applications">Technical Applications</h3>
-<ul>
-<li>Data visualization with agent representation</li>
-<li>Sensor placement simulations</li>
-<li>Urban planning with exact positioning</li>
-</ul>
-<h2 id="advanced-techniques">Advanced Techniques</h2>
-<h3 id="vertex-group-masking-strategies">Vertex Group Masking Strategies</h3>
-<ul>
-<li><strong>Weight-Based Density</strong>: Use vertex weights to control probability of placement</li>
-<li><strong>Pattern Creation</strong>: Design specific formations through vertex selection</li>
-<li><strong>Animated Distributions</strong>: Animate vertex groups for moving placement zones</li>
-</ul>
-<h3 id="multi-mesh-distributions">Multi-Mesh Distributions</h3>
-<ul>
-<li>Combine multiple meshes for complex distributions</li>
-<li>Use different vertex densities for varied concentration areas</li>
-<li>Create hierarchical placement systems</li>
-</ul>
-<h3 id="hybrid-approaches">Hybrid Approaches</h3>
-<ul>
-<li>Combine vertex placement with other distribution methods</li>
-<li>Use vertex system for base placement with other systems for variation</li>
-<li>Create layered distribution effects</li>
-</ul>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li><strong>Precision Placement</strong>: Exact control through mesh vertices</li>
-<li><strong>Vertex Group Masking</strong>: Advanced selective placement control</li>
-<li><strong>Natural Variation</strong>: Comprehensive randomization while maintaining structure</li>
-<li><strong>Topology-Aware</strong>: Distribution follows mesh flow and density</li>
-<li><strong>Non-Destructive</strong>: Original mesh remains intact</li>
-<li><strong>Scalable</strong>: Works with simple to complex meshes</li>
-</ul>
-<h2 id="performance-considerations">Performance Considerations</h2>
-<ul>
-<li><strong>Vertex Count</strong>: Performance scales with vertex quantity</li>
-<li><strong>Optimization</strong>: Use optimized meshes with appropriate vertex density</li>
-<li><strong>LOD Strategies</strong>: Implement level-of-detail for distant distributions</li>
-</ul>
-<p>The Static On Vertex system provides the perfect balance between precision control and natural variation, allowing artists to create exact formations while maintaining organic-looking results through comprehensive variation controls and vertex group masking capabilities.</p>
+<p>The On Vertex System provides the most precise control over agent positioning, making it ideal for scenarios requiring exact placement, structured formations, or specific spatial arrangements where vertex-level accuracy is essential.</p>
               
             </div>
           </div><footer>

@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Scatter</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/">Overview</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/ground/">Scatter on Ground</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/curve/">Scatter on Curve</a>
@@ -72,58 +70,90 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">City System</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#10-system-overview">1.0 System Overview</a>
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#20-inputs">2.0 Inputs</a>
+    <li class="toctree-l2"><a class="reference internal" href="#distribution">Distribution</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#21-icity-integration">2.1 iCity Integration</a>
+    <li class="toctree-l3"><a class="reference internal" href="#input-configuration">Input Configuration</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#22-custom-geometry">2.2 Custom Geometry</a>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-settings">Distribution Settings</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#object-configuration">Object Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#agent-scattering">Agent Scattering</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#weight-painting">Weight Painting</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#30-agents">3.0 Agents</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#31-agent-types">3.1 Agent Types</a>
+        </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#32-agent-settings">3.2 Agent Settings</a>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#speed-configuration">Speed Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activities-system">Activities System</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#activity-types">Activity Types</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#activity-input">Activity Input</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#needs-based-behavior">Needs-Based Behavior</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#40-population-control">4.0 Population Control</a>
+    <li class="toctree-l3"><a class="reference internal" href="#debug-features">Debug Features</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#41-density-settings">4.1 Density Settings</a>
+    <li class="toctree-l4"><a class="reference internal" href="#movement-debugging">Movement Debugging</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#42-mask">4.2 Mask</a>
+    <li class="toctree-l4"><a class="reference internal" href="#activity-debugging">Activity Debugging</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#50-movement-and-simulation">5.0 Movement and Simulation</a>
+    <li class="toctree-l3"><a class="reference internal" href="#performance-optimization">Performance Optimization</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#51-pathfinding">5.1 Pathfinding</a>
+    <li class="toctree-l4"><a class="reference internal" href="#path-finding">Path Finding</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#52-debug-tools">5.2 Debug Tools</a>
+    <li class="toctree-l4"><a class="reference internal" href="#time-management">Time Management</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#60-activity-system">6.0 Activity System</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#70-recommended-workflow">7.0 Recommended Workflow</a>
+    <li class="toctree-l2"><a class="reference internal" href="#agents">Agents</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-collections">Agent Collections</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#80-optimization-tips">8.0 Optimization Tips</a>
+    <li class="toctree-l3"><a class="reference internal" href="#density-management">Density Management</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#90-notes">9.0 Notes</a>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-customization">Agent Customization</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#individual-agent-editing">Individual Agent Editing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#custom-agent-creation">Custom Agent Creation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collection-management">Collection Management</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a>
     </li>
     </ul>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -149,143 +179,144 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="city-icrowd-simulation-system-user-documentation">City iCrowd Simulation System - User Documentation</h1>
-<h2 id="10-system-overview">1.0 System Overview</h2>
-<p>The <strong>City Crowd Simulation System</strong> is a crowd generation tool for Blender that integrates seamlessly with the <strong>iCity addon</strong>. It allows users to populate urban environments with agents that navigate roads, sidewalks, and custom areas while avoiding obstacles.</p>
-<p>Key features include:</p>
+                <h1 id="city-icrowd-system-user-documentation">City iCrowd System - User Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Dynamic Behaviour System is a comprehensive simulation system that controls agent behaviors, movement, and interactions within urban environments. The system consists of three main components: Distribution, Settings, and Agents.</p>
+<h2 id="distribution">Distribution</h2>
+<h3 id="input-configuration">Input Configuration</h3>
+<p>The system supports two types of urban environment inputs:</p>
 <ul>
-<li>Automatic integration with <strong>iCity road and sidewalk geometry</strong></li>
-<li>Optional <strong>custom ground and colliders</strong></li>
-<li>Support for <strong>default agents</strong> (idle, walk, run) or <strong>custom character collections</strong></li>
-<li>Configurable <strong>population density, movement, and activity behaviors</strong></li>
+<li><strong>iCity</strong>: Pre-built city environment</li>
+<li><strong>Custom City</strong>: User-defined city configuration consisting of:</li>
+<li><strong>City Ground</strong>: Base terrain and infrastructure</li>
+<li><strong>Colliders</strong>: Obstacles and navigation boundaries</li>
 </ul>
-<hr />
-<h2 id="20-inputs">2.0 Inputs</h2>
-<h3 id="21-icity-integration">2.1 iCity Integration</h3>
-<p>The system can automatically use iCity’s road and sidewalk geometry. It also auto-detects colliders from the sidewalk.</p>
-<p><strong>Inputs:</strong></p>
+<h3 id="distribution-settings">Distribution Settings</h3>
+<h4 id="object-configuration">Object Configuration</h4>
 <ul>
-<li><strong>Road:</strong> Main road geometry (required)</li>
-<li><strong>SideWalk:</strong> Sidewalk geometry (required)</li>
-<li><strong>Colliders:</strong> Automatically collected from sidewalks when using iCity</li>
+<li><strong>Custom City Ground</strong>: Enable/disable custom ground objects</li>
+<li><strong>Colliders</strong>: Toggle collision detection objects</li>
+<li><strong>Custom City Colliders Collection</strong>: Organize collision objects in dedicated collections</li>
 </ul>
-<h3 id="22-custom-geometry">2.2 Custom Geometry</h3>
-<p>Users can provide their own ground geometry and colliders:</p>
+<h4 id="agent-scattering">Agent Scattering</h4>
 <ul>
-<li><strong>Ground:</strong> Mesh representing walkable surfaces</li>
-<li><strong>Colliders:</strong> Collection of objects to avoid (buildings, obstacles, etc.)</li>
+<li><strong>Viewer</strong>: Render visualization mode</li>
+<li><strong>Density Controls</strong>:</li>
+<li><strong>Density</strong>: 1 meter spacing between agents</li>
+<li><strong>Max</strong>: Maximum of 2,000 agents</li>
+<li><strong>Factor</strong>: Distribution factor (default: 0.407)</li>
+<li><strong>Seed</strong>: Randomization seed for agent placement</li>
 </ul>
-<hr />
-<h2 id="30-agents">3.0 Agents</h2>
-<h3 id="31-agent-types">3.1 Agent Types</h3>
-<p>You can choose between:</p>
+<h4 id="weight-painting">Weight Painting</h4>
+<ul>
+<li><strong>Vertex Group Mask</strong>: Use vertex groups to control agent distribution density</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<h3 id="speed-configuration">Speed Configuration</h3>
+<ul>
+<li><strong>Speed Scalar</strong>: Global multiplier for all agent speeds (default: 1.000)</li>
+<li><strong>Walking Speed</strong>: Threshold speed for walking animation (0.010)</li>
+<li><strong>Run Speed</strong>: Threshold speed for running animation (1.200)</li>
+<li><strong>Max Speed</strong>: Maximum possible speed in the system (10.000)</li>
+</ul>
+<h3 id="activities-system">Activities System</h3>
+<h4 id="activity-types">Activity Types</h4>
+<p>The system supports multiple activity types:
+- <strong>Fun</strong> - Entertainment and leisure activities
+- <strong>Sleep</strong> - Resting and sleeping locations
+- <strong>Hunger</strong> - Food and dining locations
+- <strong>Bladder</strong> - Restroom facilities</p>
+<h4 id="activity-input">Activity Input</h4>
+<p>Users can input either:
+- <strong>Single Object</strong>: Individual activity location
+- <strong>Collection</strong>: Group of related activities (e.g., collection of fun locations)</p>
+<h4 id="needs-based-behavior">Needs-Based Behavior</h4>
+<p>Each agent maintains dynamic needs sliders for:
+- Fun
+- Sleep
+- Hunger
+- Bladder</p>
+<p><strong>Behavior Flow</strong>:
+1. When a need decreases below threshold, agent pathfinds to nearest relevant activity
+2. Upon reaching activity location, the corresponding need parameter is filled
+3. Agent then seeks to fulfill other deficient needs
+4. Continuous cycle of need fulfillment creates emergent behavior patterns</p>
+<h3 id="debug-features">Debug Features</h3>
+<h4 id="movement-debugging">Movement Debugging</h4>
+<ul>
+<li><strong>Debug Movement</strong>: Visualizes agent movement directions</li>
+<li><strong>Path Finding Grid</strong>: Displays navigation mesh used for pathfinding</li>
+</ul>
+<h4 id="activity-debugging">Activity Debugging</h4>
+<ul>
+<li><strong>Debug Activity</strong>: Shows real-time needs sliders above each agent</li>
+<li><strong>Activity Indicator</strong>: Circular icon above slider indicates current active action</li>
+</ul>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<h4 id="path-finding">Path Finding</h4>
+<ul>
+<li><strong>Path Finding Details</strong>: Controls grid resolution (default: 1.000)</li>
+<li>Lower values increase performance for large-scale simulations</li>
+<li>Higher values provide more precise navigation</li>
+</ul>
+<h4 id="time-management">Time Management</h4>
+<ul>
+<li><strong>Time Scale</strong>: Controls need depletion rate (default: 0.008)</li>
+<li>Higher values make needs deplete faster</li>
+<li>Affects simulation pacing (e.g., agents feel sleepy more quickly)</li>
+</ul>
+<h2 id="agents">Agents</h2>
+<h3 id="agent-collections">Agent Collections</h3>
+<p>Pre-configured agent animation states:
+- <strong>Male Agents</strong>: 
+  - men Idle
+  - men Walk<br />
+  - men Run
+- <strong>Female Agents</strong>:
+  - women Idle
+  - women Walk
+  - women Run</p>
+<h3 id="density-management">Density Management</h3>
+<ul>
+<li><strong>Probability</strong>: Controls spawn likelihood of agent collections (default: 0.500)</li>
+<li><strong>Agent Settings</strong>: Separate configuration for Male and Female agents</li>
+</ul>
+<h3 id="agent-customization">Agent Customization</h3>
+<h4 id="individual-agent-editing">Individual Agent Editing</h4>
+<ul>
+<li><strong>Customize Agent</strong>: Modify specific agent instances</li>
+<li><strong>Change Clothes</strong>: Swap agent clothing and appearance</li>
+<li><strong>Change Action</strong>: Modify animation behaviors</li>
+<li><strong>Include All</strong>: Apply changes to entire agent group</li>
+</ul>
+<h4 id="custom-agent-creation">Custom Agent Creation</h4>
+<p>Users can add custom agents or collections with:
+- <strong>Object</strong>: Agent mesh object
+- <strong>Collection</strong>: Agent group collection
+- <strong>Agent Mesh</strong>: 3D model reference
+- <strong>Agent Armature</strong>: Animation skeleton
+- <strong>Gender</strong>: Male/Female classification</p>
+<h3 id="collection-management">Collection Management</h3>
+<ul>
+<li><strong>Include</strong>: Add agents to active simulation</li>
+<li><strong>Discard</strong>: Remove agents from consideration</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
 <ol>
-<li><strong>Default agents:</strong> Idle, walk, run animations included</li>
-<li><strong>Custom agents:</strong> User-provided collection of characters</li>
+<li><strong>Setup</strong>: Configure city environment (iCity or Custom)</li>
+<li><strong>Distribution</strong>: Scatter agents with density controls</li>
+<li><strong>Activities</strong>: Place activity objects or collections</li>
+<li><strong>Agents</strong>: Configure agent types, probabilities, and behaviors</li>
+<li><strong>Simulation</strong>: Run with debug tools for monitoring</li>
+<li><strong>Optimization</strong>: Adjust pathfinding and time scale as needed</li>
 </ol>
-<h3 id="32-agent-settings">3.2 Agent Settings</h3>
-<ul>
-<li><strong>Agents Speed Scaler:</strong> Adjust the speed of agents (0.1–3.0, default 1.0)</li>
-</ul>
-<hr />
-<h2 id="40-population-control">4.0 Population Control</h2>
-<h3 id="41-density-settings">4.1 Density Settings</h3>
-<ul>
-<li><strong>Distance Min:</strong> Minimum spacing between agents (meters)</li>
-<li><strong>Density Max:</strong> Maximum crowd density (0–1)</li>
-<li><strong>Density Factor:</strong> Population multiplier (e.g., 0.5 = half, 2 = double)</li>
-<li><strong>Seed:</strong> Randomize distribution for unique crowd arrangements</li>
-</ul>
-<h3 id="42-mask">4.2 Mask</h3>
-<ul>
-<li><strong>Vertex Group:</strong> Limit agent spawning to specific areas</li>
-</ul>
-<hr />
-<h2 id="50-movement-and-simulation">5.0 Movement and Simulation</h2>
-<h3 id="51-pathfinding">5.1 Pathfinding</h3>
-<ul>
-<li><strong>Path Finding Details:</strong> Adjust precision vs performance</li>
-<li><strong>Time Scale:</strong> Control simulation speed (1.0 = real-time)</li>
-</ul>
-<h3 id="52-debug-tools">5.2 Debug Tools</h3>
-<ul>
-<li><strong>Debug Movement:</strong> Visualize agent trajectories</li>
-<li><strong>Debug Activity:</strong> Color-coded display of agent behaviors</li>
-</ul>
-<hr />
-<h2 id="60-activity-system">6.0 Activity System</h2>
-<p>Agents can perform <strong>four types of activities</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Activity</th>
-<th>Purpose</th>
-<th>Inputs</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ADM_fun</td>
-<td>Entertainment</td>
-<td>Connect a collection of target objects (e.g., parks, theaters)</td>
-</tr>
-<tr>
-<td>ADM_sleep</td>
-<td>Rest</td>
-<td>Collection of seating objects or benches</td>
-</tr>
-<tr>
-<td>ADM_hunger</td>
-<td>Nutrition</td>
-<td>Collection of restaurant or food location objects</td>
-</tr>
-<tr>
-<td>ADM_balder</td>
-<td>Shelter</td>
-<td>Collection of covered or safe areas</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Usage:</strong></p>
-<ol>
-<li>Create target objects or empties at relevant locations</li>
-<li>Group them into a collection</li>
-<li>Connect the collection to the corresponding activity socket</li>
-<li>Agents automatically navigate to the nearest target of that type</li>
-</ol>
-<hr />
-<h2 id="70-recommended-workflow">7.0 Recommended Workflow</h2>
-<ol>
-<li>Choose either <strong>iCity integration</strong> or <strong>custom geometry</strong>.</li>
-<li>Set up <strong>agents</strong> (default or custom characters).</li>
-<li>Configure <strong>density and distribution</strong> settings.</li>
-<li>Set <strong>pathfinding and simulation speed</strong>.</li>
-<li>Define <strong>activities</strong> for agents if required.</li>
-<li>Use <strong>debug tools</strong> to verify agent movement and behaviors.</li>
-</ol>
-<hr />
-<h2 id="80-optimization-tips">8.0 Optimization Tips</h2>
-<ul>
-<li>Start with <strong>Density Max ≤ 0.5</strong> for better performance</li>
-<li>Simplify colliders and ground geometry</li>
-<li>Use <strong>vertex group masks</strong> to limit agent count</li>
-<li>For large-scale crowds, prefer <strong>default agents</strong> or simplified proxies</li>
-</ul>
-<hr />
-<h2 id="90-notes">9.0 Notes</h2>
-<ul>
-<li>Agents automatically avoid obstacles detected from sidewalks in iCity mode.</li>
-<li>Custom colliders override automatic detection if provided.</li>
-<li>Custom agents must include at least idle, walk, and run animations for proper integration.</li>
-<li>Random seed ensures varied crowd patterns on each simulation run.</li>
-</ul>
-<hr />
+<p>This system creates dynamic, emergent behaviors where agents autonomously navigate urban environments to fulfill their needs, creating realistic crowd simulation and urban activity patterns.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../walkers/" class="btn btn-neutral float-left" title="Walkers System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../tutorials/" class="btn btn-neutral float-right" title="Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../extra/agents/" class="btn btn-neutral float-right" title="Customize">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -311,7 +342,7 @@
       <span><a href="../walkers/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../tutorials/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../extra/agents/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
