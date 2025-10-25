@@ -1,4 +1,4 @@
-# City iCrowd Simulation System - User Documentation
+# City iCrowd System - User Documentation
 
 ## Overview
 

@@ -8,7 +8,6 @@ nav:
       - Overview: static/index.md
       - Stadium: static/stadium.md
       - Scatter:
-          - Overview: static/scatter.md
           - Scatter on Ground: static/scatter/ground.md
           - Scatter on Curve: static/scatter/curve.md
           - Scatter on Vertex: static/scatter/vertex.md
@@ -17,5 +16,12 @@ nav:
       - Fluid System: dynamic/fluid.md
       - Walkers System: dynamic/walkers.md
       - City System: dynamic/city.md
-  - Tutorials: tutorials.md
-  - FAQ: faq.md
+  - Agents:
+      - Customize: extra/agents.md
+  - Q&A:
+      - FAQ: extra/faq.md
+      - Tutorials: extra/tutorials.md
+      
+
+
+  

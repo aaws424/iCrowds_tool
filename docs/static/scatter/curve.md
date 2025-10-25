@@ -1,182 +1,151 @@
-# iCrowds Static On Curve Documentation
-
+# On Curve iCrowd System - User Documentation
 ## Overview
-The **Static On Curve** system is a specialized tool for distributing agents along curves with intelligent density control based on curve radius. It enables artists to create natural-looking formations that follow paths, roads, or custom trajectories with radius-driven population density.
+The On Curve System creates organized lines and queues of agents following curve paths, ideal for simulating waiting lines, processional movements, and structured formations.
 
-## Core Components
+## Distribution Tab
 
-### Global Inputs
-**Purpose**: Define the base environment and agent sources
+### Basic Setup
+- **View Mode**: Render - Standard visualization mode
+- **Terrain**: On Curve Terrain - Input terrain for ground alignment
 
-**Parameters**:
-- **Terrain**: Reference surface for agent placement
-- **Agents**: Source objects or collections for distribution
-- **Agent Input Type**: Switch between Object or Collection input methods
+### Distribution Types
 
-### Curve Distribution System
-**Purpose**: Control agent placement along curves with radius-based density
+#### 1. Radius Based Distribution
+**Agents distributed around curve points based on radius**
+- **Radius Control**: Edit curve points in Edit Mode and use **Alt+S** to scale radius at each point
+- **Radius Multiplier**: 512.000 - Global multiplier for all radius values
+- **Effect**: More agents in areas with larger radius values
 
-#### Density Panel
-**Placement Methods**:
-- **Curve**: Target curve object for agent distribution
-- **Density Type**: Method for calculating agent placement
-- **Max**: Maximum number of agents along the curve
+#### 2. Count Based Distribution
+**Fixed number of agents per curve**
+- **Min (Per Curve)**: 50 - Minimum agents per curve
+- **Max (Per Curve)**: 100 - Maximum agents per curve
+- **System**: Randomly selects between min/max for each curve
 
-#### Count-Based Distribution
-**Fixed Quantity Control**:
-- **Count Min**: Minimum number of agents to place
-- **Count Max**: Maximum number of agents to place
+#### 3. Min Distance Distribution
+**Agents spaced by minimum distance**
+- **Length**: 0.2 m - Minimum spacing between agents
+- **Use**: Evenly spaced queues and lines
 
-#### Length-Based Distribution
-**Density-per-Length Control**:
-- **Length**: Agents per unit length of the curve
+### Global Limits
+- **Max Agents Num**: 100,000.000 - Total maximum agents in system
 
-#### Radius Multiplier Panel
-**Curve Radius Integration**:
-- **Radius Multiplier**: Scale factor for curve radius influence on density
-- *Feature: Use Alt+S curve point scaling to drive agent density variations*
+### Positioning Controls
 
-### Personal Space
-**Purpose**: Maintain natural spacing between agents along the curve
+#### Personal Space
+- **Relax Iterations**: 12 - Processing passes for collision resolution
+- **Min Distance**: 0.500 m - Minimum space between agents
+- **Max Distance**: 1.000 m - Maximum personal buffer
+- **Seed**: 2 - Randomization pattern
 
-**Parameters**:
-- **Relax Iterations**: Physics smoothing passes for optimal spacing
-- **Space Min**: Minimum distance between adjacent agents
-- **Space Max**: Maximum allowable spacing
-- **Space Seed**: Randomization for organic spacing variation
+#### Position Variation
+- **Position Variation**: 2.934 - Random offset from perfect curve alignment
+- **Seed**: 86 - Randomization pattern
+- **Effect**: Creates natural, imperfect lines instead of perfect grid
 
-### Rotation
-**Purpose**: Control agent orientation along the curve path
+## Settings Tab
 
-**Parameters**:
-- **Up Direction**: Surface normal alignment for agents
-- **Look Direction**: Forward orientation (typically follows curve direction)
+### Orientation Control
 
-### Random
-**Purpose**: Introduce controlled variation for natural results
+#### Rotation Modes
+1. **Default**
+   - Consistent facing direction
+   - Uniform appearance along curves
 
-**Parameters**:
-- **Random Min**: Minimum random placement offset
-- **Random Max**: Maximum random placement offset  
-- **Random Seed**: Randomization control for reproducible results
+2. **Randomize**
+   - Random rotation per agent
+   - Natural variation in facing directions
 
-### At Object Panel
-**Purpose**: Object-based placement along curves
+3. **At Object**
+   - All agents face toward target object
+   - Optional randomization for natural look
 
-**Parameters**:
-- **At Object**: Specific object targets for placement
-- **Add Randomness**: Introduce variation to object-based placement
+#### Up Direction
+- **Value**: 1.000 - Controls alignment with terrain normals
+- **Function**: Keeps agents properly oriented to ground surface
+- **Adjustment**: Higher values increase terrain following
 
-### Position Variation
-**Purpose**: Fine-tune agent positioning relative to the curve
+### Scale Variation
+- **Min Scale**: 0.900 - Smallest agent size
+- **Max Scale**: 1.000 - Largest agent size
+- **Seed**: 0 - Randomization pattern
+- **Effect**: Natural size variation in crowd
 
-**Parameters**:
-- **Position Variation**: Amount of positional randomness
-- **Position Seed**: Randomization control for position variations
+## Agent Configuration
 
-### Scale Variations
-**Purpose**: Create size diversity among agents
+### Input Requirements
+- **Animated Agents**: Collections with idle animations
+- **Multiple Collections**: Support for varied agent types
+- **Probability Control**: Balance between different agent collections
 
-**Parameters**:
-- **Scale Variation**: Enable/disable agent size variations
+### Customization
+- **Custom Collections**: Import additional agent types
+- **Clothing Variations**: Modify agent appearances
+- **Collection Blending**: Mix different agent types
 
-## Key Innovation: Radius-Driven Density
+## Curve Editing Guide
 
-### Curve Radius Control
-**Unique Feature**: The system uses the curve's radius (adjusted with **Alt+S**) to dynamically control agent density:
+### Radius-Based Setup
+1. Select curve object
+2. Enter Edit Mode (Tab)
+3. Select curve points where you want more agents
+4. Press **Alt+S** and drag to increase radius
+5. Larger radius = more agents around that point
 
-- **Wider Radius Areas**: Higher agent density and more spacing flexibility
-- **Narrower Radius Areas**: Lower agent density with tighter constraints
-- **Variable Radius Curves**: Create natural density gradients along paths
+### Curve Types
+- **Open Curves**: Lines and queues
+- **Closed Curves**: Circular formations and surrounding areas
+- **Multiple Curves**: Complex formations and multiple lines
 
-### Radius Multiplier Application
-- **Multiplier > 1.0**: Amplify the radius's effect on density
-- **Multiplier < 1.0**: Reduce the radius's influence
-- **Multiplier = 0.0**: Disable radius-based density control
+## Typical Workflow
 
-## Workflow
+1. **Curve Creation**
+   - Draw curves representing desired lines or formations
+   - Adjust radius at key points for density variation
+   - Set curve object in distribution panel
 
-### Phase 1: Curve Preparation
-1. Create or import the target curve object
-2. Use **Alt+S** to scale curve points' radius for density control
-3. Adjust radius variations to define density hotspots and sparse areas
+2. **Distribution Setup**
+   - Choose distribution type (Radius/Count/Min Distance)
+   - Set agent limits and spacing parameters
+   - Adjust position variation for natural look
 
-### Phase 2: Agent and Curve Setup
-1. Select the target curve for distribution
-2. Choose agent objects or collections
-3. Set Agent Input Type (Object or Collection)
+3. **Orientation & Scale**
+   - Set rotation mode based on scene needs
+   - Adjust up direction for proper ground alignment
+   - Configure scale variations
 
-### Phase 3: Distribution Method Selection
-**Option A: Count-Based Placement**
-1. Set Count Min/Max for fixed agent quantities
-2. System automatically distributes along curve length
+4. **Agent Assignment**
+   - Select agent collections
+   - Balance probabilities between collections
+   - Fine-tune appearance variations
 
-**Option B: Density-Based Placement**  
-1. Set Length parameter for agents per unit distance
-2. Density automatically adapts to curve radius variations
+## Best Practices
 
-### Phase 4: Radius Integration
-1. Adjust Radius Multiplier to control radius influence
-2. Fine-tune how curve point scaling affects density
-3. Balance between radius-driven and uniform distribution
+### For Realistic Lines
+- Use **position variation** to avoid perfect grid patterns
+- Combine **min distance** with **personal space** for natural spacing
+- Use **radius based** for areas needing higher density
+- Apply slight **scale variation** for diverse crowds
 
-### Phase 5: Spacing and Variation
-1. Configure Personal Space for natural agent separation
-2. Set Rotation parameters for proper orientation
-3. Add Random and Position variations for organic look
-4. Enable Scale Variations for size diversity
+### Curve Setup Tips
+- Use smoother curves for more natural agent distribution
+- Adjust radius gradually for smooth density transitions
+- Test different distribution types for each scene need
+- Use multiple simple curves instead of one complex curve
 
-### Phase 6: Refinement
-1. Use At Object for specific placement requirements
-2. Adjust randomization seeds for controlled variation
-3. Fine-tune Max parameter to limit total agents
+### Performance Optimization
+- Use appropriate relax iterations (12 is good for quality)
+- Set realistic max agent counts
+- Balance position variation with performance needs
+- Use simpler curves for large-scale simulations
 
 ## Use Cases
 
-### Road and Path Populations
-- pedestrians along sidewalks
-- vehicles on roads
-- street furniture along pathways
+- **Waiting lines** for attractions, security, or ticketing
+- **Processional movements** in ceremonies or events
+- **Queue simulations** for retail or services
+- **Formation patterns** for military or performance groups
+- **Surrounding areas** around objects or stages
+- **Path lining** for parades or special events
 
-### Event and Ceremony Layouts
-- audience seating along procession routes
-- participants in parade formations
-- vendors along festival paths
-
-### Natural Formations
-- trees along riverbanks
-- rocks along geological faults
-- plants following terrain contours
-
-### Architectural Applications
-- people in queue lines
-- furniture along building perimeters
-- decorative elements along architectural features
-
-## Advanced Techniques
-
-### Dynamic Density Gradients
-- Use gradually changing radius to create smooth density transitions
-- Create crowded-to-sparse effects along paths
-- Simulate natural gathering and dispersion patterns
-
-### Multi-Curve Networks
-- Distribute across multiple curves for complex layouts
-- Use different radius settings for varied density zones
-- Create hierarchical distribution patterns
-
-### Animation Preparation
-- Set up static formations for later fluid system integration
-- Pre-define natural starting positions for dynamic simulations
-- Create baseline distributions for motion systems
-
-## Key Features
-
-- **Radius-Driven Density**: Unique curve radius control over agent distribution
-- **Dual Distribution Methods**: Choose between count-based or density-based placement
-- **Adaptive Spacing**: Automatic adjustment based on curve characteristics
-- **Non-Linear Control**: Curve point radius scaling for localized density effects
-- **Natural Orientation**: Automatic rotation following curve direction
-- **Artist-Friendly**: Visual curve editing with immediate density feedback
-
-The Static On Curve system provides intuitive control over path-based agent distribution, leveraging Blender's native curve editing tools to create natural, radius-driven population densities that adapt intelligently to path width variations.
+The On Curve System provides precise control over linear and curved formations, making it ideal for any scenario requiring organized lines, queues, or structured crowd arrangements.

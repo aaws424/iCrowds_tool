@@ -1,4 +1,4 @@
-# Fluid iCrowd Simulation System - User Documentation
+# Fluid iCrowd System - User Documentation
 ## Overview
 
 The Fluid System is an alternative agent distribution and control system that provides three distinct distribution methods and specialized control objects to influence agent movement and behavior.

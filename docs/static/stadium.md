@@ -1,192 +1,127 @@
-# iCrowds Static Stadium Documentation
+# Stadium iCrowd System - User Documentation
 
 ## Overview
-The **Static Stadium** system is a specialized crowd distribution tool designed for structured seating arrangements and organized formations. It provides multiple input methods for precise agent placement on seating surfaces, instance objects, or predefined points, making it ideal for venues, theaters, and any scenario requiring organized crowd layouts.
+The Stadium System creates organized, static crowds for structured environments like stadiums, theaters, and auditoriums.
 
-## Core Components
+## Distribution Tab
 
-### Inputs
-**Purpose**: Define agent sources and distribution methods
+### Distribution Types
 
-**Parameters**:
-- **Agents**: Source objects or collections for placement
-- **Agent Input Type**: Switch between Object or Collection input methods
-- **Input Type**: Primary distribution method selector
+#### 1. On Face
+- **Requires**: A face with UV mapping (recmmend adding a plane and miving it around)
+- **Function**: Distributes agents across a surface
+- **Controls**:
+  - **Count X**: Number of agents horizontally
+  - **Count Y**: Number of agents vertically
+- **Best for**: Large seating areas and bleachers
 
-### Distribution Methods
+#### 2. On Instance
+- **Function**: Places one agent on each instanced object
+- **Example**: Geometry nodes stadium with instanced chairs
+- **Use case**: Pre-arranged seating layouts
 
-#### On Face Distribution
-**Purpose**: Place agents in organized grid patterns on surface faces
+#### 3. On Collection Objects
+- **Function**: Places agents on each object in a collection
+- **Input**: Collection of seats or chairs
+- **Use case**: Organized seating sections
 
-**Parameters**:
-- **Face Uv Object**: Target face object with UV mapping (recommended: scaled/rotated plane)
-- **Count X**: Number of agents along the X-axis (columns)
-- **Count Y**: Number of agents along the Y-axis (rows)
+#### 4. On Vertex
+- **Function**: Places agents on mesh vertices
+- **Setup**: Subdivide face to create vertex points
+- **Use case**: Precise positioning control
 
-*Best for: Custom seating layouts, flexible grid arrangements*
+### Distribution Controls
 
-#### On Instance Distribution  
-**Purpose**: Place agents on existing geometry nodes instances
+#### Fill Settings
+- **Factor**: 1.000 - Controls fill density (0.000 to 1.000)
+- **Seed**: 0 - Randomization seed for fill pattern
 
-**Parameters**:
-- **Geo_Nodes Object**: Geometry nodes object with instances output
-- *Perfect for: Chair instances, predefined seating arrangements*
+#### Weight Paint
+- **Brush Tool**: Paint custom density patterns
+- **Vertex Group Mask**: Use vertex weights for density control
+- **Application**: Create uneven crowd distribution
 
-#### On Collection Objects
-**Purpose**: Distribute agents across objects in a collection
+#### Translation
+- **Mode**: Local or Global transform space
+- **X, Y, Z**: 0m - Fine-tune agent positioning
+- **Use**: Adjust agent placement offsets
 
-**Parameters**:
-- **On Collection**: Target collection containing placement objects
-- *Ideal for: Existing scene objects as placement points*
+## Settings Tab
 
-#### On Vertex Distribution
-**Purpose**: Precise placement on mesh vertices with advanced controls
+### Orientation & Scale
 
-**Parameters**:
-- **On Vertix**: Target mesh for vertex-based placement
-- **Fill Factor**: Density control (0.0-1.0)
-- **Weight Paint Fill**: Use vertex groups/weight painting for density variation
+#### Default Behavior
+- **Rotation**: Agents face -Y direction by default
+- **Adjustment**: Modify X, Y, Z rotation angles (default: 0°)
+- **Scale**: Control agent size (X:1.000, Y:1.000, Z:1.000)
 
-### Settings Panel
-**Purpose**: Fine-tune agent orientation and variation
+#### Rotation Types
 
-#### Rotation
-**Orientation Control**:
-- **Rotation Type**: Method for agent rotation alignment
-- *Options: Face normal, object direction, custom vectors*
+1. **Default**
+   - Fixed rotation as specified
+   - Consistent facing direction
 
-#### Random
-**Variation Controls**:
-- **Mix Factor**: Blend between perfect alignment and randomness
-- **Rotation Min**: Minimum random rotation offset
-- **Rotation Max**: Maximum random rotation offset  
-- **Rotation Seed**: Randomization control for reproducible results
+2. **Randomize**
+   - Random rotation per agent
+   - **Control**: Adjust randomization range
+   - **Use**: Natural-looking varied crowd
 
-### At Object Panel
-**Purpose**: Advanced instance transformation controls
+3. **At Object**
+   - All agents face toward target object
+   - **Optional**: Add randomization to object-facing
+   - **Use**: Audience facing stage/screen
 
-**Parameters**:
-- **At Object**: Target object for placement
-- **Randomize**: Enable randomization features
+## Agent Configuration
 
-#### Transformation Controls
-**Instance Translation**:
-- **Offset**: Position offset from base placement
-- **Translation Local Space**: Use local coordinates for offsets
+### Input Collections
+- **Animated Agents**: Collections with idle animations
+- **Multiple Collections**: Support for varied agent types
 
-**Instance Rotation**:
-- **Rotation Local Space**: Local coordinate rotation
-- *Advanced orientation adjustments*
+### Probability Control
+- **Method 1**: Slider-based probability per collection
+- **Method 2**: Attribute-based assignment
+  - **Face Attributes**: Control by UV face data
+  - **Instance Attributes**: Control by instance properties
+- **Example**: Different agent types for different seating sections
 
-**Instance Scale**:
-- **Scale Local Space**: Local coordinate scaling
-- *Size variations within the formation*
+### Customization
+- **Custom Collections**: Import additional agent types
+- **Clothing Changes**: Modify agent appearances
+- **Collection Probability**: Balance appearance rates
 
-## Workflow
+## Typical Workflow
 
-### Phase 1: Input Method Selection
-**Choose based on your scene setup:**
+1. **Setup Distribution**
+   - Choose distribution type based on seating layout
+   - Set fill factor for crowd density
+   - Use weight paint for selective density
 
-**Option A: On Face Method**
-1. Create a plane and scale/rotate to fit seating area
-2. Ensure proper UV mapping on the face
-3. Set Count X/Y for grid dimensions
+2. **Configure Orientation**
+   - Set default rotation or choose random/object-facing
+   - Adjust scale if needed
 
-**Option B: On Instance Method**
-1. Use Geometry Nodes to create chair/seat instances
-2. Reference the GN object in the system
-3. Agents automatically place on each instance
+3. **Assign Agents**
+   - Select agent collections
+   - Set probabilities via slider or attributes
+   - Add custom agents if required
 
-**Option C: On Collection Objects**
-1. Gather placement objects into a collection
-2. Reference the collection in the system
-3. Agents distribute across all collection objects
+4. **Fine-tune**
+   - Adjust translations for precise positioning
+   - Tune rotation randomization
+   - Balance collection probabilities
 
-**Option D: On Vertex Method**
-1. Use mesh with vertex layout matching seating
-2. Apply vertex groups/weight painting for density control
-3. Adjust Fill Factor for overall density
+## Best Practices
 
-### Phase 2: Agent Configuration
-1. Select agent objects or collections
-2. Choose Object or Collection input type
-3. Set up agent properties and variations
-
-### Phase 3: Placement Refinement
-1. Adjust Rotation Type for proper orientation
-2. Use Random settings for natural variation
-3. Fine-tune Mix Factor for balance between order and randomness
-
-### Phase 4: Advanced Transformations
-1. Use At Object panel for specific placement adjustments
-2. Apply offsets and local transformations
-3. Adjust instance scaling for size variations
+- Use **On Collection Objects** for pre-built stadium seats
+- Use **On Face** with weight paint for organic crowd patterns
+- Combine **At Object** rotation with slight randomization for natural audiences
+- Use face/instance attributes for section-based crowd variety
+- Start with lower fill factors and increase as needed
 
 ## Use Cases
 
-### Venue Seating
-- Theater audiences
-- Stadium crowds
-- Concert seating arrangements
-- Lecture hall populations
-
-### Event Planning
-- Conference seating layouts
-- Wedding ceremony arrangements
-- Exhibition booth assignments
-- Ceremonial formations
-
-### Architectural Visualization
-- Building occupancy simulations
-- Space planning with populated areas
-- Venue capacity testing
-
-### Entertainment Production
-- Film/TV crowd scenes in venues
-- Game level population
-- Virtual event planning
-
-## Advanced Techniques
-
-### Multi-Method Workflow
-- Combine On Face for main seating + On Vertex for VIP sections
-- Use On Instance for fixed seating + On Collection for special areas
-- Layer methods for complex venue layouts
-
-### Weight Painting for Density
-- Paint high-density areas for premium seating
-- Create sparse areas for aisles and walkways
-- Animate weight maps for dynamic crowd changes
-
-### Geometry Nodes Integration
-- Create sophisticated instance patterns with GN
-- Use attribute-based variations for realistic seating
-- Combine with scatter systems for hybrid approaches
-
-## Key Features
-
-- **Multiple Input Methods**: Flexible placement options for any scenario
-- **Precision Grid Control**: Exact row/column arrangements with On Face
-- **Instance Awareness**: Perfect alignment with existing geometry
-- **Vertex Group Integration**: Advanced density control through weight painting
-- **Transformation Flexibility**: Local/global space controls for perfect alignment
-- **Natural Variation**: Controlled randomness for organic-looking crowds
-
-## Pro Tips
-
-### Face Method Best Practices
-- Use a single quad face for best results
-- Ensure proper UV scaling to match venue proportions
-- Adjust Count X/Y to match actual seating dimensions
-
-### Instance Method Optimization
-- Pre-generate chair instances with Geometry Nodes
-- Use instances with consistent orientation for uniform results
-- Combine with vertex groups for section-based variations
-
-### Vertex Method Advanced Use
-- Create vertex groups for different ticket sections
-- Use weight painting for gradual density transitions
-- Animate vertex weights for crowd movement simulations
-
-The Static Stadium system provides venue-specific crowd distribution with architectural precision, offering multiple workflow options to match any seating arrangement scenario from simple theaters to complex stadium layouts.
+- Sports stadium crowds
+- Theater and cinema audiences
+- Conference and event seating
+- Concert venues
+- Graduation ceremonies

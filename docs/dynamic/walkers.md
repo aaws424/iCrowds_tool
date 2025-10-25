@@ -1,5 +1,4 @@
-# Walkers System Documentation
-
+# Walkers iCrowd System - User Documentation
 ## Overview
 
 The Walkers System is a specialized crowd simulation tool designed for controlled pedestrian movement along predefined paths. This system creates organized lane-based traffic flow with configurable agent behavior and path following.

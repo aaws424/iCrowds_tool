@@ -1,177 +1,154 @@
-# iCrowds Static On Ground Documentation
-
+# On Ground iCrowd System - User Documentation
 ## Overview
-The **Static On Ground** system is a comprehensive terrain-based crowd distribution tool that scatters agents across surfaces with precise control over placement, density, and grouping. It supports both individual agent placement and clustered groupings for natural-looking crowd formations.
+The On Ground System creates natural-looking static crowds scattered across terrain, perfect for park scenes, outdoor events, queues, and social gatherings with both individual agents and social groups.
 
-## Core Components
+## Distribution Tab
 
-### Global Inputs
-**Purpose**: Define the base environment and agent sources
+### Basic Setup
+- **View Mode**: Render - Standard visualization
+- **Terrain**: On Ground Terrain - Input terrain collection for agent placement
 
-**Parameters**:
-- **Terrain**: Base surface for agent placement
-- **Agents**: Source objects or collections for scattering
-- **Agent Input Type**: Switch between Object or Collection input methods
+### Distribution Types
 
-### Singles Distribution System
-**Purpose**: Place individual agents with controlled spacing and variation
+#### 1. Singles
+**Individual scattered agents**
+- **Density**: 0.200 - Overall density of individual agents
+- **Min Distance**: 1m - Minimum spacing between single agents
+- **Seed**: 1 - Randomization pattern
+- **Max Agents**: 100,000.000 - Maximum number limit
 
-#### Density_Singles Panel
-**Placement Controls**:
-- **Density_Singles**: Overall agent concentration level
-- **Min_Distance_Singles**: Minimum spacing between individual agents
-- **Seed_Singles**: Randomization seed for placement variation
-- **max_Singles**: Maximum number of agents to place
+#### 2. Clusters
+**Social groups and clusters**
+- **Density**: 0.060 - Density of cluster centers
+- **Min Distance**: 6.39m - Spacing between different clusters
+- **Seed**: 0 - Randomization pattern
+- **Max Clusters**: 100,000.000 - Maximum cluster count
 
-#### Masks_Singles
-**Placement Restrictions**:
-- **Vertex Group Mask_Singles**: Use vertex groups to define density areas
-- **Inside Sphere Mask_Singles**: Spherical boundary constraints
+### Distribution Controls
 
-#### Personal Space_Singles
-**Natural Spacing**:
-- **Relax Iterations_Singles**: Physics passes for optimal spacing
-- **Space Min_Singles**: Minimum personal space between agents
-- **Space Max_Singles**: Maximum personal space allowance
-- **Space Seed_Singles**: Randomization for natural spacing variation
+#### Weight Painting
+- **Brush Tool**: Paint density variations directly on terrain
+- **Vertex Group Mask**: Use predefined vertex groups for density control
+- **Application**: Create natural density variations like pathways vs open areas
 
-#### Rotation_Singles
-**Orientation Control**:
-- **Up Direction_Singles**: Surface normal alignment
-- **Look Direction_Singles**: Forward orientation direction
+#### Sphere Mask
+- **Sphere Object**: Use sphere objects to define inclusion/exclusion zones
+- **Edit**: Modify sphere position and radius for precise area control
 
-#### Random_Singles
-**Placement Variation**:
-- **Random Min_Singles**: Minimum random offset
-- **Random Max_Singles**: Maximum random offset
-- **Random Seed_Singles**: Randomization control
+### Personal Space System
+- **Relax Iterations**: 12 - Processing passes for collision resolution
+- **Min Distance**: 0.500m - Minimum personal space between agents
+- **Max Distance**: 1.000m - Maximum personal space buffer
+- **Seed**: 0 - Randomization for personal space variation
 
-#### At Object_Singles Panel
-**Object-Based Placement**:
-- **At Object_Singles**: Target objects for placement
-- **Add Randomness_Singles**: Introduce variation to object-based placement
+### Cluster Variations
 
-#### Scale Variations_Singles
-**Size Diversity**:
-- **Scale Variation_Singles**: Enable/disable size variations
-- **Scale Min_Singles**: Minimum agent scale
-- **Scale Max_Singles**: Maximum agent scale
-- **Scale Seed_Singles**: Scale randomization control
+#### Radius Settings
+- **Min Radius**: 0.000m - Smallest cluster size
+- **Max Radius**: 1.000m - Largest cluster size
+- **Seed**: 6 - Randomization pattern
+- **Relax Iterations**: 1.329 - Cluster formation quality
+- **Noise**: 1.000 - Natural variation in cluster shapes
 
-### Clusters Distribution System
-**Purpose**: Create natural group formations with clustered agent placement
+#### Population Settings
+- **Min Count**: 5 - Minimum agents per cluster
+- **Max Count**: 12 - Maximum agents per cluster
+- **Seed**: 0 - Randomization for cluster sizes
 
-#### Density_Clusters Panel
-**Cluster Density**:
-- **Density_Clusters**: Overall cluster concentration
-- **Min Distance_Clusters**: Spacing between cluster centers
-- **Seed_Clusters**: Cluster placement randomization
-- **max_Clusters**: Maximum number of clusters
+#### Placement Settings
+- **Offset**: Random positioning variation within clusters
+- **Creates**: More organic, natural-looking group formations
 
-#### Mask_Clusters
-**Cluster Placement Restrictions**:
-- **Vertex Group Mask_Clusters**: Density control via vertex groups
-- **Inside Sphere Mask_Clusters**: Spherical boundary for clusters
+## Settings Tab
 
-#### Cluster Variations_Clusters
-**Group Configuration**:
-- **Radius_Clusters**: Overall cluster size control
-- **Radius Min_Clusters**: Minimum cluster radius
-- **Radius Max_Clusters**: Maximum cluster radius
-- **Radius Seed_Clusters**: Cluster size randomization
-- **Count_Clusters**: Agents per cluster
-- **Count Min_Clusters**: Minimum agents per cluster
-- **Count Max_Clusters**: Maximum agents per cluster
-- **Count Seed_Clusters**: Agent count randomization
+### Orientation Control
 
-#### Offset_Clusters Panel
-**Placement Refinement**:
-- **Offset_Clusters**: Enable cluster position offsets
-- **Detail_Clusters**: Offset refinement level
-- **Random Offset_Clusters**: Random position variation
-- **Offset Min_Clusters**: Minimum offset distance
-- **Offset Max_Clusters**: Maximum offset distance
-- **Offset Seed_Clusters**: Offset randomization
+#### Rotation Modes
+1. **Default**
+   - Consistent facing direction across all agents
+   - Uniform crowd appearance
 
-#### Personal Space_Clusters
-**Intra-Cluster Spacing**:
-- **Relax Iterations_Clusters**: Physics smoothing within clusters
-- **Space Min_Clusters**: Minimum spacing between cluster members
-- **Space Max_Clusters**: Maximum spacing allowance
-- **Space Seed_Clusters**: Spacing variation control
+2. **Randomize**
+   - Random rotation per agent
+   - Natural-looking varied crowd
+   - **Control**: Adjust randomization intensity
 
-#### Rotation_Clusters
-**Cluster Orientation**:
-- **Up Direction_Clusters**: Surface alignment for clusters
-- **Look Direction_Clusters**: Cluster facing direction
+3. **At Object**
+   - All agents face toward target object
+   - **Optional**: Add randomization for natural variation
+   - **Use**: Crowds facing a stage, speaker, or point of interest
 
-#### Random_Clusters
-**Cluster Variation**:
-- **Random Min_Clusters**: Minimum cluster variation
-- **Random Max_Clusters**: Maximum variation range
-- **Random Seed_Clusters**: Cluster randomization control
+### Scale Variations
+- **Size Randomization**: Control agent size variations
+- **Natural Variation**: Avoid uniform, artificial appearance
+- **Scale Range**: Adjust minimum and maximum size parameters
 
-## Workflow
+## Agent Configuration
 
-### Phase 1: Terrain and Agent Setup
-1. Define the base terrain surface for placement
-2. Select agent objects or collections for scattering
-3. Choose between Object or Collection input method
+### Input Requirements
+- **Animated Agents**: Collections with idle animations
+- **Multiple Collections**: Support for varied agent types
+- **Probability Control**: Balance between different agent collections
 
-### Phase 2: Distribution Method Selection
-**Option A: Singles Distribution**
-1. Configure density and minimum spacing parameters
-2. Set up masking for controlled placement areas
-3. Adjust personal space for natural agent spacing
-4. Configure rotation and scale variations
+### Customization
+- **Custom Collections**: Import additional agent types
+- **Clothing Variations**: Modify agent appearances within collections
+- **Collection Blending**: Mix different agent types naturally
 
-**Option B: Clusters Distribution**
-1. Set cluster density and spacing between groups
-2. Define cluster size parameters (radius and agent count)
-3. Configure intra-cluster spacing and organization
-4. Apply offsets and variations for natural group formations
+## Typical Workflow
 
-### Phase 3: Masking and Refinement
-1. Use vertex groups to control density distribution
-2. Apply spherical masks for boundary control
-3. Fine-tune placement with offset and detail parameters
-4. Adjust randomization seeds for controlled variation
+1. **Terrain Setup**
+   - Prepare ground terrain collection
+   - Define areas using weight painting or sphere masks
 
-### Phase 4: Final Adjustments
-1. Review and tweak scale variations
-2. Optimize personal space parameters
-3. Finalize rotation and orientation settings
-4. Balance randomness for natural-looking results
+2. **Singles Distribution**
+   - Set density for individual agents
+   - Adjust personal space for natural spacing
+   - Use weight painting for area-specific density
+
+3. **Clusters Setup**
+   - Configure cluster density and spacing
+   - Set cluster size variations (radius and population)
+   - Adjust cluster formation parameters
+
+4. **Orientation & Scale**
+   - Choose rotation mode based on scene needs
+   - Set scale variations for natural appearance
+   - Fine-tune facing directions
+
+5. **Agent Assignment**
+   - Select agent collections
+   - Balance probabilities between collections
+   - Add custom agents if needed
+
+## Best Practices
+
+### For Realistic Results
+- Use **Singles** for background crowds and individuals
+- Use **Clusters** for social groups and gatherings
+- Combine both types for most natural scenes
+- Use **weight painting** to follow terrain features and paths
+- Apply **personal space** to prevent agent overlapping
+
+### Performance Optimization
+- Start with lower densities and increase gradually
+- Use appropriate relax iterations (higher = better quality but slower)
+- Balance cluster counts with scene complexity
+- Use sphere masks to limit calculations to visible areas
+
+### Natural Appearance Tips
+- Use random rotation with moderate variation
+- Apply scale variations for diverse crowd
+- Mix cluster sizes for organic social groups
+- Use noise and offset for irregular cluster shapes
 
 ## Use Cases
 
-### Natural Environments
-- Scattering vegetation and natural elements
-- Wildlife placement in ecosystems
-- Rock and debris distribution on terrain
+- **Park scenes** with people sitting and standing
+- **Outdoor events** like concerts or festivals
+- **Queue simulations** for attractions or services
+- **Public squares** and gathering places
+- **Beach scenes** with scattered groups
+- **Marketplaces** and social spaces
 
-### Urban Planning
-- Pedestrian placement in public spaces
-- Street furniture and object distribution
-- Park and recreational area population
-
-### Event Scenarios
-- Audience seating arrangements
-- Exhibition booth placement
-- Festival attendee distribution
-
-### Architectural Visualization
-- People in building environments
-- Furniture and object placement in interiors
-- Context population around structures
-
-## Key Features
-
-- **Dual Distribution Methods**: Choose between individual or clustered placement
-- **Precise Density Control**: Vertex group masking for area-specific density
-- **Natural Spacing Algorithms**: Physics-based personal space optimization
-- **Comprehensive Randomization**: Controlled variation for organic results
-- **Scalable Workflow**: Handle from small scenes to massive distributions
-- **Non-Destructive Workflow**: Parameters can be adjusted iteratively
-
-The Static On Ground system provides artist-friendly controls for creating believable, naturally distributed crowds and objects across any terrain surface, with advanced options for both individual placement and group formations.
+The On Ground System creates the most organic and natural-looking static crowds, ideal for environments where people gather informally and social dynamics are important.

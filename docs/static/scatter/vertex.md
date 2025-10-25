@@ -1,174 +1,139 @@
-# iCrowds Static On Vertex Documentation
-
+# On Vertex iCrowd System - User Documentation
 ## Overview
-The **Static On Vertex** system is a mesh-based distribution tool that places agents precisely on mesh vertices with controlled variation and spacing. It enables exact placement control using existing mesh topology while maintaining natural-looking variations through comprehensive randomization options.
+The On Vertex System precisely places agents on mesh vertices, providing exact control over agent positioning for structured arrangements and specific placement requirements.
 
-## Core Components
+## Distribution Tab
 
-### Global Inputs
-**Purpose**: Define the base environment and agent sources
+### Basic Setup
+- **View Mode**: Render - Standard visualization mode
+- **Terrain**: On Curve Terrain - Ground surface for agent alignment
 
-**Parameters**:
-- **Terrain**: Reference surface for orientation and placement context
-- **Agents**: Source objects or collections for vertex-based distribution
-- **Agent Input Type**: Switch between Object or Collection input methods
+### Vertex Distribution
+- **Mesh Object**: Input the object containing vertices for agent placement
+- **Distribution**: One agent per vertex (On vertex distribution)
+- **Max Agents Num**: 100,000.000 - Total maximum agents in system
 
-### Vertex Distribution System
-**Purpose**: Control agent placement directly on mesh vertices
+### Positioning Controls
 
-#### Density Panel
-**Placement Controls**:
-- **Mesh**: Target mesh object whose vertices will host agents
-- **Max**: Maximum number of agents to place (vertex-limited)
-- *Feature: Vertex group masking for selective placement*
+#### Personal Space
+- **Relax Iterations**: 12 - Processing passes for collision resolution
+- **Min Distance**: 0.500 m - Minimum space between agents
+- **Max Distance**: 1.000 m - Maximum personal buffer
+- **Seed**: 0 - Randomization pattern
 
-### Personal Space
-**Purpose**: Maintain natural spacing between vertex-placed agents
+#### Position Variation
+- **Position Variation**: 0.000 - Random offset from exact vertex positions
+- **Seed**: 0 - Randomization pattern
+- **Usage**: Add imperfection to avoid overly perfect grid patterns
 
-**Parameters**:
-- **Relax Iterations**: Physics smoothing passes for optimal vertex spacing
-- **Space Min**: Minimum distance between agents on adjacent vertices
-- **Space Max**: Maximum allowable spacing adjustment
-- **Space Seed**: Randomization for organic spacing variation
+## Settings Tab
 
-### Position Variations
-**Purpose**: Introduce controlled offsets from exact vertex positions
+### Orientation Control
 
-**Parameters**:
-- **Position Variation**: Amount of positional randomness from vertex centers
-- **Position Seed**: Randomization control for position variations
+#### Rotation Modes
+1. **Default**
+   - Consistent facing direction for all agents
+   - Uniform appearance across vertex points
 
-### Rotation Variations
-**Purpose**: Control agent orientation on vertices
+2. **Random**
+   - Random rotation per agent
+   - Creates natural variation in facing directions
 
-**Parameters**:
-- **Up Direction**: Surface normal alignment for natural standing
-- **Look Direction**: Forward orientation control (random or directed)
+3. **At Object**
+   - All agents face toward a target object
+   - Useful for crowds facing a stage or point of interest
 
-### Random
-**Purpose**: Additional randomization for natural distribution
+#### Up Direction
+- **Default**: Automatic alignment with terrain normals
+- **Function**: Ensures agents stand properly on ground surface
+- **Adjustment**: Can be modified for special orientation needs
 
-**Parameters**:
-- **Random Min**: Minimum random influence
-- **Random Max**: Maximum random influence
-- **Random Seed**: Overall randomization control
+### Scale Variation
+- **Min Scale**: 0.900 - Smallest agent size (90% of normal)
+- **Max Scale**: 1.000 - Largest agent size (100% of normal)
+- **Seed**: 0 - Randomization pattern for size variation
+- **Effect**: Creates natural size diversity in the crowd
 
-### At Object Panel
-**Purpose**: Object-specific vertex placement
+## Agent Configuration
 
-**Parameters**:
-- **At Object**: Target specific objects for vertex placement
-- **Add Randomness**: Introduce variation to object-based placement
+### Input Requirements
+- **Animated Agents**: Collections with idle animations
+- **Multiple Collections**: Support for varied agent types
+- **Probability Control**: Balance between different agent collections
 
-### Scale Variations
-**Purpose**: Create size diversity among vertex-placed agents
+### Customization
+- **Custom Collections**: Import additional agent types
+- **Clothing Variations**: Modify agent appearances
+- **Collection Blending**: Mix different agent types naturally
 
-**Parameters**:
-- **Scale Variation**: Enable/disable agent size variations
-- **Scale Min**: Minimum agent scale factor
-- **Scale Max**: Maximum agent scale factor
-- **Scale Seed**: Scale randomization control
+## Mesh Preparation Guide
 
-## Key Innovation: Vertex-Based Precision with Natural Variation
+### Optimal Vertex Setup
+1. **Even Distribution**: Vertices should be evenly spaced for consistent agent placement
+2. **Density Control**: More vertices = more agents in that area
+3. **Mesh Types**: Works with any mesh object containing vertices
+4. **Vertex Groups**: Use vertex groups for selective agent placement
 
-### Exact Vertex Placement
-**Core Feature**: Agents are placed precisely on mesh vertices while maintaining organic feel:
+### Creating Vertex Patterns
+- **Grid Meshes**: For organized, grid-like formations
+- **Scattered Points**: For random but controlled placement
+- **Custom Shapes**: Arrange vertices in specific patterns or logos
 
-- **Vertex-Level Control**: Each agent corresponds to a specific vertex
-- **Topology-Driven**: Distribution follows mesh edge flow and density
-- **Non-Destructive**: Original mesh remains untouched
+## Typical Workflow
 
-### Vertex Group Masking
-**Advanced Control**: Use vertex groups to selectively enable/disable placement:
+1. **Mesh Preparation**
+   - Create or select mesh with desired vertex arrangement
+   - Ensure vertex density matches required agent density
+   - Use vertex groups for area-specific control
 
-- **Density Zones**: Create high-density and sparse areas using vertex weights
-- **Pattern Control**: Design specific formation patterns through vertex selection
-- **Animated Masks**: Use animated vertex groups for dynamic placement changes
+2. **Distribution Setup**
+   - Input mesh object into distribution panel
+   - Set maximum agent count if needed
+   - Adjust position variation for natural imperfection
 
-## Workflow
+3. **Spacing Configuration**
+   - Set personal space parameters
+   - Adjust relax iterations for collision quality
+   - Fine-tune min/max distances
 
-### Phase 1: Mesh Preparation
-1. Create or import the target mesh with appropriate vertex density
-2. Use vertex groups to define placement zones and density variations
-3. Ensure mesh has sufficient vertices for desired agent count
+4. **Orientation & Scale**
+   - Choose rotation mode based on scene requirements
+   - Set scale variation for natural size diversity
+   - Configure up direction for proper ground alignment
 
-### Phase 2: Agent and Mesh Setup
-1. Select the target mesh for vertex-based distribution
-2. Choose agent objects or collections
-3. Set Agent Input Type (Object or Collection)
+5. **Agent Assignment**
+   - Select agent collections
+   - Balance probabilities between collections
+   - Apply customizations as needed
 
-### Phase 3: Density Configuration
-1. Set Max parameter to control total agent count
-2. System automatically uses available vertices up to the maximum
-3. Vertex group masks automatically limit placement to weighted areas
+## Best Practices
 
-### Phase 4: Spacing and Naturalization
-1. Configure Personal Space to prevent overcrowding on dense vertices
-2. Adjust Position Variations for organic offsets from exact vertex positions
-3. Set Rotation parameters for natural orientation
+### For Precise Placement
+- Use **position variation 0.000** for exact vertex alignment
+- Create custom vertex layouts for specific formations
+- Use **relax iterations** to prevent agent overlapping
+- Combine with **vertex groups** for complex placement patterns
 
-### Phase 5: Variation Controls
-1. Enable Scale Variations for size diversity
-2. Use Random parameters to introduce controlled chaos
-3. Fine-tune randomization seeds for reproducible results
+### Mesh Optimization
+- Use appropriate vertex density for required agent count
+- Avoid overly dense meshes unless high agent count is needed
+- Use simple meshes for large-scale simulations
+- Test different mesh types for various formation needs
 
-### Phase 6: Advanced Placement
-1. Use At Object for specific object targeting
-2. Apply additional randomness for object-based variations
-3. Balance exact placement with natural-looking results
+### Natural Appearance Tips
+- Use **random rotation** with vertex-based placement
+- Apply **scale variation** to avoid uniform look
+- Use slight **position variation** to break perfect patterns
+- Mix agent collections for visual diversity
 
 ## Use Cases
 
-### Architectural Precision
-- People placed exactly on seating vertices
-- Furniture on floor plan vertices
-- Decorative elements on architectural features
+- **Stadium Seating**: Precise seat-by-seat placement
+- **Military Formations**: Exact positional arrangements
+- **Theater Audiences**: Controlled seating patterns
+- **Ceremonial Events**: Structured participant placement
+- **Architectural Visualization**: Precise population of spaces
+- **Logo Formations**: Spelling out words or shapes with agents
+- **Grid Patterns**: Organized displays and exhibitions
 
-### Event Planning
-- Audience members on seating vertices
-- Participants in organized formations
-- Exhibits on precise layout points
-
-### Natural Distributions
-- Plants on terrain vertices following contours
-- Rocks on geological feature vertices
-- Animals on ecosystem analysis points
-
-### Technical Applications
-- Data visualization with agent representation
-- Sensor placement simulations
-- Urban planning with exact positioning
-
-## Advanced Techniques
-
-### Vertex Group Masking Strategies
-- **Weight-Based Density**: Use vertex weights to control probability of placement
-- **Pattern Creation**: Design specific formations through vertex selection
-- **Animated Distributions**: Animate vertex groups for moving placement zones
-
-### Multi-Mesh Distributions
-- Combine multiple meshes for complex distributions
-- Use different vertex densities for varied concentration areas
-- Create hierarchical placement systems
-
-### Hybrid Approaches
-- Combine vertex placement with other distribution methods
-- Use vertex system for base placement with other systems for variation
-- Create layered distribution effects
-
-## Key Features
-
-- **Precision Placement**: Exact control through mesh vertices
-- **Vertex Group Masking**: Advanced selective placement control
-- **Natural Variation**: Comprehensive randomization while maintaining structure
-- **Topology-Aware**: Distribution follows mesh flow and density
-- **Non-Destructive**: Original mesh remains intact
-- **Scalable**: Works with simple to complex meshes
-
-## Performance Considerations
-
-- **Vertex Count**: Performance scales with vertex quantity
-- **Optimization**: Use optimized meshes with appropriate vertex density
-- **LOD Strategies**: Implement level-of-detail for distant distributions
-
-The Static On Vertex system provides the perfect balance between precision control and natural variation, allowing artists to create exact formations while maintaining organic-looking results through comprehensive variation controls and vertex group masking capabilities.
+The On Vertex System provides the most precise control over agent positioning, making it ideal for scenarios requiring exact placement, structured formations, or specific spatial arrangements where vertex-level accuracy is essential.
