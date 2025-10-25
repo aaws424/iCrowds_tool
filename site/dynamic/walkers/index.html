@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Scatter</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/">Overview</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/ground/">Scatter on Ground</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/curve/">Scatter on Curve</a>
@@ -70,102 +68,74 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Walkers System</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#10-system-overview">1.0 System Overview</a>
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#20-quick-start">2.0 Quick Start</a>
+    <li class="toctree-l2"><a class="reference internal" href="#distribution">Distribution</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#21-basic-setup">2.1 Basic Setup</a>
+    <li class="toctree-l3"><a class="reference internal" href="#viewer">Viewer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#terrain-configuration">Terrain Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-setup">Distribution Setup</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#path-definition">Path Definition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#density-control">Density Control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#collision-avoidance">Collision Avoidance</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#30-input-configuration">3.0 Input Configuration</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#31-primary-inputs">3.1 Primary Inputs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-lifecycle">Agent Lifecycle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#system-configuration">System Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lane-management">Lane Management</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lane-generation">Lane Generation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#movement-variation">Movement Variation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#speed-control">Speed Control</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#40-agent-configuration">4.0 Agent Configuration</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#41-agent-assignment">4.1 Agent Assignment</a>
+        </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#42-path-parameters">4.2 Path Parameters</a>
+    <li class="toctree-l2"><a class="reference internal" href="#agents-configuration">Agents Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-collections">Agent Collections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#simplified-agent-management">Simplified Agent Management</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#50-motion-control">5.0 Motion Control</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#51-noise-parameters">5.1 Noise Parameters</a>
+    <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#52-speed-management">5.2 Speed Management</a>
+    <li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#60-density-spacing">6.0 Density &amp; Spacing</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#61-density-control">6.1 Density Control</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#62-personal-space-configuration">6.2 Personal Space Configuration</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#70-implementation-guide">7.0 Implementation Guide</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#71-basic-workflow">7.1 Basic Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#72-advanced-configurations">7.2 Advanced Configurations</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#80-animation-integration">8.0 Animation Integration</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#81-character-requirements">8.1 Character Requirements</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#82-motion-blending">8.2 Motion Blending</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#90-performance-optimization">9.0 Performance Optimization</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#91-efficiency-guidelines">9.1 Efficiency Guidelines</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#92-quality-settings">9.2 Quality Settings</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#100-use-cases">10.0 Use Cases</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#101-urban-scenarios">10.1 Urban Scenarios</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#102-architectural-visualization">10.2 Architectural Visualization</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#110-troubleshooting">11.0 Troubleshooting</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#111-common-issues">11.1 Common Issues</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#120-technical-notes">12.0 Technical Notes</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#121-curve-requirements">12.1 Curve Requirements</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#122-system-integration">12.2 System Integration</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a>
     </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../city/">City System</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -191,196 +161,131 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="walkers-icrowd-simulation-system-user-documentation">Walkers iCrowd Simulation System - User Documentation</h1>
-<h2 id="10-system-overview">1.0 System Overview</h2>
-<p>The Walkers Path System is a curve-based pedestrian animation tool that generates animated characters moving along user-defined paths. The system creates natural movement patterns around drawn curves with configurable lane behavior, density, and motion parameters.</p>
-<h2 id="20-quick-start">2.0 Quick Start</h2>
-<h3 id="21-basic-setup">2.1 Basic Setup</h3>
+                <h1 id="walkers-icrowd-system-user-documentation">Walkers iCrowd System - User Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Walkers System is a specialized crowd simulation tool designed for controlled pedestrian movement along predefined paths. This system creates organized lane-based traffic flow with configurable agent behavior and path following.</p>
+<h2 id="distribution">Distribution</h2>
+<h3 id="viewer">Viewer</h3>
+<ul>
+<li><strong>Render</strong>: Standard visualization mode for agent display</li>
+</ul>
+<h3 id="terrain-configuration">Terrain Configuration</h3>
+<ul>
+<li><strong>Collection</strong>: Terrain setup consistent with other systems in the suite</li>
+</ul>
+<h3 id="distribution-setup">Distribution Setup</h3>
+<h4 id="path-definition">Path Definition</h4>
+<ul>
+<li><strong>Distribution Object</strong>: Input a collection of curves that define walking paths</li>
+<li><strong>Walkers Curve</strong>: Curves act as the central guide for lane generation</li>
+<li><strong>Edit</strong>: Modify curve properties and placement</li>
+</ul>
+<h4 id="density-control">Density Control</h4>
+<ul>
+<li><strong>Density</strong>: 1.000 - Controls the number of people distributed across lanes</li>
+<li><strong>Randomness</strong>: 1.000 - Randomizes walker distribution along the lanes</li>
+<li><strong>Seed</strong>: 0 - Randomization seed for consistent patterns</li>
+</ul>
+<h4 id="collision-avoidance">Collision Avoidance</h4>
+<ul>
+<li><strong>Personal Space</strong>: Individual buffer zone for each agent</li>
+<li><strong>Min</strong>: 0.000 - Minimum personal space distance</li>
+<li><strong>Max</strong>: 1.000 - Maximum personal space distance</li>
+<li><strong>Seed</strong>: 0 - Randomization seed for personal space variation</li>
+</ul>
+<p><strong>Note</strong>: Personal space system activates when System Type is set to Physics (not Animation)</p>
+<h2 id="settings">Settings</h2>
+<h3 id="agent-lifecycle">Agent Lifecycle</h3>
+<ul>
+<li><strong>Loop Type</strong>: Controls agent behavior at path endpoints</li>
+<li><strong>Respawn</strong>: Agents reappear at the start when reaching the end</li>
+<li><strong>Delete</strong>: Agents are removed from simulation when reaching the end</li>
+</ul>
+<h3 id="system-configuration">System Configuration</h3>
+<ul>
+<li><strong>System Type</strong>: </li>
+<li><strong>Animation</strong>: Uses animated movement (default)</li>
+<li><strong>Physics</strong>: Enables physical interactions and collision avoidance</li>
+</ul>
+<h3 id="lane-management">Lane Management</h3>
+<h4 id="lane-generation">Lane Generation</h4>
+<ul>
+<li><strong>Count</strong>: 4 - Number of lane instances generated left and right of input curves</li>
+<li><strong>Direction</strong>: 0.632 - Controls lane direction variation</li>
+<li>Values &gt; 0.5 create opposing traffic flows</li>
+<li>Some agents move forward, others move in reverse direction</li>
+</ul>
+<h4 id="movement-variation">Movement Variation</h4>
+<ul>
+<li><strong>Noise</strong>: Adds natural variation to agent movement</li>
+<li><strong>Power</strong>: 1.000 - Strength of noise influence</li>
+<li><strong>Offset</strong>: 0.000 - Base offset for noise pattern</li>
+<li><strong>Scale</strong>: 0.100 - Size of noise pattern effect</li>
+</ul>
+<h4 id="speed-control">Speed Control</h4>
+<ul>
+<li><strong>Speed</strong>: 1.000 - Controls the movement speed of all agents</li>
+</ul>
+<h2 id="agents-configuration">Agents Configuration</h2>
+<h3 id="agent-collections">Agent Collections</h3>
+<ul>
+<li><strong>Single Collection Input</strong>: Unlike other systems, accepts only one collection type</li>
+<li><strong>Animated Walking Meshes</strong>: Collection must contain pre-animated walking animation meshes</li>
+<li><strong>No Gender Separation</strong>: All agents use the same animation collection</li>
+</ul>
+<h3 id="simplified-agent-management">Simplified Agent Management</h3>
+<ul>
+<li>No individual agent customization (clothes, actions)</li>
+<li>No probability settings for different agent types</li>
+<li>Focus on uniform crowd behavior rather than individual variation</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
 <ol>
-<li><strong>Create a curve</strong> in your scene</li>
-<li><strong>Connect the curve</strong> to "Walkers Curve" input</li>
-<li><strong>Set Agent Object</strong> or <strong>Collection</strong> for characters</li>
-<li><strong>Adjust Count</strong> for desired number of walkers</li>
-<li><strong>Play timeline</strong> to activate animation</li>
+<li><strong>Path Creation</strong>:</li>
+<li>Create and position guide curves for desired walking paths</li>
+<li>
+<p>Organize curves into a collection for system input</p>
+</li>
+<li>
+<p><strong>Distribution Setup</strong>:</p>
+</li>
+<li>Set lane count for path width</li>
+<li>Adjust density for crowd size</li>
+<li>
+<p>Configure personal space for collision avoidance</p>
+</li>
+<li>
+<p><strong>Behavior Configuration</strong>:</p>
+</li>
+<li>Choose loop type (respawn or delete)</li>
+<li>Set system type (animation or physics)</li>
+<li>
+<p>Adjust direction for traffic flow patterns</p>
+</li>
+<li>
+<p><strong>Movement Tuning</strong>:</p>
+</li>
+<li>Set base movement speed</li>
+<li>Add noise for natural movement variation</li>
+<li>Fine-tune lane directions for realistic traffic patterns</li>
 </ol>
-<h2 id="30-input-configuration">3.0 Input Configuration</h2>
-<h3 id="31-primary-inputs">3.1 Primary Inputs</h3>
-<p><strong>Terrain</strong> (Optional)
-- Purpose: Ground surface for elevation matching
-- Usage: Connect terrain mesh for height alignment</p>
-<p><strong>Input Type</strong>
-- Purpose: Determines how paths are generated
-- Options: Single curve or curve collection</p>
-<p><strong>Walkers Curves/Walkers Curve</strong>
-- Purpose: Path definition for walker movement
-- Usage: Connect Bézier curve or curve collection</p>
-<h2 id="40-agent-configuration">4.0 Agent Configuration</h2>
-<h3 id="41-agent-assignment">4.1 Agent Assignment</h3>
-<p><strong>Object</strong>
-- Purpose: Single character object to duplicate
-- Usage: Connect a mesh object with walk animation</p>
-<p><strong>Collection</strong>
-- Purpose: Multiple character variations
-- Usage: Connect collection of character objects</p>
-<h3 id="42-path-parameters">4.2 Path Parameters</h3>
-<p><strong>Lanes</strong>
-- Purpose: Number of parallel walking paths
-- Effect: Creates multi-lane pedestrian flow
-- Range: 1-8 (typical urban sidewalk capacity)</p>
-<p><strong>Count</strong>
-- Purpose: Total number of walkers on path
-- Effect: Controls pedestrian density
-- Recommendation: Start with 10-20 for testing</p>
-<p><strong>Direction</strong>
-- Purpose: Movement direction along curve
-- Options: Forward, Reverse, Bidirectional</p>
-<p><strong>Loop Type</strong>
-- Purpose: Path cycling behavior
-- Options: 
-  - Single Pass: One-time traversal
-  - Loop: Continuous circulation
-  - Ping-Pong: Forward/reverse alternation</p>
-<h2 id="50-motion-control">5.0 Motion Control</h2>
-<h3 id="51-noise-parameters">5.1 Noise Parameters</h3>
-<p><strong>Power</strong>
-- Purpose: Intensity of path variation
-- Effect: Creates natural path deviations
-- Range: 0.0 (exact path) to 1.0 (maximum variation)</p>
-<p><strong>Offset</strong>
-- Purpose: Lateral position variation
-- Effect: Random lane positioning
-- Usage: Creates organic spacing</p>
-<p><strong>Scale</strong>
-- Purpose: Spatial frequency of noise
-- Effect: Controls deviation pattern scale</p>
-<h3 id="52-speed-management">5.2 Speed Management</h3>
-<p><strong>Speed</strong>
-- Purpose: Base movement velocity
-- Units: Blender units per second
-- Typical: 1.0-2.0 for walking speed</p>
-<h2 id="60-density-spacing">6.0 Density &amp; Spacing</h2>
-<h3 id="61-density-control">6.1 Density Control</h3>
-<p><strong>Density</strong>
-- Purpose: Overall walker concentration
-- Effect: Multiplier for Count parameter
-- Range: 0.0 (none) to 2.0 (double density)</p>
-<p><strong>Randomness</strong>
-- Purpose: Distribution variation
-- Effect: Irregular spacing between walkers
-- Usage: Avoids robotic uniformity</p>
-<p><strong>Seed</strong>
-- Purpose: Randomization control
-- Effect: Unique distribution patterns</p>
-<h3 id="62-personal-space-configuration">6.2 Personal Space Configuration</h3>
-<p><strong>Min/Max Space</strong>
-- Purpose: Inter-walker distance constraints
-- Min: Minimum allowed distance (avoid collision)
-- Max: Maximum allowed distance (maintain group cohesion)</p>
-<p><strong>Seed</strong>
-- Purpose: Personal space randomization
-- Effect: Natural distance variations</p>
-<h2 id="70-implementation-guide">7.0 Implementation Guide</h2>
-<h3 id="71-basic-workflow">7.1 Basic Workflow</h3>
-<pre><code>1. Create and position Bézier curve for desired path
-2. Connect curve to &quot;Walkers Curve&quot; socket
-3. Assign character object/collection to &quot;Object&quot; or &quot;Collection&quot;
-4. Set Count to desired number of walkers (10-50 typical)
-5. Configure Lanes for path width (2-4 for sidewalks)
-6. Adjust Speed for realistic movement (1.2-1.8)
-7. Enable timeline playback to activate animation
-</code></pre>
-<h3 id="72-advanced-configurations">7.2 Advanced Configurations</h3>
-<p><strong>Multi-lane Sidewalk</strong></p>
-<pre><code>- Lanes: 3
-- Count: 25
-- Direction: Bidirectional
-- Loop Type: Loop
-- Power: 0.3 (subtle variation)
-</code></pre>
-<p><strong>Single-file Path</strong></p>
-<pre><code>- Lanes: 1
-- Count: 15
-- Direction: Forward
-- Loop Type: Single Pass
-- Power: 0.1 (minimal deviation)
-</code></pre>
-<h2 id="80-animation-integration">8.0 Animation Integration</h2>
-<h3 id="81-character-requirements">8.1 Character Requirements</h3>
+<h2 id="key-features">Key Features</h2>
 <ul>
-<li>Walk cycle animation required</li>
-<li>Proper armature rigging for natural movement</li>
-<li>Scale matching to scene proportions</li>
+<li><strong>Lane-Based System</strong>: Automatically generates multiple lanes from single curves</li>
+<li><strong>Bidirectional Traffic</strong>: Direction parameter creates natural opposing flows</li>
+<li><strong>Consistent Animation</strong>: All agents use the same walking animation collection</li>
+<li><strong>Controlled Density</strong>: Precise control over agent distribution along paths</li>
+<li><strong>Collision Awareness</strong>: Personal space system prevents agent overlap</li>
 </ul>
-<h3 id="82-motion-blending">8.2 Motion Blending</h3>
+<h2 id="use-cases">Use Cases</h2>
 <ul>
-<li>System automatically matches animation speed to path velocity</li>
-<li>Supports walk/run cycle blending based on speed parameter</li>
-<li>Root motion alignment with path curvature</li>
+<li>Sidewalk and pedestrian walkway simulations</li>
+<li>Museum or exhibition visitor flow</li>
+<li>Emergency egress and crowd movement studies</li>
+<li>Architectural planning for public spaces</li>
+<li>Traffic flow analysis for urban planning</li>
 </ul>
-<h2 id="90-performance-optimization">9.0 Performance Optimization</h2>
-<h3 id="91-efficiency-guidelines">9.1 Efficiency Guidelines</h3>
-<ul>
-<li>Use simplified character meshes for large counts</li>
-<li>Limit Count to scene requirements (typically &lt; 100)</li>
-<li>Use moderate Power values (0.2-0.5) for balance</li>
-<li>Consider instancing for identical characters</li>
-</ul>
-<h3 id="92-quality-settings">9.2 Quality Settings</h3>
-<pre><code>High Quality:
-- Count: 50-100
-- Power: 0.3-0.6
-- High-detail characters
-
-Performance Mode:
-- Count: 10-30
-- Power: 0.1-0.3
-- Low-poly characters
-</code></pre>
-<h2 id="100-use-cases">10.0 Use Cases</h2>
-<h3 id="101-urban-scenarios">10.1 Urban Scenarios</h3>
-<ul>
-<li>Sidewalk pedestrian flows</li>
-<li>Park pathway circulation</li>
-<li>Shopping district foot traffic</li>
-<li>Event venue entry/exit flows</li>
-</ul>
-<h3 id="102-architectural-visualization">10.2 Architectural Visualization</h3>
-<ul>
-<li>Building entrance approaches</li>
-<li>Plaza and courtyard movement</li>
-<li>Stairway and ramp circulation</li>
-<li>Queue simulation for facilities</li>
-</ul>
-<h2 id="110-troubleshooting">11.0 Troubleshooting</h2>
-<h3 id="111-common-issues">11.1 Common Issues</h3>
-<p><strong>Walkers Not Moving</strong>
-- Verify curve connection to correct socket
-- Check timeline is playing
-- Validate character objects have animations</p>
-<p><strong>Uneven Spacing</strong>
-- Adjust Personal Space Min/Max values
-- Reduce Randomness parameter
-- Check curve resolution and length</p>
-<p><strong>Unnatural Movement</strong>
-- Reduce Power parameter for straighter paths
-- Adjust Speed to match animation cycle
-- Verify proper character scaling</p>
-<h2 id="120-technical-notes">12.0 Technical Notes</h2>
-<h3 id="121-curve-requirements">12.1 Curve Requirements</h3>
-<ul>
-<li>Use Bézier curves for smooth paths</li>
-<li>Ensure adequate curve resolution</li>
-<li>Avoid sharp angles for natural movement</li>
-<li>Closed curves work well for looped paths</li>
-</ul>
-<h3 id="122-system-integration">12.2 System Integration</h3>
-<ul>
-<li>Compatible with main crowd system</li>
-<li>Can be used alongside area-based crowds</li>
-<li>Supports hybrid approaches (path + free movement)</li>
-</ul>
-<hr />
-<p><em>Documentation Version: 1.0 | System: Walkers Path Module</em></p>
+<p>This Walkers System provides a streamlined approach for creating organized pedestrian movement patterns with minimal setup complexity, ideal for architectural visualization and urban planning applications where controlled crowd flow is essential.</p>
               
             </div>
           </div><footer>

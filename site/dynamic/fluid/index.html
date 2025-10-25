@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" >Scatter</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/">Overview</a>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/ground/">Scatter on Ground</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../static/scatter/curve/">Scatter on Curve</a>
@@ -70,47 +68,71 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#core-components">Core Components</a>
+    <li class="toctree-l2"><a class="reference internal" href="#distribution">Distribution</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#input-module">Input Module</a>
+    <li class="toctree-l3"><a class="reference internal" href="#view-mode">View Mode</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#motion-engine">Motion Engine</a>
+    <li class="toctree-l3"><a class="reference internal" href="#terrain-configuration">Terrain Configuration</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#movement-control-systems">Movement Control Systems</a>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-types">Distribution Types</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#path-based-movement">Path-Based Movement</a>
+    <li class="toctree-l4"><a class="reference internal" href="#1-distribute-on-terrain">1. Distribute On Terrain</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#attraction-system">Attraction System</a>
+    <li class="toctree-l4"><a class="reference internal" href="#2-distribute-on-vertex">2. Distribute On Vertex</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#repulsion-system">Repulsion System</a>
+    <li class="toctree-l4"><a class="reference internal" href="#3-crowd-system-distribution">3. Crowd System Distribution</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-parameters">Distribution Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#weight-painting">Weight Painting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#speed-thresholds">Speed Thresholds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collision-prevention">Collision Prevention</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#control-objects">Control Objects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#three-control-types">Three Control Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-flow-curves">1. Flow Curves</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-attracters">2. Attracters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-repelers">3. Repelers</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#agents-configuration">Agents Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#predefined-agent-collections">Predefined Agent Collections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#agent-management">Agent Management</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#density-control">Density Control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#agent-settings">Agent Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#customization-options">Customization Options</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-agent-creation">Custom Agent Creation</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-1-distribution-setup">Phase 1: Distribution Setup</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-2-fluid-system-integration">Phase 2: Fluid System Integration</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-3-movement-control">Phase 3: Movement Control</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#phase-4-simulation">Phase 4: Simulation</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#use-cases">Use Cases</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#urban-scenarios">Urban Scenarios</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#entertainment-applications">Entertainment Applications</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#technical-applications">Technical Applications</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a>
+    <li class="toctree-l2"><a class="reference internal" href="#best-practices">Best Practices</a>
     </li>
     </ul>
                   </li>
@@ -119,13 +141,17 @@
                   <li class="toctree-l1"><a class="reference internal" href="../city/">City System</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Agents</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../tutorials/">Tutorials</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/agents/">Customize</a>
+                  </li>
               </ul>
+              <p class="caption"><span class="caption-text">Q&A</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/faq/">FAQ</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../extra/tutorials/">Tutorials</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -151,110 +177,163 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="fluid-icrowd-simulation-system-user-documentation">Fluid iCrowd Simulation System - User Documentation</h1>
+                <h1 id="fluid-icrowd-system-user-documentation">Fluid iCrowd System - User Documentation</h1>
 <h2 id="overview">Overview</h2>
-<p>The <strong>Fluid System</strong> is a dynamic crowd simulation tool that transforms static crowd distributions into living, moving populations. It takes pre-made density layouts from other systems and brings them to life with realistic movement behaviors.</p>
-<h2 id="core-components">Core Components</h2>
-<h3 id="input-module">Input Module</h3>
-<p><strong>Purpose</strong>: Import and process static crowd distributions</p>
-<p><strong>Parameters</strong>:
-- <strong>Density Source</strong>
-  - Terrain: Base surface for crowd placement
-  - Distribution Type: Method of agent distribution
-  - Crowds Objects: Reference objects for density calculation
-  - Input Density object/objects: Pre-configured density setups</p>
+<p>The Fluid System is an alternative agent distribution and control system that provides three distinct distribution methods and specialized control objects to influence agent movement and behavior.</p>
+<h2 id="distribution">Distribution</h2>
+<h3 id="view-mode">View Mode</h3>
 <ul>
-<li><strong>Distribution Controls</strong></li>
-<li>Distance Min: Minimum spacing between agents</li>
-<li>Density Max: Maximum agent concentration</li>
-<li>Seed: Randomization seed for variation</li>
-<li>
-<p>Mask Vertex Group: Vertex-based placement restrictions</p>
-</li>
-<li>
-<p><strong>Animation Setup</strong></p>
-</li>
-<li>Agent animation configurations and behaviors</li>
+<li><strong>Render</strong>: Standard visualization mode for agent distribution</li>
 </ul>
-<h3 id="motion-engine">Motion Engine</h3>
-<p><strong>Purpose</strong>: Control agent movement characteristics and physics</p>
-<p><strong>Settings</strong>:
-- <strong>Walk Speed</strong>: Normal movement velocity (m/s)
-- <strong>Run Speed</strong>: Fast movement velocity (m/s) 
-- <strong>Max Speed</strong>: Velocity cap for all movements (m/s)
-- <strong>Relax Iterations</strong>: Physics smoothing passes for natural movement</p>
-<h3 id="movement-control-systems">Movement Control Systems</h3>
-<p><strong>Purpose</strong>: Direct agent flow and behavior patterns</p>
-<h4 id="path-based-movement">Path-Based Movement</h4>
+<h3 id="terrain-configuration">Terrain Configuration</h3>
 <ul>
-<li><strong>Flow Curve</strong>: Single guiding path for agent direction</li>
-<li><strong>Flow Curves</strong>: Multiple path networks for complex routing</li>
-<li><em>Behavior: Agents follow curve direction and flow</em></li>
+<li><strong>Fluid Terrain</strong>: Enable fluid-based terrain interactions</li>
 </ul>
-<h4 id="attraction-system">Attraction System</h4>
+<h3 id="distribution-types">Distribution Types</h3>
+<p>The system supports three distribution methods:</p>
+<h4 id="1-distribute-on-terrain">1. Distribute On Terrain</h4>
 <ul>
-<li><strong>Attract</strong>: Enable/disable attraction behavior</li>
-<li><strong>Attracters</strong>: Target objects that pull agents toward them</li>
-<li><em>Behavior: Agents naturally move toward attractive points</em></li>
+<li>Distributes agents across the entire input terrain surface</li>
+<li><strong>Weight Paint</strong>: Use brush tools to paint distribution density on specific terrain areas</li>
+<li><strong>Vertex Group Mask</strong>: Utilize vertex groups to control agent placement</li>
 </ul>
-<h4 id="repulsion-system">Repulsion System</h4>
+<h4 id="2-distribute-on-vertex">2. Distribute On Vertex</h4>
 <ul>
-<li><strong>Repel</strong>: Enable/disable repulsion behavior</li>
-<li><strong>Repelers</strong>: Objects that agents avoid</li>
-<li><em>Behavior: Agents maintain distance from repulsive elements</em></li>
+<li>Places agents specifically on mesh vertices</li>
+<li>Provides precise control over agent positioning</li>
+</ul>
+<h4 id="3-crowd-system-distribution">3. Crowd System Distribution</h4>
+<ul>
+<li>Integrates with external crowd systems</li>
+<li>Takes existing instances and replaces them with dynamic agents</li>
+<li>Enables migration from static crowds to interactive agent systems</li>
+</ul>
+<h3 id="distribution-parameters">Distribution Parameters</h3>
+<ul>
+<li><strong>Distance Min</strong>: Minimum spacing between agents (0.5 m)</li>
+<li><strong>Density Max</strong>: Maximum agent density (1.000)</li>
+<li><strong>Seed</strong>: Randomization seed for distribution patterns (0)</li>
+</ul>
+<h3 id="weight-painting">Weight Painting</h3>
+<ul>
+<li><strong>Brush Tool</strong>: Interactive painting interface for density control</li>
+<li><strong>Vertex Group Mask</strong>: Use predefined vertex groups as distribution masks</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<h3 id="speed-thresholds">Speed Thresholds</h3>
+<ul>
+<li><strong>Walk Speed</strong>: 0.010 m/s - Agents use walking animation below this speed</li>
+<li><strong>Run Speed</strong>: 1.000 m/s - Agents switch to running animation above this speed</li>
+<li><strong>Max Speed</strong>: 1.000 m/s - Absolute maximum movement speed</li>
+</ul>
+<h3 id="collision-prevention">Collision Prevention</h3>
+<ul>
+<li><strong>Relax Iterations</strong>: 1 iteration - Controls how agents avoid passing through each other</li>
+<li>Higher values increase collision avoidance quality</li>
+<li>Lower values improve performance</li>
+</ul>
+<h2 id="control-objects">Control Objects</h2>
+<h3 id="three-control-types">Three Control Types</h3>
+<p>Users can input single objects or collections for each control type:</p>
+<h4 id="1-flow-curves">1. Flow Curves</h4>
+<ul>
+<li><strong>Function</strong>: Agents follow the tangent direction of curves</li>
+<li><strong>Zone of Effect</strong>: Controlled by curve radius</li>
+<li><strong>Editing</strong>:</li>
+<li>Select curve points in Edit Mode</li>
+<li>Use <strong>Alt+S</strong> to scale radius up or down</li>
+<li>Larger radius = wider influence area</li>
+</ul>
+<h4 id="2-attracters">2. Attracters</h4>
+<ul>
+<li><strong>Function</strong>: Pull agents toward the object location</li>
+<li><strong>Radius Control</strong>: Object scale determines attraction area</li>
+<li><strong>Recommended</strong>: Use empty sphere objects for clear visualization</li>
+</ul>
+<h4 id="3-repelers">3. Repelers</h4>
+<ul>
+<li><strong>Function</strong>: Push agents away from object location</li>
+<li><strong>Radius Control</strong>: Object scale determines repulsion area</li>
+<li><strong>Recommended</strong>: Use empty sphere objects for clear visualization</li>
+</ul>
+<h2 id="agents-configuration">Agents Configuration</h2>
+<h3 id="predefined-agent-collections">Predefined Agent Collections</h3>
+<ul>
+<li><strong>Male Agents</strong>:</li>
+<li>mem Idle</li>
+<li>mem Walk</li>
+<li>mem Run</li>
+<li><strong>Female Agents</strong>:</li>
+<li>women Idle</li>
+<li>women Walk</li>
+<li>women Run</li>
+</ul>
+<h3 id="agent-management">Agent Management</h3>
+<h4 id="density-control">Density Control</h4>
+<ul>
+<li><strong>Probability</strong>: 0.500 - Controls spawn likelihood of agent collections</li>
+</ul>
+<h4 id="agent-settings">Agent Settings</h4>
+<ul>
+<li>Separate configuration for Male and Female agents</li>
+<li>Gender-specific behavior and appearance settings</li>
+</ul>
+<h4 id="customization-options">Customization Options</h4>
+<ul>
+<li><strong>Include/Discard</strong>: Add or remove agents from simulation</li>
+<li><strong>Customize Individual Agents</strong>: Modify specific agent instances (e.g., man1)</li>
+<li><strong>Change Clothes</strong>: Swap clothing and appearance elements</li>
+<li><strong>Change Action</strong>: Modify animation behaviors</li>
+<li><strong>Include All</strong>: Apply changes to entire agent groups</li>
+</ul>
+<h3 id="custom-agent-creation">Custom Agent Creation</h3>
+<ul>
+<li><strong>Object</strong>: Reference to agent mesh object</li>
+<li><strong>Collection</strong>: Agent group organization</li>
+<li><strong>Agent Mesh</strong>: 3D model reference</li>
+<li><strong>Agent Armature</strong>: Animation skeleton and rigging</li>
+<li><strong>Gender</strong>: Male/Female classification for behavior rules</li>
 </ul>
 <h2 id="workflow">Workflow</h2>
-<h3 id="phase-1-distribution-setup">Phase 1: Distribution Setup</h3>
 <ol>
-<li>Create static crowd layout using Walkers or City systems</li>
-<li>Export density configuration and agent placements</li>
+<li><strong>Distribution Setup</strong>:</li>
+<li>Choose distribution type (Terrain/Vertex/Crowd System)</li>
+<li>Configure density and spacing parameters</li>
+<li>
+<p>Use weight painting for area-specific control</p>
+</li>
+<li>
+<p><strong>Agent Configuration</strong>:</p>
+</li>
+<li>Select agent collections and probabilities</li>
+<li>Customize individual agents as needed</li>
+<li>
+<p>Add custom agents if required</p>
+</li>
+<li>
+<p><strong>Control Placement</strong>:</p>
+</li>
+<li>Add Flow Curves for guided movement paths</li>
+<li>Place Attracters at points of interest</li>
+<li>
+<p>Use Repelers to block areas or create obstacles</p>
+</li>
+<li>
+<p><strong>Simulation Tuning</strong>:</p>
+</li>
+<li>Adjust speed thresholds for animation transitions</li>
+<li>Set relax iterations for collision quality</li>
+<li>Fine-tune control object radii and positions</li>
 </ol>
-<h3 id="phase-2-fluid-system-integration">Phase 2: Fluid System Integration</h3>
-<ol>
-<li>Import static distribution into Fluid system</li>
-<li>Configure density parameters and terrain matching</li>
-<li>Set up animation behaviors for agents</li>
-</ol>
-<h3 id="phase-3-movement-control">Phase 3: Movement Control</h3>
-<ol>
-<li><strong>Path-based Flow</strong>: Add curves to guide agent direction</li>
-<li><strong>Attraction Points</strong>: Place objects to pull agents toward goals</li>
-<li><strong>Repulsion Zones</strong>: Set up barriers and avoidance areas</li>
-<li><strong>Motion Tuning</strong>: Adjust speeds and physics for realism</li>
-</ol>
-<h3 id="phase-4-simulation">Phase 4: Simulation</h3>
-<ol>
-<li>Activate real-time movement simulation</li>
-<li>Monitor agent interactions and flow patterns</li>
-<li>Adjust parameters dynamically during runtime</li>
-</ol>
-<h2 id="use-cases">Use Cases</h2>
-<h3 id="urban-scenarios">Urban Scenarios</h3>
+<h2 id="best-practices">Best Practices</h2>
 <ul>
-<li>Pedestrian flows through city streets</li>
-<li>Crowd movement in public squares</li>
-<li>Emergency evacuation simulations</li>
+<li>Use empty spheres for attracter/repeler objects for clear visualization</li>
+<li>Test flow curves with varying radii to create natural movement patterns</li>
+<li>Balance agent density with performance considerations</li>
+<li>Use weight painting to create realistic concentration areas</li>
+<li>Start with lower relax iterations and increase if collision issues occur</li>
 </ul>
-<h3 id="entertainment-applications">Entertainment Applications</h3>
-<ul>
-<li>Animated crowds in films/games</li>
-<li>Event planning and crowd management</li>
-<li>Architectural visualization with living populations</li>
-</ul>
-<h3 id="technical-applications">Technical Applications</h3>
-<ul>
-<li>Traffic flow analysis</li>
-<li>Space utilization studies</li>
-<li>Behavioral pattern research</li>
-</ul>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li><strong>Real-time Control</strong>: Adjust parameters while simulation runs</li>
-<li><strong>Multi-method Movement</strong>: Combine paths, attraction, and repulsion</li>
-<li><strong>Physics-based</strong>: Natural collision avoidance and flow dynamics</li>
-<li><strong>Scalable</strong>: Handle from small groups to massive crowds</li>
-<li><strong>Interoperable</strong>: Works with various static distribution systems</li>
-</ul>
+<p>This Fluid System provides flexible agent distribution and sophisticated movement control, enabling complex crowd simulations with natural-looking behaviors and interactions.</p>
               
             </div>
           </div><footer>
