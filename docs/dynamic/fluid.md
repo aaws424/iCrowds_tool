@@ -1,99 +1,143 @@
 # Fluid iCrowd Simulation System - User Documentation
 ## Overview
-The **Fluid System** is a dynamic crowd simulation tool that transforms static crowd distributions into living, moving populations. It takes pre-made density layouts from other systems and brings them to life with realistic movement behaviors.
 
-## Core Components
+The Fluid System is an alternative agent distribution and control system that provides three distinct distribution methods and specialized control objects to influence agent movement and behavior.
 
-### Input Module
-**Purpose**: Import and process static crowd distributions
+## Distribution
 
-**Parameters**:
-- **Density Source**
-  - Terrain: Base surface for crowd placement
-  - Distribution Type: Method of agent distribution
-  - Crowds Objects: Reference objects for density calculation
-  - Input Density object/objects: Pre-configured density setups
+### View Mode
+- **Render**: Standard visualization mode for agent distribution
 
-- **Distribution Controls**
-  - Distance Min: Minimum spacing between agents
-  - Density Max: Maximum agent concentration
-  - Seed: Randomization seed for variation
-  - Mask Vertex Group: Vertex-based placement restrictions
+### Terrain Configuration
+- **Fluid Terrain**: Enable fluid-based terrain interactions
 
-- **Animation Setup**
-  - Agent animation configurations and behaviors
+### Distribution Types
 
-### Motion Engine
-**Purpose**: Control agent movement characteristics and physics
+The system supports three distribution methods:
 
-**Settings**:
-- **Walk Speed**: Normal movement velocity (m/s)
-- **Run Speed**: Fast movement velocity (m/s) 
-- **Max Speed**: Velocity cap for all movements (m/s)
-- **Relax Iterations**: Physics smoothing passes for natural movement
+#### 1. Distribute On Terrain
+- Distributes agents across the entire input terrain surface
+- **Weight Paint**: Use brush tools to paint distribution density on specific terrain areas
+- **Vertex Group Mask**: Utilize vertex groups to control agent placement
 
-### Movement Control Systems
-**Purpose**: Direct agent flow and behavior patterns
+#### 2. Distribute On Vertex
+- Places agents specifically on mesh vertices
+- Provides precise control over agent positioning
 
-#### Path-Based Movement
-- **Flow Curve**: Single guiding path for agent direction
-- **Flow Curves**: Multiple path networks for complex routing
-- *Behavior: Agents follow curve direction and flow*
+#### 3. Crowd System Distribution
+- Integrates with external crowd systems
+- Takes existing instances and replaces them with dynamic agents
+- Enables migration from static crowds to interactive agent systems
 
-#### Attraction System
-- **Attract**: Enable/disable attraction behavior
-- **Attracters**: Target objects that pull agents toward them
-- *Behavior: Agents naturally move toward attractive points*
+### Distribution Parameters
 
-#### Repulsion System  
-- **Repel**: Enable/disable repulsion behavior
-- **Repelers**: Objects that agents avoid
-- *Behavior: Agents maintain distance from repulsive elements*
+- **Distance Min**: Minimum spacing between agents (0.5 m)
+- **Density Max**: Maximum agent density (1.000)
+- **Seed**: Randomization seed for distribution patterns (0)
+
+### Weight Painting
+- **Brush Tool**: Interactive painting interface for density control
+- **Vertex Group Mask**: Use predefined vertex groups as distribution masks
+
+## Settings
+
+### Speed Thresholds
+- **Walk Speed**: 0.010 m/s - Agents use walking animation below this speed
+- **Run Speed**: 1.000 m/s - Agents switch to running animation above this speed
+- **Max Speed**: 1.000 m/s - Absolute maximum movement speed
+
+### Collision Prevention
+- **Relax Iterations**: 1 iteration - Controls how agents avoid passing through each other
+  - Higher values increase collision avoidance quality
+  - Lower values improve performance
+
+## Control Objects
+
+### Three Control Types
+
+Users can input single objects or collections for each control type:
+
+#### 1. Flow Curves
+- **Function**: Agents follow the tangent direction of curves
+- **Zone of Effect**: Controlled by curve radius
+- **Editing**:
+  - Select curve points in Edit Mode
+  - Use **Alt+S** to scale radius up or down
+  - Larger radius = wider influence area
+
+#### 2. Attracters
+- **Function**: Pull agents toward the object location
+- **Radius Control**: Object scale determines attraction area
+- **Recommended**: Use empty sphere objects for clear visualization
+
+#### 3. Repelers
+- **Function**: Push agents away from object location
+- **Radius Control**: Object scale determines repulsion area
+- **Recommended**: Use empty sphere objects for clear visualization
+
+## Agents Configuration
+
+### Predefined Agent Collections
+- **Male Agents**:
+  - mem Idle
+  - mem Walk
+  - mem Run
+- **Female Agents**:
+  - women Idle
+  - women Walk
+  - women Run
+
+### Agent Management
+
+#### Density Control
+- **Probability**: 0.500 - Controls spawn likelihood of agent collections
+
+#### Agent Settings
+- Separate configuration for Male and Female agents
+- Gender-specific behavior and appearance settings
+
+#### Customization Options
+- **Include/Discard**: Add or remove agents from simulation
+- **Customize Individual Agents**: Modify specific agent instances (e.g., man1)
+- **Change Clothes**: Swap clothing and appearance elements
+- **Change Action**: Modify animation behaviors
+- **Include All**: Apply changes to entire agent groups
+
+### Custom Agent Creation
+- **Object**: Reference to agent mesh object
+- **Collection**: Agent group organization
+- **Agent Mesh**: 3D model reference
+- **Agent Armature**: Animation skeleton and rigging
+- **Gender**: Male/Female classification for behavior rules
 
 ## Workflow
 
-### Phase 1: Distribution Setup
-1. Create static crowd layout using Walkers or City systems
-2. Export density configuration and agent placements
+1. **Distribution Setup**:
+   - Choose distribution type (Terrain/Vertex/Crowd System)
+   - Configure density and spacing parameters
+   - Use weight painting for area-specific control
 
-### Phase 2: Fluid System Integration  
-1. Import static distribution into Fluid system
-2. Configure density parameters and terrain matching
-3. Set up animation behaviors for agents
+2. **Agent Configuration**:
+   - Select agent collections and probabilities
+   - Customize individual agents as needed
+   - Add custom agents if required
 
-### Phase 3: Movement Control
-1. **Path-based Flow**: Add curves to guide agent direction
-2. **Attraction Points**: Place objects to pull agents toward goals
-3. **Repulsion Zones**: Set up barriers and avoidance areas
-4. **Motion Tuning**: Adjust speeds and physics for realism
+3. **Control Placement**:
+   - Add Flow Curves for guided movement paths
+   - Place Attracters at points of interest
+   - Use Repelers to block areas or create obstacles
 
-### Phase 4: Simulation
-1. Activate real-time movement simulation
-2. Monitor agent interactions and flow patterns
-3. Adjust parameters dynamically during runtime
+4. **Simulation Tuning**:
+   - Adjust speed thresholds for animation transitions
+   - Set relax iterations for collision quality
+   - Fine-tune control object radii and positions
 
-## Use Cases
+## Best Practices
 
-### Urban Scenarios
-- Pedestrian flows through city streets
-- Crowd movement in public squares
-- Emergency evacuation simulations
+- Use empty spheres for attracter/repeler objects for clear visualization
+- Test flow curves with varying radii to create natural movement patterns
+- Balance agent density with performance considerations
+- Use weight painting to create realistic concentration areas
+- Start with lower relax iterations and increase if collision issues occur
 
-### Entertainment Applications
-- Animated crowds in films/games
-- Event planning and crowd management
-- Architectural visualization with living populations
-
-### Technical Applications
-- Traffic flow analysis
-- Space utilization studies
-- Behavioral pattern research
-
-## Key Features
-
-- **Real-time Control**: Adjust parameters while simulation runs
-- **Multi-method Movement**: Combine paths, attraction, and repulsion
-- **Physics-based**: Natural collision avoidance and flow dynamics
-- **Scalable**: Handle from small groups to massive crowds
-- **Interoperable**: Works with various static distribution systems
-
+This Fluid System provides flexible agent distribution and sophisticated movement control, enabling complex crowd simulations with natural-looking behaviors and interactions.

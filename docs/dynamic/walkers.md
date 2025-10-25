@@ -1,227 +1,113 @@
-# Walkers iCrowd Simulation System - User Documentation
+# Walkers System Documentation
 
-## 1.0 System Overview
+## Overview
 
-The Walkers Path System is a curve-based pedestrian animation tool that generates animated characters moving along user-defined paths. The system creates natural movement patterns around drawn curves with configurable lane behavior, density, and motion parameters.
+The Walkers System is a specialized crowd simulation tool designed for controlled pedestrian movement along predefined paths. This system creates organized lane-based traffic flow with configurable agent behavior and path following.
 
-## 2.0 Quick Start
+## Distribution
 
-### 2.1 Basic Setup
-1. **Create a curve** in your scene
-2. **Connect the curve** to "Walkers Curve" input
-3. **Set Agent Object** or **Collection** for characters
-4. **Adjust Count** for desired number of walkers
-5. **Play timeline** to activate animation
+### Viewer
+- **Render**: Standard visualization mode for agent display
 
-## 3.0 Input Configuration
+### Terrain Configuration
+- **Collection**: Terrain setup consistent with other systems in the suite
 
-### 3.1 Primary Inputs
-**Terrain** (Optional)
-- Purpose: Ground surface for elevation matching
-- Usage: Connect terrain mesh for height alignment
+### Distribution Setup
 
-**Input Type**
-- Purpose: Determines how paths are generated
-- Options: Single curve or curve collection
+#### Path Definition
+- **Distribution Object**: Input a collection of curves that define walking paths
+- **Walkers Curve**: Curves act as the central guide for lane generation
+- **Edit**: Modify curve properties and placement
 
-**Walkers Curves/Walkers Curve**
-- Purpose: Path definition for walker movement
-- Usage: Connect Bézier curve or curve collection
+#### Density Control
+- **Density**: 1.000 - Controls the number of people distributed across lanes
+- **Randomness**: 1.000 - Randomizes walker distribution along the lanes
+- **Seed**: 0 - Randomization seed for consistent patterns
 
-## 4.0 Agent Configuration
+#### Collision Avoidance
+- **Personal Space**: Individual buffer zone for each agent
+- **Min**: 0.000 - Minimum personal space distance
+- **Max**: 1.000 - Maximum personal space distance
+- **Seed**: 0 - Randomization seed for personal space variation
 
-### 4.1 Agent Assignment
-**Object**
-- Purpose: Single character object to duplicate
-- Usage: Connect a mesh object with walk animation
+**Note**: Personal space system activates when System Type is set to Physics (not Animation)
 
-**Collection**
-- Purpose: Multiple character variations
-- Usage: Connect collection of character objects
+## Settings
 
-### 4.2 Path Parameters
-**Lanes**
-- Purpose: Number of parallel walking paths
-- Effect: Creates multi-lane pedestrian flow
-- Range: 1-8 (typical urban sidewalk capacity)
+### Agent Lifecycle
+- **Loop Type**: Controls agent behavior at path endpoints
+  - **Respawn**: Agents reappear at the start when reaching the end
+  - **Delete**: Agents are removed from simulation when reaching the end
 
-**Count**
-- Purpose: Total number of walkers on path
-- Effect: Controls pedestrian density
-- Recommendation: Start with 10-20 for testing
+### System Configuration
+- **System Type**: 
+  - **Animation**: Uses animated movement (default)
+  - **Physics**: Enables physical interactions and collision avoidance
 
-**Direction**
-- Purpose: Movement direction along curve
-- Options: Forward, Reverse, Bidirectional
+### Lane Management
 
-**Loop Type**
-- Purpose: Path cycling behavior
-- Options: 
-  - Single Pass: One-time traversal
-  - Loop: Continuous circulation
-  - Ping-Pong: Forward/reverse alternation
+#### Lane Generation
+- **Count**: 4 - Number of lane instances generated left and right of input curves
+- **Direction**: 0.632 - Controls lane direction variation
+  - Values > 0.5 create opposing traffic flows
+  - Some agents move forward, others move in reverse direction
 
-## 5.0 Motion Control
+#### Movement Variation
+- **Noise**: Adds natural variation to agent movement
+  - **Power**: 1.000 - Strength of noise influence
+  - **Offset**: 0.000 - Base offset for noise pattern
+  - **Scale**: 0.100 - Size of noise pattern effect
 
-### 5.1 Noise Parameters
-**Power**
-- Purpose: Intensity of path variation
-- Effect: Creates natural path deviations
-- Range: 0.0 (exact path) to 1.0 (maximum variation)
+#### Speed Control
+- **Speed**: 1.000 - Controls the movement speed of all agents
 
-**Offset**
-- Purpose: Lateral position variation
-- Effect: Random lane positioning
-- Usage: Creates organic spacing
+## Agents Configuration
 
-**Scale**
-- Purpose: Spatial frequency of noise
-- Effect: Controls deviation pattern scale
+### Agent Collections
+- **Single Collection Input**: Unlike other systems, accepts only one collection type
+- **Animated Walking Meshes**: Collection must contain pre-animated walking animation meshes
+- **No Gender Separation**: All agents use the same animation collection
 
-### 5.2 Speed Management
-**Speed**
-- Purpose: Base movement velocity
-- Units: Blender units per second
-- Typical: 1.0-2.0 for walking speed
+### Simplified Agent Management
+- No individual agent customization (clothes, actions)
+- No probability settings for different agent types
+- Focus on uniform crowd behavior rather than individual variation
 
-## 6.0 Density & Spacing
+## Workflow
 
-### 6.1 Density Control
-**Density**
-- Purpose: Overall walker concentration
-- Effect: Multiplier for Count parameter
-- Range: 0.0 (none) to 2.0 (double density)
+1. **Path Creation**:
+   - Create and position guide curves for desired walking paths
+   - Organize curves into a collection for system input
 
-**Randomness**
-- Purpose: Distribution variation
-- Effect: Irregular spacing between walkers
-- Usage: Avoids robotic uniformity
+2. **Distribution Setup**:
+   - Set lane count for path width
+   - Adjust density for crowd size
+   - Configure personal space for collision avoidance
 
-**Seed**
-- Purpose: Randomization control
-- Effect: Unique distribution patterns
+3. **Behavior Configuration**:
+   - Choose loop type (respawn or delete)
+   - Set system type (animation or physics)
+   - Adjust direction for traffic flow patterns
 
-### 6.2 Personal Space Configuration
-**Min/Max Space**
-- Purpose: Inter-walker distance constraints
-- Min: Minimum allowed distance (avoid collision)
-- Max: Maximum allowed distance (maintain group cohesion)
+4. **Movement Tuning**:
+   - Set base movement speed
+   - Add noise for natural movement variation
+   - Fine-tune lane directions for realistic traffic patterns
 
-**Seed**
-- Purpose: Personal space randomization
-- Effect: Natural distance variations
+## Key Features
 
-## 7.0 Implementation Guide
+- **Lane-Based System**: Automatically generates multiple lanes from single curves
+- **Bidirectional Traffic**: Direction parameter creates natural opposing flows
+- **Consistent Animation**: All agents use the same walking animation collection
+- **Controlled Density**: Precise control over agent distribution along paths
+- **Collision Awareness**: Personal space system prevents agent overlap
 
-### 7.1 Basic Workflow
-```
-1. Create and position Bézier curve for desired path
-2. Connect curve to "Walkers Curve" socket
-3. Assign character object/collection to "Object" or "Collection"
-4. Set Count to desired number of walkers (10-50 typical)
-5. Configure Lanes for path width (2-4 for sidewalks)
-6. Adjust Speed for realistic movement (1.2-1.8)
-7. Enable timeline playback to activate animation
-```
+## Use Cases
 
-### 7.2 Advanced Configurations
+- Sidewalk and pedestrian walkway simulations
+- Museum or exhibition visitor flow
+- Emergency egress and crowd movement studies
+- Architectural planning for public spaces
+- Traffic flow analysis for urban planning
 
-**Multi-lane Sidewalk**
-```
-- Lanes: 3
-- Count: 25
-- Direction: Bidirectional
-- Loop Type: Loop
-- Power: 0.3 (subtle variation)
-```
-
-**Single-file Path**
-```
-- Lanes: 1
-- Count: 15
-- Direction: Forward
-- Loop Type: Single Pass
-- Power: 0.1 (minimal deviation)
-```
-
-## 8.0 Animation Integration
-
-### 8.1 Character Requirements
-- Walk cycle animation required
-- Proper armature rigging for natural movement
-- Scale matching to scene proportions
-
-### 8.2 Motion Blending
-- System automatically matches animation speed to path velocity
-- Supports walk/run cycle blending based on speed parameter
-- Root motion alignment with path curvature
-
-## 9.0 Performance Optimization
-
-### 9.1 Efficiency Guidelines
-- Use simplified character meshes for large counts
-- Limit Count to scene requirements (typically < 100)
-- Use moderate Power values (0.2-0.5) for balance
-- Consider instancing for identical characters
-
-### 9.2 Quality Settings
-```
-High Quality:
-- Count: 50-100
-- Power: 0.3-0.6
-- High-detail characters
-
-Performance Mode:
-- Count: 10-30
-- Power: 0.1-0.3
-- Low-poly characters
-```
-
-## 10.0 Use Cases
-
-### 10.1 Urban Scenarios
-- Sidewalk pedestrian flows
-- Park pathway circulation
-- Shopping district foot traffic
-- Event venue entry/exit flows
-
-### 10.2 Architectural Visualization
-- Building entrance approaches
-- Plaza and courtyard movement
-- Stairway and ramp circulation
-- Queue simulation for facilities
-
-## 11.0 Troubleshooting
-
-### 11.1 Common Issues
-**Walkers Not Moving**
-- Verify curve connection to correct socket
-- Check timeline is playing
-- Validate character objects have animations
-
-**Uneven Spacing**
-- Adjust Personal Space Min/Max values
-- Reduce Randomness parameter
-- Check curve resolution and length
-
-**Unnatural Movement**
-- Reduce Power parameter for straighter paths
-- Adjust Speed to match animation cycle
-- Verify proper character scaling
-
-## 12.0 Technical Notes
-
-### 12.1 Curve Requirements
-- Use Bézier curves for smooth paths
-- Ensure adequate curve resolution
-- Avoid sharp angles for natural movement
-- Closed curves work well for looped paths
-
-### 12.2 System Integration
-- Compatible with main crowd system
-- Can be used alongside area-based crowds
-- Supports hybrid approaches (path + free movement)
-
----
-
-*Documentation Version: 1.0 | System: Walkers Path Module*
+This Walkers System provides a streamlined approach for creating organized pedestrian movement patterns with minimal setup complexity, ideal for architectural visualization and urban planning applications where controlled crowd flow is essential.

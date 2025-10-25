@@ -1,89 +1,85 @@
-# Dynamic iCrowd Simulation - System Overview
+# iCrowds Dynamic Systems
 
-## Three Integrated Systems
+## System Overview
 
-### 1. Walkers System - **Static Path-Based Distribution**
-**Purpose**: Create structured, lane-based crowd placements along defined paths
+iCrowds provides three specialized crowd simulation systems for different scenarios:
 
-**Core Functionality**:
-- Path-following agent distribution along curves and lanes
-- Controlled density with personal space management
-- Predictable, organized crowd patterns
-- Ideal for parades, guided flows, structured movement
+### 1. City System
+**Purpose:** Autonomous urban population simulation  
+**Best For:** 
+- Open-world city environments
+- Agents with independent needs and behaviors
+- Complex urban planning studies
 
-**Key Components**: Lanes, Walkers Curves, Noise controls, Personal Space settings
+**Key Features:**
+- Needs-based AI (hunger, sleep, fun, bladder)
+- Automatic pathfinding to activities
+- High agent customization
+- Debug tools for behavior monitoring
 
-### 2. City System - **Static Urban Distribution** 
-**Purpose**: Environment-aware crowd placement for urban scenarios
+### 2. Fluid System
+**Purpose:** Artist-controlled crowd movement  
+**Best For:**
+- Directed crowd flow
+- Event and venue simulations
+- Emergency evacuation planning
 
-**Core Functionality**:
-- Terrain and infrastructure-based distribution (roads, sidewalks)
-- Activity-based agent behaviors (sleep, eat, work, leisure)
-- Collision-aware placement with environmental constraints
-- Urban-scale crowd simulation setup
+**Key Features:**
+- Flow curves for guided movement
+- Attracter/repeler objects
+- Multiple distribution methods
+- Physics-based collision avoidance
 
-**Key Components**: ICity infrastructure, Activities system, Collision objects, Mask controls
+### 3. Walkers System
+**Purpose:** Organized path-based pedestrian traffic  
+**Best For:**
+- Sidewalks and crosswalks
+- Museum/retail visitor flow
+- Structured movement patterns
 
-### 3. Fluid System - **Dynamic Movement Control**
-**Purpose**: Transform static distributions into living, responsive crowds
+**Key Features:**
+- Lane-based curve following
+- Bidirectional traffic flow
+- Simple setup and management
+- Consistent animation patterns
 
-**Core Functionality**:
-- Real-time movement simulation with physics-based behaviors
-- Multi-method control (path following, attraction, repulsion)
-- Dynamic response to environmental changes
-- Smooth, natural crowd flow and interactions
+## Quick System Selection Guide
 
-**Key Components**: Motion engine, Flow Curves, Attract/Repel systems, Real-time controls
+**Choose City System if:**
+- You want autonomous, life-like behavior
+- Agents should make independent decisions
+- Simulating daily urban activities
 
-## Integrated Workflow
+**Choose Fluid System if:**
+- You need precise crowd direction control
+- Using attractors/repellers to shape movement
+- Creating natural crowd flow patterns
 
-### Phase 1: Static Setup
-- Use **Walkers** for structured path-based distributions
-- Use **City** for environment-aware urban placements
-- Both systems output density maps and agent configurations
+**Choose Walkers System if:**
+- You need organized path following
+- Simulating sidewalk or lane-based traffic
+- Quick setup with predictable results
 
-### Phase 2: Dynamic Activation
-- **Fluid system** imports static distributions
-- Applies motion behaviors and interactive controls
-- Enables real-time crowd movement and responses
+## Common Workflow
 
-### Phase 3: Runtime Control
-- Adjust movement parameters in real-time
-- Modify attractors/repellers during simulation
-- Monitor and tweak crowd behaviors dynamically
+1. **Setup Environment** - Prepare terrain and collision objects
+2. **Select System** - Choose based on your simulation needs
+3. **Configure Distribution** - Place agents using density controls
+4. **Set Behaviors** - Configure speeds, activities, or paths
+5. **Add Controls** - Place flow curves, attracters, or activities
+6. **Run Simulation** - Monitor with debug tools as needed
 
-## System Relationships
+## Technical Notes
 
-```
-Static Systems (Walkers/City) → Fluid System → Dynamic Simulation
-    ↓                            ↓
-Distribution Setup          Movement Control
-    ↓                            ↓
-Agent Placement            Real-time Behavior
-```
+- All systems support custom agent collections
+- Speed thresholds control animation transitions
+- Distribution uses weight painting for density control
+- Systems can be combined in different scene areas
 
-## Unique Capabilities
+## Getting Started
 
-### Walkers System Specialization
-- Precise lane control and flow direction
-- Looping paths and structured formations
-- Ideal for controlled crowd movements
+1. Start with the Walkers System for simple path-based crowds
+2. Use Fluid System for controlled crowd movement
+3. Implement City System for complex autonomous populations
 
-### City System Specialization  
-- Urban environment integration
-- Activity-based behavior states
-- Complex collision and space management
-
-### Fluid System Specialization
-- Real-time dynamic control
-- Multiple simultaneous movement methods
-- Physics-based natural interactions
-
-## Use Case Scenarios
-
-**Architectural Visualization**: City (placement) → Fluid (movement)
-**Event Planning**: Walkers (structured flow) → Fluid (dynamic behavior)  
-**Urban Analysis**: City (environment setup) → Fluid (traffic simulation)
-**Entertainment**: Combined use for complex crowd scenes
-
-This three-system approach provides complete flexibility: from highly controlled static placements to fully dynamic, responsive crowd simulations that can adapt to changing conditions in real-time.
+**Remember:** You can mix systems in different parts of your scene for optimal results.
