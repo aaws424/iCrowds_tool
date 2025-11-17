@@ -23,7 +23,7 @@ theme:
       background: '#0e1621'  # deep dark navy like the top navbar
       text: '#e8ecf2'        # light grey-blue text
   logo: assets/logo.png
-#  favicon: assets/favicon.png
+  favicon: assets/favicon.png
 
 nav:
   - Home: index.md
