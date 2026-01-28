@@ -2,45 +2,43 @@ site_name: iCrowds Documentation
 
 theme:
   name: material
-  features:
-    - navigation.tabs
-    - navigation.expand
-    - navigation.sections
-    - content.code.copy
-    - search.suggest
-    - search.highlight
-    - toc.integrate
-    - palette.toggle  # dark/light toggle
+
   palette:
-    - scheme: default        # Light mode
-      primary: 'indigo'
-      accent: 'blue'
-      background: '#f5f6fa'  # light grey-white like your hero section
-      text: '#1c1c1c'
-    - scheme: slate          # Dark mode
-      primary: 'blue grey'   # matches your dark navy tone
-      accent: 'light blue'
-      background: '#0e1621'  # deep dark navy like the top navbar
-      text: '#e8ecf2'        # light grey-blue text
-  logo: assets/logo.png
-  favicon: assets/favicon.png
+    - scheme: default
+      primary: grey
+      accent: grey
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+    - scheme: slate
+      primary: grey
+      accent: grey
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
 
 nav:
   - Home: index.md
-  - Static:
+
+  - Static Systems:
       - Overview: static/index.md
       - Stadium: static/stadium.md
       - Scatter:
-          - Scatter on Ground: static/scatter/ground.md
-          - Scatter on Curve: static/scatter/curve.md
-          - Scatter on Vertex: static/scatter/vertex.md
-  - Dynamic:
+          - Ground Scatter: static/scatter/ground.md
+          - Curve Scatter: static/scatter/curve.md
+          - Vertex Scatter: static/scatter/vertex.md
+
+  - Dynamic Systems:
       - Overview: dynamic/index.md
+      - Ragdoll System: dynamic/ragdoll.md
       - Fluid System: dynamic/fluid.md
       - Walkers System: dynamic/walkers.md
       - City System: dynamic/city.md
+
   - Agents:
-      - Customize: extra/agents.md
-  - Q&A:
+      - Customization: extra/agents.md
+
+  - Help:
       - FAQ: extra/faq.md
       - Tutorials: extra/tutorials.md
